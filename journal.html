@@ -15,6 +15,7 @@
 <meta property="og:image" content="https://mohapx-v-it.github.io/journal/j03.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2307070B'/%3E%3Cpath d='M12 42V18l11 9 9-14 9 14 11-9v24z' fill='%23FF9A1F'/%3E%3Crect x='12' y='46' width='40' height='5' rx='2.5' fill='%23FF9A1F'/%3E%3C/svg%3E">
+<link rel="alternate" type="application/rss+xml" title="MOHAPX-V-IT" href="rss.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -130,7 +131,7 @@ nav.stuck{border-bottom-color:var(--line)}
 .brand .wm i{font-style:normal;color:var(--dimmer)}
 .dot{width:7px;height:7px;border-radius:50%;background:var(--acc);box-shadow:0 0 12px var(--acc);animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.75)}}
-.navlinks{display:flex;gap:26px;font-family:var(--mono);font-size:12.5px;letter-spacing:.05em;color:var(--dim)}
+.navlinks{display:flex;gap:20px;font-family:var(--mono);font-size:12.5px;letter-spacing:.05em;color:var(--dim)}
 .navlinks a{position:relative;transition:color .25s}
 .navlinks a::after{content:'';position:absolute;left:0;bottom:-5px;width:0;height:1px;background:var(--acc);transition:width .3s var(--ease)}
 .navlinks a:hover{color:var(--tx)}
@@ -144,7 +145,7 @@ nav.stuck{border-bottom-color:var(--line)}
 }
 .chip:hover{color:var(--tx);border-color:var(--acc);box-shadow:0 0 0 3px color-mix(in srgb,var(--acc) 12%,transparent)}
 .chip b{color:var(--acc);font-weight:700}
-@media(max-width:900px){.navlinks{display:none}}
+@media(max-width:1150px){.navlinks{display:none}}
 
 /* ============ LAYOUT ============ */
 main{position:relative;z-index:2}
@@ -284,6 +285,30 @@ html[data-theme="light"] .pframe .lines{background:repeating-linear-gradient(to 
 .card > *{position:relative;z-index:1}
 .card .num{font-family:var(--mono);font-size:12px;color:var(--acc);letter-spacing:.16em;margin-bottom:14px;display:block}
 
+/* ---------- TIMELINE ---------- */
+.tl{position:relative;margin-top:44px;padding-left:38px}
+.tl::before{
+  content:'';position:absolute;left:9px;top:6px;bottom:6px;width:2px;
+  background:linear-gradient(to bottom,var(--acc),color-mix(in srgb,var(--acc) 25%,transparent) 65%,transparent);
+  opacity:.55
+}
+.tli{position:relative;padding:0 0 34px 0}
+.tli:last-child{padding-bottom:0}
+.tli::before{
+  content:'';position:absolute;left:-34px;top:7px;width:12px;height:12px;border-radius:50%;
+  background:var(--bg);border:2px solid var(--acc);box-shadow:0 0 0 4px color-mix(in srgb,var(--acc) 12%,transparent);
+  transition:.4s var(--ease)
+}
+.tli:hover::before{background:var(--acc);box-shadow:0 0 18px var(--glow)}
+.tli .yr2{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--acc);display:block;margin-bottom:6px}
+.tli h3{margin-bottom:7px}
+.tli p{font-size:15.5px;max-width:66ch}
+.tli.now::after{
+  content:'';position:absolute;left:-31px;top:10px;width:6px;height:6px;border-radius:50%;
+  background:var(--acc);animation:pulse 2s infinite
+}
+@media(max-width:560px){.tl{padding-left:30px}.tli::before{left:-27px}.tli.now::after{left:-24px}}
+
 /* PROCESS */
 .steps{display:grid;gap:0;margin-top:36px;border-top:1px solid var(--line)}
 .step{
@@ -319,6 +344,17 @@ html[data-theme="light"] .pframe .lines{background:repeating-linear-gradient(to 
 }
 .rule q::before,.rule q::after{content:''}
 .rule p{margin-top:24px;max-width:62ch;position:relative;z-index:1}
+
+.calcteaser{
+  margin-top:26px;display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;
+  border:1px solid var(--line);border-radius:16px;padding:26px 28px;background:var(--bg2);
+  position:relative;z-index:1;transition:.4s var(--ease)
+}
+.calcteaser:hover{border-color:color-mix(in srgb,var(--acc) 45%,var(--line))}
+.calcteaser > div{flex:1 1 380px}
+.ct-tag{font-family:var(--mono);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--acc);display:block;margin-bottom:10px}
+.calcteaser h3{margin-bottom:10px}
+.calcteaser p{font-size:15.5px;max-width:62ch}
 
 /* NUMBERS */
 .stat{text-align:left;display:flex;flex-direction:column}
@@ -422,6 +458,10 @@ footer a:hover{color:var(--acc)}
 .jrub{color:var(--acc)}
 .jdate{color:var(--dimmer)}
 .jpin{border:1px solid var(--line-2);color:var(--dim);padding:3px 8px;border-radius:5px}
+.jperm{color:var(--dimmer);margin-left:auto;transition:color .25s}
+.jperm:hover{color:var(--acc)}
+.jtitle a{transition:color .25s}
+.jtitle a:hover{color:var(--acc)}
 .jtitle{font-family:var(--disp);font-weight:800;font-size:clamp(20px,2.3vw,28px);line-height:1.2;letter-spacing:-.02em;margin:14px 0 16px}
 .jtext{position:relative;max-height:132px;overflow:hidden;transition:max-height .55s var(--ease)}
 .jtext::after{content:'';position:absolute;left:0;right:0;bottom:0;height:70px;pointer-events:none;
@@ -453,6 +493,7 @@ footer a:hover{color:var(--acc)}
   text-align:center
 }
 </style>
+<script>try{var _t=localStorage.getItem('mvi-theme');if(_t)document.documentElement.setAttribute('data-theme',_t);var _l=localStorage.getItem('mvi-lang');if(_l)document.documentElement.setAttribute('lang',_l);}catch(e){}</script>
 </head>
 <body>
 
@@ -473,8 +514,9 @@ footer a:hover{color:var(--acc)}
     <a href="index.html#whoami"><span class="ru">кто я</span><span class="en">whoami</span></a>
     <a href="index.html#process"><span class="ru">процесс</span><span class="en">process</span></a>
     <a href="index.html#work"><span class="ru">проекты</span><span class="en">work</span></a>
-    <a href="index.html#stack"><span class="ru">стек</span><span class="en">stack</span></a>
+    <a href="index.html#path"><span class="ru">путь</span><span class="en">path</span></a>
     <a href="journal.html" style="color:var(--acc)"><span class="ru">журнал</span><span class="en">journal</span></a>
+    <a href="calculator.html"><span class="ru">калькулятор</span><span class="en">calculator</span></a>
     <a href="index.html#contact"><span class="ru">контакт</span><span class="en">contact</span></a>
   </div>
   <div class="hud">
@@ -511,8 +553,9 @@ footer a:hover{color:var(--acc)}
           <span class="jrub"><span class="ru">// мнение</span><span class="en">// take</span></span>
           <span class="jdate"><span class="ru">3 августа</span><span class="en">Aug 3</span></span>
           <span class="jpin"><span class="ru">закреплено</span><span class="en">pinned</span></span>
+          <a class="jperm" href="journal/post-00.html"><span class="ru">страница ↗</span><span class="en">page ↗</span></a>
         </div>
-        <h2 class="jtitle"><span class="ru">Кто я и о чём здесь</span><span class="en">Who I am and what this is</span></h2>
+        <h2 class="jtitle"><a href="journal/post-00.html"><span class="ru">Кто я и о чём здесь</span><span class="en">Who I am and what this is</span></a></h2>
         <div class="jtext" id="t00">
           <div class="ru"><p>Меня зовут Алексей Марышев. Я ИИ-инженер: беру у заказчика фразу «а что если мы автоматизируем вот это» и превращаю её в работающую систему в проде. Обычно за неделю.</p>
 <p>Я не только пишу код. Сначала я разбираю процесс: считаю, что реально изменится в цифрах, сколько будет стоить сборка, насколько сложно встроить решение в то, что уже работает. И только потом сажусь за редактор — или не сажусь, если считать нечего.</p>
@@ -546,8 +589,9 @@ footer a:hover{color:var(--acc)}
           <span class="jrub"><span class="ru">// мнение</span><span class="en">// take</span></span>
           <span class="jdate"><span class="ru">5 августа</span><span class="en">Aug 5</span></span>
           
+          <a class="jperm" href="journal/post-01.html"><span class="ru">страница ↗</span><span class="en">page ↗</span></a>
         </div>
-        <h2 class="jtitle"><span class="ru">Автоматизация ради автоматизации неприемлема</span><span class="en">Automation for its own sake is unacceptable</span></h2>
+        <h2 class="jtitle"><a href="journal/post-01.html"><span class="ru">Автоматизация ради автоматизации неприемлема</span><span class="en">Automation for its own sake is unacceptable</span></a></h2>
         <div class="jtext" id="t01">
           <div class="ru"><p>Это единственное правило, которое я не нарушаю.</p>
 <p>Половина моей работы — сказать «нет» раньше, чем в идею вложены деньги и месяцы. Не потому что мне лень, а потому что внедрение, которое не двигает ни одной цифры в отчёте, — это не инновация. Это строчка в презентации, которую через полгода никто не откроет.</p>
@@ -573,8 +617,9 @@ footer a:hover{color:var(--acc)}
           <span class="jrub"><span class="ru">// поле</span><span class="en">// field</span></span>
           <span class="jdate"><span class="ru">7 августа</span><span class="en">Aug 7</span></span>
           
+          <a class="jperm" href="journal/post-02.html"><span class="ru">страница ↗</span><span class="en">page ↗</span></a>
         </div>
-        <h2 class="jtitle"><span class="ru">Первый вопрос заказчику</span><span class="en">The first question I ask a client</span></h2>
+        <h2 class="jtitle"><a href="journal/post-02.html"><span class="ru">Первый вопрос заказчику</span><span class="en">The first question I ask a client</span></a></h2>
         <div class="jtext" id="t02">
           <div class="ru"><p>Меня редко зовут словами «нам нужен ИИ». Чаще приходят с готовым решением: «давайте поставим бота», «давайте прикрутим нейросеть к отчётам».</p>
 <p>Я на это всегда отвечаю одним вопросом: <b>где у вас больше всего просадок?</b></p>
@@ -600,8 +645,9 @@ footer a:hover{color:var(--acc)}
           <span class="jrub"><span class="ru">// разбор</span><span class="en">// case</span></span>
           <span class="jdate"><span class="ru">10 августа</span><span class="en">Aug 10</span></span>
           
+          <a class="jperm" href="journal/post-03.html"><span class="ru">страница ↗</span><span class="en">page ↗</span></a>
         </div>
-        <h2 class="jtitle"><span class="ru">Неделя от идеи до прода: как это устроено</span><span class="en">A week from idea to production: how it works</span></h2>
+        <h2 class="jtitle"><a href="journal/post-03.html"><span class="ru">Неделя от идеи до прода: как это устроено</span><span class="en">A week from idea to production: how it works</span></a></h2>
         <div class="jtext" id="t03">
           <div class="ru"><p>Мне часто не верят, что полный цикл занимает неделю. Разбираю по шагам, где именно экономится время.</p>
 <p><b>1. Запрос.</b> Заказчик приходит с гипотезой. Не с техзаданием — с фразой в одно предложение.</p>
@@ -639,8 +685,9 @@ footer a:hover{color:var(--acc)}
           <span class="jrub"><span class="ru">// мнение</span><span class="en">// take</span></span>
           <span class="jdate"><span class="ru">12 августа</span><span class="en">Aug 12</span></span>
           
+          <a class="jperm" href="journal/post-04.html"><span class="ru">страница ↗</span><span class="en">page ↗</span></a>
         </div>
-        <h2 class="jtitle"><span class="ru">ИИ не отбирает работу</span><span class="en">AI doesn&#x27;t take your job</span></h2>
+        <h2 class="jtitle"><a href="journal/post-04.html"><span class="ru">ИИ не отбирает работу</span><span class="en">AI doesn&#x27;t take your job</span></a></h2>
         <div class="jtext" id="t04">
           <div class="ru"><p>ИИ не отбирает работу. Он отбирает её у тех, кто перестал учиться.</p>
 <p>Работа никуда не девается — меняется её содержание. Пятнадцать лет назад вёрстку таблицами делали руками и это была профессия. Сейчас это чекбокс во фреймворке, а профессия переехала на уровень выше.</p>
@@ -666,8 +713,9 @@ footer a:hover{color:var(--acc)}
           <span class="jrub"><span class="ru">// поле</span><span class="en">// field</span></span>
           <span class="jdate"><span class="ru">14 августа</span><span class="en">Aug 14</span></span>
           
+          <a class="jperm" href="journal/post-05.html"><span class="ru">страница ↗</span><span class="en">page ↗</span></a>
         </div>
-        <h2 class="jtitle"><span class="ru">Три признака, что автоматизацию делать не надо</span><span class="en">Three signs the automation shouldn&#x27;t be built</span></h2>
+        <h2 class="jtitle"><a href="journal/post-05.html"><span class="ru">Три признака, что автоматизацию делать не надо</span><span class="en">Three signs the automation shouldn&#x27;t be built</span></a></h2>
         <div class="jtext" id="t05">
           <div class="ru"><p>Собрал по своей практике. Если совпадает хотя бы два — я разворачиваю задачу обратно.</p>
 <p><b>Никто не может назвать, кому станет легче.</b> Не «отделу», не «компании», а конкретной роли. Если ответ размазан по организации, значит боли нет, есть желание.</p>
@@ -693,8 +741,9 @@ footer a:hover{color:var(--acc)}
           <span class="jrub"><span class="ru">// разбор</span><span class="en">// case</span></span>
           <span class="jdate"><span class="ru">17 августа</span><span class="en">Aug 17</span></span>
           
+          <a class="jperm" href="journal/post-06.html"><span class="ru">страница ↗</span><span class="en">page ↗</span></a>
         </div>
-        <h2 class="jtitle"><span class="ru">Как заявки перестали ждать до утра</span><span class="en">How tickets stopped waiting until morning</span></h2>
+        <h2 class="jtitle"><a href="journal/post-06.html"><span class="ru">Как заявки перестали ждать до утра</span><span class="en">How tickets stopped waiting until morning</span></a></h2>
         <div class="jtext" id="t06">
           <div class="ru"><p>Обезличенный кейс — один из тех, где эффект получился больше, чем ожидали на входе.</p>
 <p><b>Что было.</b> Поток заявок от подрядчиков падал в таск-трекер круглосуточно. Разбирал их человек: читал, понимал, к какому типу относится, проверял, все ли данные на месте, дописывал недостающее и назначал исполнителя. Ночью человека нет — заявки лежали до утра. Утром образовывался завал, и первые часы дня уходили на разбор вчерашнего.</p>
@@ -726,8 +775,9 @@ footer a:hover{color:var(--acc)}
           <span class="jrub"><span class="ru">// инструмент</span><span class="en">// tool</span></span>
           <span class="jdate"><span class="ru">19 августа</span><span class="en">Aug 19</span></span>
           
+          <a class="jperm" href="journal/post-07.html"><span class="ru">страница ↗</span><span class="en">page ↗</span></a>
         </div>
-        <h2 class="jtitle"><span class="ru">Локальная модель или облако</span><span class="en">Local model or cloud</span></h2>
+        <h2 class="jtitle"><a href="journal/post-07.html"><span class="ru">Локальная модель или облако</span><span class="en">Local model or cloud</span></a></h2>
         <div class="jtext" id="t07">
           <div class="ru"><p>Вопрос, который в проектах всплывает раньше, чем выбор фреймворка.</p>
 <p><b>Облако выигрывает,</b> когда данные не чувствительные, нагрузка неровная, а качество ответа важнее всего остального. Топовая модель по API почти всегда умнее того, что ты поднимешь у себя на доступном железе.</p>
@@ -755,8 +805,9 @@ footer a:hover{color:var(--acc)}
           <span class="jrub"><span class="ru">// мнение</span><span class="en">// take</span></span>
           <span class="jdate"><span class="ru">21 августа</span><span class="en">Aug 21</span></span>
           
+          <a class="jperm" href="journal/post-08.html"><span class="ru">страница ↗</span><span class="en">page ↗</span></a>
         </div>
-        <h2 class="jtitle"><span class="ru">Человек — рабочая единица, ИИ — инструмент</span><span class="en">A human is the working unit, AI is the tool</span></h2>
+        <h2 class="jtitle"><a href="journal/post-08.html"><span class="ru">Человек — рабочая единица, ИИ — инструмент</span><span class="en">A human is the working unit, AI is the tool</span></a></h2>
         <div class="jtext" id="t08">
           <div class="ru"><p>Меня выводят из себя предложения уволить людей и посадить на их места модели.</p>
 <p>Это не оптимизация. Это подмена понятий, и она разваливается на первом же нестандартном случае — а нестандартные случаи в любом процессе составляют не пять процентов, как принято думать, а заметно больше.</p>
@@ -782,8 +833,9 @@ footer a:hover{color:var(--acc)}
           <span class="jrub"><span class="ru">// поле</span><span class="en">// field</span></span>
           <span class="jdate"><span class="ru">24 августа</span><span class="en">Aug 24</span></span>
           
+          <a class="jperm" href="journal/post-09.html"><span class="ru">страница ↗</span><span class="en">page ↗</span></a>
         </div>
-        <h2 class="jtitle"><span class="ru">Мой провал: я хотел сделать альтернативу 1С</span><span class="en">My failure: I tried to build an alternative to 1C</span></h2>
+        <h2 class="jtitle"><a href="journal/post-09.html"><span class="ru">Мой провал: я хотел сделать альтернативу 1С</span><span class="en">My failure: I tried to build an alternative to 1C</span></a></h2>
         <div class="jtext" id="t09">
           <div class="ru"><p>Пишу про это спокойно, потому что вывод оттуда оказался дороже любого удачного проекта.</p>
 <p><b>Идея.</b> Система учёта, где автоматизация и ИИ снимают с человека необходимость держать открытыми десяток вкладок и вручную ловить ошибки, которые в 1С становятся критичными. Мне казалось, что боль очевидна: её испытывает каждый, кто хоть раз работал с типовой конфигурацией.</p>
@@ -813,8 +865,9 @@ footer a:hover{color:var(--acc)}
           <span class="jrub"><span class="ru">// цифра</span><span class="en">// num</span></span>
           <span class="jdate"><span class="ru">26 августа</span><span class="en">Aug 26</span></span>
           
+          <a class="jperm" href="journal/post-10.html"><span class="ru">страница ↗</span><span class="en">page ↗</span></a>
         </div>
-        <h2 class="jtitle"><span class="ru">4 часа → 1,5 часа</span><span class="en">4 hours → 1.5 hours</span></h2>
+        <h2 class="jtitle"><a href="journal/post-10.html"><span class="ru">4 часа → 1,5 часа</span><span class="en">4 hours → 1.5 hours</span></a></h2>
         <div class="jtext" id="t10">
           <div class="ru"><p>Столько стало занимать составление одной технической инструкции после внедрения RAG-системы на локальной модели.</p>
 <p>За цифрой стоит скучное: документы разложены на фрагменты, фрагменты проиндексированы, поиск идёт по смыслу, а не по вхождению слова. Человек больше не листает базу знаний — он проверяет собранный черновик.</p>
@@ -838,8 +891,9 @@ footer a:hover{color:var(--acc)}
           <span class="jrub"><span class="ru">// мнение</span><span class="en">// take</span></span>
           <span class="jdate"><span class="ru">28 августа</span><span class="en">Aug 28</span></span>
           
+          <a class="jperm" href="journal/post-11.html"><span class="ru">страница ↗</span><span class="en">page ↗</span></a>
         </div>
-        <h2 class="jtitle"><span class="ru">Прохождение пары курсов — не достижение</span><span class="en">Finishing a couple of courses is not an achievement</span></h2>
+        <h2 class="jtitle"><a href="journal/post-11.html"><span class="ru">Прохождение пары курсов — не достижение</span><span class="en">Finishing a couple of courses is not an achievement</span></a></h2>
         <div class="jtext" id="t11">
           <div class="ru"><p>Знаю, что это непопулярно, но скажу.</p>
 <p>Айтишник учится каждый день и каждый день что-то выкладывает. Гордиться прохождением одного-двух курсов — примерно как гордиться тем, что прочитал две книги. Хорошо, что прочитал. Но это не строчка в резюме.</p>
@@ -867,8 +921,9 @@ footer a:hover{color:var(--acc)}
           <span class="jrub"><span class="ru">// инструмент</span><span class="en">// tool</span></span>
           <span class="jdate"><span class="ru">31 августа</span><span class="en">Aug 31</span></span>
           
+          <a class="jperm" href="journal/post-12.html"><span class="ru">страница ↗</span><span class="en">page ↗</span></a>
         </div>
-        <h2 class="jtitle"><span class="ru">Как я на самом деле работаю с ИИ-агентами</span><span class="en">How I actually work with AI agents</span></h2>
+        <h2 class="jtitle"><a href="journal/post-12.html"><span class="ru">Как я на самом деле работаю с ИИ-агентами</span><span class="en">How I actually work with AI agents</span></a></h2>
         <div class="jtext" id="t12">
           <div class="ru"><p>Я писал чистый код до того, как появились агенты, и пишу с ними сейчас. Изменилась производительность, а не роль: фуллстек тогда, фуллстек сейчас — просто с помощником.</p>
 <p>Но помощник работает ровно настолько, насколько структурно ты с ним обращаешься. Разница между «напиши, чтобы работало» и рабочим процессом примерно как между «сделай красиво» и техзаданием.</p>
@@ -908,8 +963,9 @@ footer a:hover{color:var(--acc)}
           <span class="jrub"><span class="ru">// поле</span><span class="en">// field</span></span>
           <span class="jdate"><span class="ru">2 сентября</span><span class="en">Sep 2</span></span>
           
+          <a class="jperm" href="journal/post-13.html"><span class="ru">страница ↗</span><span class="en">page ↗</span></a>
         </div>
-        <h2 class="jtitle"><span class="ru">Что я спрашиваю до того, как открыть редактор</span><span class="en">What I ask before opening the editor</span></h2>
+        <h2 class="jtitle"><a href="journal/post-13.html"><span class="ru">Что я спрашиваю до того, как открыть редактор</span><span class="en">What I ask before opening the editor</span></a></h2>
         <div class="jtext" id="t13">
           <div class="ru"><p>Короткий список. Проходит минут за двадцать разговора и экономит недели.</p>
 <p>Кто именно выполняет эту работу сейчас и сколько времени она у него занимает в неделю?</p>
@@ -941,8 +997,9 @@ footer a:hover{color:var(--acc)}
           <span class="jrub"><span class="ru">// разбор</span><span class="en">// case</span></span>
           <span class="jdate"><span class="ru">4 сентября</span><span class="en">Sep 4</span></span>
           
+          <a class="jperm" href="journal/post-14.html"><span class="ru">страница ↗</span><span class="en">page ↗</span></a>
         </div>
-        <h2 class="jtitle"><span class="ru">Почему у больших компаний это занимает квартал</span><span class="en">Why it takes big companies a quarter</span></h2>
+        <h2 class="jtitle"><a href="journal/post-14.html"><span class="ru">Почему у больших компаний это занимает квартал</span><span class="en">Why it takes big companies a quarter</span></a></h2>
         <div class="jtext" id="t14">
           <div class="ru"><p>Меня спрашивают, в чём подвох недельного цикла. Подвоха нет — есть разница в том, где теряется время. Разбираю, куда уходит квартал.</p>
 <p><b>Неделя на формулировку.</b> Идея от бизнеса приходит одной фразой. Аналитик превращает её в документ. Документ согласуют. На этом этапе исходная мысль обычно уже слегка не та.</p>
@@ -985,6 +1042,7 @@ footer a:hover{color:var(--acc)}
 <footer>
   <span>MOHAPX-V-IT © 2026 <span class="ru">Алексей Марышев</span><span class="en">Aleksei Maryshev</span></span>
   <a href="index.html"><span class="ru">← на главную</span><span class="en">← back home</span></a>
+  <a href="rss.xml">RSS</a>
   <a href="#top">↑ <span class="ru">наверх</span><span class="en">back to top</span></a>
 </footer>
 
@@ -992,7 +1050,7 @@ footer a:hover{color:var(--acc)}
 (function(){
   var root=document.documentElement;
   var themeBtn=document.getElementById('themeBtn'),themeTx=document.getElementById('themeTx'),themeIco=document.getElementById('themeIco');
-  function setTheme(t){root.setAttribute('data-theme',t);themeTx.textContent=t==='dark'?'DARK':'LIGHT';themeIco.textContent=t==='dark'?'◐':'◑';}
+  function setTheme(t){root.setAttribute('data-theme',t);themeTx.textContent=t==='dark'?'DARK':'LIGHT';themeIco.textContent=t==='dark'?'◐':'◑';try{localStorage.setItem('mvi-theme',t);}catch(e){}}
   themeBtn.addEventListener('click',function(){setTheme(root.getAttribute('data-theme')==='dark'?'light':'dark');});
 
   var langBtn=document.getElementById('langBtn'),langA=document.getElementById('langA'),langB=document.getElementById('langB');
@@ -1002,8 +1060,12 @@ footer a:hover{color:var(--acc)}
       var v=el.dataset[l]; if(!v) return;
       if(el.tagName==='IMG') el.src=v; else el.href=v;
     });
+    try{localStorage.setItem('mvi-lang',l);}catch(e){}
     setTimeout(fitText,60);}
   langBtn.addEventListener('click',function(){setLang(root.getAttribute('lang')==='ru'?'en':'ru');});
+
+  try{var sT=localStorage.getItem('mvi-theme');if(sT)setTheme(sT);
+      var sL=localStorage.getItem('mvi-lang');if(sL)setLang(sL);}catch(e){}
 
   var prog=document.getElementById('prog'),nav=document.getElementById('nav');
   function onScroll(){var h=document.documentElement.scrollHeight-window.innerHeight;

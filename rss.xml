@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MOHAPX-V-IT — журнал</title>
+    <link>https://mohapx-v-it.github.io/journal.html</link>
+    <atom:link href="https://mohapx-v-it.github.io/rss.xml" rel="self" type="application/rss+xml"/>
+    <description>ИИ-инженер. Внедряю ИИ в бизнес-процессы: от «а что если» до прода за неделю. Пишу о том, что работает, и о том, что продают под видом работающего. Связь: @ELITeeiiNHEIT</description>
+    <language>ru</language>
+    <item>
+      <title>Почему у больших компаний это занимает квартал</title>
+      <link>https://mohapx-v-it.github.io/journal/post-14.html</link>
+      <guid isPermaLink="true">https://mohapx-v-it.github.io/journal/post-14.html</guid>
+      <pubDate>Fri, 04 Sep 2026 10:00:00 +0000</pubDate>
+      <category>разбор</category>
+      <description>Меня спрашивают, в чём подвох недельного цикла. Подвоха нет — есть разница в том, где теряется время. Разбираю, куда уходит квартал.</description>
+      <enclosure url="https://mohapx-v-it.github.io/journal/j14.jpg" type="image/jpeg" length="0"/>
+    </item>
+    <item>
+      <title>Что я спрашиваю до того, как открыть редактор</title>
+      <link>https://mohapx-v-it.github.io/journal/post-13.html</link>
+      <guid isPermaLink="true">https://mohapx-v-it.github.io/journal/post-13.html</guid>
+      <pubDate>Wed, 02 Sep 2026 10:00:00 +0000</pubDate>
+      <category>поле</category>
+      <description>Короткий список. Проходит минут за двадцать разговора и экономит недели.</description>
+      <enclosure url="https://mohapx-v-it.github.io/journal/j13.jpg" type="image/jpeg" length="0"/>
+    </item>
+    <item>
+      <title>Как я на самом деле работаю с ИИ-агентами</title>
+      <link>https://mohapx-v-it.github.io/journal/post-12.html</link>
+      <guid isPermaLink="true">https://mohapx-v-it.github.io/journal/post-12.html</guid>
+      <pubDate>Mon, 31 Aug 2026 10:00:00 +0000</pubDate>
+      <category>инструмент</category>
+      <description>Я писал чистый код до того, как появились агенты, и пишу с ними сейчас. Изменилась производительность, а не роль: фуллстек тогда, фуллстек сейчас — просто с помощником.</description>
+      <enclosure url="https://mohapx-v-it.github.io/journal/j12.jpg" type="image/jpeg" length="0"/>
+    </item>
+    <item>
+      <title>Прохождение пары курсов — не достижение</title>
+      <link>https://mohapx-v-it.github.io/journal/post-11.html</link>
+      <guid isPermaLink="true">https://mohapx-v-it.github.io/journal/post-11.html</guid>
+      <pubDate>Fri, 28 Aug 2026 10:00:00 +0000</pubDate>
+      <category>мнение</category>
+      <description>Знаю, что это непопулярно, но скажу.</description>
+      <enclosure url="https://mohapx-v-it.github.io/journal/j11.jpg" type="image/jpeg" length="0"/>
+    </item>
+    <item>
+      <title>4 часа → 1,5 часа</title>
+      <link>https://mohapx-v-it.github.io/journal/post-10.html</link>
+      <guid isPermaLink="true">https://mohapx-v-it.github.io/journal/post-10.html</guid>
+      <pubDate>Wed, 26 Aug 2026 10:00:00 +0000</pubDate>
+      <category>цифра</category>
+      <description>Столько стало занимать составление одной технической инструкции после внедрения RAG-системы на локальной модели.</description>
+      <enclosure url="https://mohapx-v-it.github.io/journal/j10.jpg" type="image/jpeg" length="0"/>
+    </item>
+    <item>
+      <title>Мой провал: я хотел сделать альтернативу 1С</title>
+      <link>https://mohapx-v-it.github.io/journal/post-09.html</link>
+      <guid isPermaLink="true">https://mohapx-v-it.github.io/journal/post-09.html</guid>
+      <pubDate>Mon, 24 Aug 2026 10:00:00 +0000</pubDate>
+      <category>поле</category>
+      <description>Пишу про это спокойно, потому что вывод оттуда оказался дороже любого удачного проекта.</description>
+      <enclosure url="https://mohapx-v-it.github.io/journal/j09.jpg" type="image/jpeg" length="0"/>
+    </item>
+    <item>
+      <title>Человек — рабочая единица, ИИ — инструмент</title>
+      <link>https://mohapx-v-it.github.io/journal/post-08.html</link>
+      <guid isPermaLink="true">https://mohapx-v-it.github.io/journal/post-08.html</guid>
+      <pubDate>Fri, 21 Aug 2026 10:00:00 +0000</pubDate>
+      <category>мнение</category>
+      <description>Меня выводят из себя предложения уволить людей и посадить на их места модели.</description>
+      <enclosure url="https://mohapx-v-it.github.io/journal/j08.jpg" type="image/jpeg" length="0"/>
+    </item>
+    <item>
+      <title>Локальная модель или облако</title>
+      <link>https://mohapx-v-it.github.io/journal/post-07.html</link>
+      <guid isPermaLink="true">https://mohapx-v-it.github.io/journal/post-07.html</guid>
+      <pubDate>Wed, 19 Aug 2026 10:00:00 +0000</pubDate>
+      <category>инструмент</category>
+      <description>Вопрос, который в проектах всплывает раньше, чем выбор фреймворка.</description>
+      <enclosure url="https://mohapx-v-it.github.io/journal/j07.jpg" type="image/jpeg" length="0"/>
+    </item>
+    <item>
+      <title>Как заявки перестали ждать до утра</title>
+      <link>https://mohapx-v-it.github.io/journal/post-06.html</link>
+      <guid isPermaLink="true">https://mohapx-v-it.github.io/journal/post-06.html</guid>
+      <pubDate>Mon, 17 Aug 2026 10:00:00 +0000</pubDate>
+      <category>разбор</category>
+      <description>Обезличенный кейс — один из тех, где эффект получился больше, чем ожидали на входе.</description>
+      <enclosure url="https://mohapx-v-it.github.io/journal/j06.jpg" type="image/jpeg" length="0"/>
+    </item>
+    <item>
+      <title>Три признака, что автоматизацию делать не надо</title>
+      <link>https://mohapx-v-it.github.io/journal/post-05.html</link>
+      <guid isPermaLink="true">https://mohapx-v-it.github.io/journal/post-05.html</guid>
+      <pubDate>Fri, 14 Aug 2026 10:00:00 +0000</pubDate>
+      <category>поле</category>
+      <description>Собрал по своей практике. Если совпадает хотя бы два — я разворачиваю задачу обратно.</description>
+      <enclosure url="https://mohapx-v-it.github.io/journal/j05.jpg" type="image/jpeg" length="0"/>
+    </item>
+    <item>
+      <title>ИИ не отбирает работу</title>
+      <link>https://mohapx-v-it.github.io/journal/post-04.html</link>
+      <guid isPermaLink="true">https://mohapx-v-it.github.io/journal/post-04.html</guid>
+      <pubDate>Wed, 12 Aug 2026 10:00:00 +0000</pubDate>
+      <category>мнение</category>
+      <description>ИИ не отбирает работу. Он отбирает её у тех, кто перестал учиться.</description>
+      <enclosure url="https://mohapx-v-it.github.io/journal/j04.jpg" type="image/jpeg" length="0"/>
+    </item>
+    <item>
+      <title>Неделя от идеи до прода: как это устроено</title>
+      <link>https://mohapx-v-it.github.io/journal/post-03.html</link>
+      <guid isPermaLink="true">https://mohapx-v-it.github.io/journal/post-03.html</guid>
+      <pubDate>Mon, 10 Aug 2026 10:00:00 +0000</pubDate>
+      <category>разбор</category>
+      <description>Мне часто не верят, что полный цикл занимает неделю. Разбираю по шагам, где именно экономится время.</description>
+      <enclosure url="https://mohapx-v-it.github.io/journal/j03.jpg" type="image/jpeg" length="0"/>
+    </item>
+    <item>
+      <title>Первый вопрос заказчику</title>
+      <link>https://mohapx-v-it.github.io/journal/post-02.html</link>
+      <guid isPermaLink="true">https://mohapx-v-it.github.io/journal/post-02.html</guid>
+      <pubDate>Fri, 07 Aug 2026 10:00:00 +0000</pubDate>
+      <category>поле</category>
+      <description>Меня редко зовут словами «нам нужен ИИ». Чаще приходят с готовым решением: «давайте поставим бота», «давайте прикрутим нейросеть к отчётам».</description>
+      <enclosure url="https://mohapx-v-it.github.io/journal/j02.jpg" type="image/jpeg" length="0"/>
+    </item>
+    <item>
+      <title>Автоматизация ради автоматизации неприемлема</title>
+      <link>https://mohapx-v-it.github.io/journal/post-01.html</link>
+      <guid isPermaLink="true">https://mohapx-v-it.github.io/journal/post-01.html</guid>
+      <pubDate>Wed, 05 Aug 2026 10:00:00 +0000</pubDate>
+      <category>мнение</category>
+      <description>Это единственное правило, которое я не нарушаю.</description>
+      <enclosure url="https://mohapx-v-it.github.io/journal/j01.jpg" type="image/jpeg" length="0"/>
+    </item>
+    <item>
+      <title>Кто я и о чём здесь</title>
+      <link>https://mohapx-v-it.github.io/journal/post-00.html</link>
+      <guid isPermaLink="true">https://mohapx-v-it.github.io/journal/post-00.html</guid>
+      <pubDate>Mon, 03 Aug 2026 10:00:00 +0000</pubDate>
+      <category>мнение</category>
+      <description>Меня зовут Алексей Марышев. Я ИИ-инженер: беру у заказчика фразу «а что если мы автоматизируем вот это» и превращаю её в работающую систему в проде. Обычно за неделю.</description>
+      <enclosure url="https://mohapx-v-it.github.io/journal/j00.jpg" type="image/jpeg" length="0"/>
+    </item>
+  </channel>
+</rss>

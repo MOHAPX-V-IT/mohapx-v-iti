@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MOHAPX-V-IT — Алексей Марышев, ИИ-инженер</title>
-<meta name="description" content="ИИ-инженер. Превращаю «а что если» заказчика в работающий продакшн за неделю. Внедрение ИИ в бизнес-процессы: RAG, агенты, автоматизация.">
+<meta name="description" content="ИИ-инженер. Превращаю «а что если» заказчика в работающий продакшн за неделю. Внедрение ИИ в бизнес-процессы, автоматизация и расчёт окупаемости: RAG, агенты, LLM. Бесплатный калькулятор окупаемости автоматизации на сайте.">
 <meta name="theme-color" content="#07070B">
 <link rel="canonical" href="https://mohapx-v-it.github.io/">
 <meta property="og:url" content="https://mohapx-v-it.github.io/">
@@ -130,7 +130,7 @@ nav.stuck{border-bottom-color:var(--line)}
 .brand .wm i{font-style:normal;color:var(--dimmer)}
 .dot{width:7px;height:7px;border-radius:50%;background:var(--acc);box-shadow:0 0 12px var(--acc);animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.75)}}
-.navlinks{display:flex;gap:26px;font-family:var(--mono);font-size:12.5px;letter-spacing:.05em;color:var(--dim)}
+.navlinks{display:flex;gap:20px;font-family:var(--mono);font-size:12.5px;letter-spacing:.05em;color:var(--dim)}
 .navlinks a{position:relative;transition:color .25s}
 .navlinks a::after{content:'';position:absolute;left:0;bottom:-5px;width:0;height:1px;background:var(--acc);transition:width .3s var(--ease)}
 .navlinks a:hover{color:var(--tx)}
@@ -144,7 +144,7 @@ nav.stuck{border-bottom-color:var(--line)}
 }
 .chip:hover{color:var(--tx);border-color:var(--acc);box-shadow:0 0 0 3px color-mix(in srgb,var(--acc) 12%,transparent)}
 .chip b{color:var(--acc);font-weight:700}
-@media(max-width:900px){.navlinks{display:none}}
+@media(max-width:1150px){.navlinks{display:none}}
 
 /* ============ LAYOUT ============ */
 main{position:relative;z-index:2}
@@ -284,6 +284,30 @@ html[data-theme="light"] .pframe .lines{background:repeating-linear-gradient(to 
 .card > *{position:relative;z-index:1}
 .card .num{font-family:var(--mono);font-size:12px;color:var(--acc);letter-spacing:.16em;margin-bottom:14px;display:block}
 
+/* ---------- TIMELINE ---------- */
+.tl{position:relative;margin-top:44px;padding-left:38px}
+.tl::before{
+  content:'';position:absolute;left:9px;top:6px;bottom:6px;width:2px;
+  background:linear-gradient(to bottom,var(--acc),color-mix(in srgb,var(--acc) 25%,transparent) 65%,transparent);
+  opacity:.55
+}
+.tli{position:relative;padding:0 0 34px 0}
+.tli:last-child{padding-bottom:0}
+.tli::before{
+  content:'';position:absolute;left:-34px;top:7px;width:12px;height:12px;border-radius:50%;
+  background:var(--bg);border:2px solid var(--acc);box-shadow:0 0 0 4px color-mix(in srgb,var(--acc) 12%,transparent);
+  transition:.4s var(--ease)
+}
+.tli:hover::before{background:var(--acc);box-shadow:0 0 18px var(--glow)}
+.tli .yr2{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--acc);display:block;margin-bottom:6px}
+.tli h3{margin-bottom:7px}
+.tli p{font-size:15.5px;max-width:66ch}
+.tli.now::after{
+  content:'';position:absolute;left:-31px;top:10px;width:6px;height:6px;border-radius:50%;
+  background:var(--acc);animation:pulse 2s infinite
+}
+@media(max-width:560px){.tl{padding-left:30px}.tli::before{left:-27px}.tli.now::after{left:-24px}}
+
 /* PROCESS */
 .steps{display:grid;gap:0;margin-top:36px;border-top:1px solid var(--line)}
 .step{
@@ -319,6 +343,17 @@ html[data-theme="light"] .pframe .lines{background:repeating-linear-gradient(to 
 }
 .rule q::before,.rule q::after{content:''}
 .rule p{margin-top:24px;max-width:62ch;position:relative;z-index:1}
+
+.calcteaser{
+  margin-top:26px;display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;
+  border:1px solid var(--line);border-radius:16px;padding:26px 28px;background:var(--bg2);
+  position:relative;z-index:1;transition:.4s var(--ease)
+}
+.calcteaser:hover{border-color:color-mix(in srgb,var(--acc) 45%,var(--line))}
+.calcteaser > div{flex:1 1 380px}
+.ct-tag{font-family:var(--mono);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--acc);display:block;margin-bottom:10px}
+.calcteaser h3{margin-bottom:10px}
+.calcteaser p{font-size:15.5px;max-width:62ch}
 
 /* NUMBERS */
 .stat{text-align:left;display:flex;flex-direction:column}
@@ -393,6 +428,7 @@ footer a:hover{color:var(--acc)}
   .rv{opacity:1;transform:none}
 }
 </style>
+<script>try{var _t=localStorage.getItem('mvi-theme');if(_t)document.documentElement.setAttribute('data-theme',_t);var _l=localStorage.getItem('mvi-lang');if(_l)document.documentElement.setAttribute('lang',_l);}catch(e){}</script>
 </head>
 <body>
 
@@ -415,7 +451,9 @@ footer a:hover{color:var(--acc)}
     <a href="#process"><span class="ru">процесс</span><span class="en">process</span></a>
     <a href="#work"><span class="ru">проекты</span><span class="en">work</span></a>
     <a href="#stack"><span class="ru">стек</span><span class="en">stack</span></a>
+    <a href="#path"><span class="ru">путь</span><span class="en">path</span></a>
     <a href="journal.html"><span class="ru">журнал</span><span class="en">journal</span></a>
+    <a href="calculator.html"><span class="ru">калькулятор</span><span class="en">calculator</span></a>
     <a href="#manifest"><span class="ru">взгляды</span><span class="en">manifesto</span></a>
     <a href="#contact"><span class="ru">контакт</span><span class="en">contact</span></a>
   </div>
@@ -516,6 +554,61 @@ footer a:hover{color:var(--acc)}
   </p>
 </section>
 
+<!-- ================= TIMELINE ================= -->
+<section id="path">
+  <div class="eyebrow">$ git log --reverse</div>
+  <h2><span class="ru">Как я сюда пришёл</span><span class="en">How I got here</span></h2>
+  <p class="muted"><span class="ru">Путь получился нелинейным — и каждый поворот на нём был осознанным, а не случайным.</span><span class="en">The path wasn't a straight line — and every turn on it was a decision, not an accident.</span></p>
+
+  <div class="tl">
+    <div class="tli rv">
+      <span class="yr2"><span class="ru">старт</span><span class="en">the start</span></span>
+      <h3><span class="ru">Билайн</span><span class="en">Beeline</span></h3>
+      <p><span class="ru">Первое место работы в IT. Отсюда началось всё остальное.</span><span class="en">My first job in IT. Everything else started here.</span></p>
+    </div>
+    <div class="tli rv">
+      <span class="yr2"><span class="ru">дальше</span><span class="en">next</span></span>
+      <h3><span class="ru">Системное и сетевое администрирование</span><span class="en">Systems and network administration</span></h3>
+      <p><span class="ru">Ушёл туда и понял, что это не моё: администрирование удерживает систему в текущем состоянии, а мне интересно её менять.</span><span class="en">I moved into it and realised it wasn't for me: administration keeps a system where it is, and I'm interested in changing it.</span></p>
+    </div>
+    <div class="tli rv">
+      <span class="yr2"><span class="ru">2023</span><span class="en">2023</span></span>
+      <h3><span class="ru">Фулстек на себя</span><span class="en">Independent full-stack</span></h3>
+      <p><span class="ru">Два с половиной года проектов полного цикла — от сбора требований до production-деплоя. Переговоры с заказчиками, ТЗ и приёмка на мне.</span><span class="en">Two and a half years of end-to-end projects — from requirements to production deployment. Client talks, specs and acceptance all mine.</span></p>
+    </div>
+    <div class="tli rv">
+      <span class="yr2"><span class="ru">2024</span><span class="en">2024</span></span>
+      <h3><span class="ru">IT-специалист в клинике</span><span class="en">IT specialist at a clinic</span></h3>
+      <p><span class="ru">Поддержка внутренней рабочей системы и помощь сотрудникам, обязанности системного администратора.</span><span class="en">Supporting the internal working system and its users, covering the sysadmin role.</span></p>
+    </div>
+    <div class="tli rv">
+      <span class="yr2"><span class="ru">2025</span><span class="en">2025</span></span>
+      <h3><span class="ru">Проект «Внутренний табель»</span><span class="en">Project “Internal Timesheet”</span></h3>
+      <p><span class="ru">Корпоративная система учёта времени с нуля. Первая команда из пяти человек, CI/CD — время интеграции изменений сократилось вдвое.</span><span class="en">A corporate time-tracking system from scratch. My first team of five, plus CI/CD — change integration time cut in half.</span></p>
+    </div>
+    <div class="tli rv">
+      <span class="yr2"><span class="ru">2025</span><span class="en">2025</span></span>
+      <h3><span class="ru">Проект «Ночной диспетчер»</span><span class="en">Project “Night Dispatcher”</span></h3>
+      <p><span class="ru">Связка таск-трекера с локальной LLM: 200+ заявок в час, +35% к точности маршрутизации, ночные простои поддержки исчезли.</span><span class="en">A task tracker wired to a local LLM: 200+ tickets an hour, +35% routing accuracy, night-time support backlogs gone.</span></p>
+    </div>
+    <div class="tli rv">
+      <span class="yr2"><span class="ru">2025—2026</span><span class="en">2025—2026</span></span>
+      <h3><span class="ru">Проект «Аренда и брони»</span><span class="en">Project “Rent & Bookings”</span></h3>
+      <p><span class="ru">CRM с ИИ-ассистентом в одиночку: архитектура БД, бэкенд, фронтенд, админ-панель и RAG поверх всего этого.</span><span class="en">A CRM with an AI assistant, solo: database architecture, backend, frontend, admin panel and RAG on top.</span></p>
+    </div>
+    <div class="tli rv">
+      <span class="yr2"><span class="ru">2026</span><span class="en">2026</span></span>
+      <h3><span class="ru">Диплом</span><span class="en">Degree</span></h3>
+      <p><span class="ru">Калужский государственный университет им. К. Э. Циолковского, «Информационные системы и технологии».</span><span class="en">Tsiolkovsky State University, Information Systems and Technologies.</span></p>
+    </div>
+    <div class="tli rv now">
+      <span class="yr2"><span class="ru">сейчас</span><span class="en">now</span></span>
+      <h3><span class="ru">ИИ-инженер</span><span class="en">AI Engineer</span></h3>
+      <p><span class="ru">Работаю в <span class="rdct" title="скрыто по NDA" aria-label="скрыто по NDA">████████</span>. Принимаю гипотезы напрямую от заказчиков и довожу отобранные до прода за неделю.</span><span class="en">At <span class="rdct" title="redacted under NDA" aria-label="redacted under NDA">████████</span>. I take hypotheses straight from clients and ship the surviving ones to production in a week.</span></p>
+    </div>
+  </div>
+</section>
+
 <!-- ================= PROCESS ================= -->
 <section id="process">
   <div class="eyebrow">$ run --pipeline</div>
@@ -558,6 +651,14 @@ footer a:hover{color:var(--acc)}
       <span class="ru">Это правило я не нарушаю. Половина моей работы — сказать «нет» до того, как в идею вложены деньги и месяцы. Внедрение, которое не меняет ни одной цифры в отчёте, — это не инновация, а строчка в презентации. Самая крупная экономия, которую я приношу компании, обычно нигде не отражается: это проекты, которые не начались.</span>
       <span class="en">This is the one rule I don't break. Half of my job is saying no before money and months go into an idea. An implementation that doesn't move a single number in the report isn't innovation — it's a line in a slide deck. The largest saving I deliver usually shows up nowhere: it's the projects that never started.</span>
     </p>
+    <div class="calcteaser">
+      <div>
+        <span class="ct-tag">$ roi --calc</span>
+        <h3><span class="ru">Посчитай окупаемость своей автоматизации за минуту</span><span class="en">Work out your automation payback in a minute</span></h3>
+        <p class="muted"><span class="ru">Калькулятор окупаемости автоматизации бизнес-процессов: расчёт ROI внедрения ИИ, срок окупаемости в месяцах, экономия человеко-часов и годовые потери на ручной работе. Бесплатно и без регистрации.</span><span class="en">A payback calculator for business process automation: AI rollout ROI, payback period in months, person-hours saved and the annual cost of manual work. Free, no sign-up.</span></p>
+      </div>
+      <a class="btn primary" href="calculator.html"><span class="ru">Открыть калькулятор</span><span class="en">Open the calculator</span><span class="arw">→</span></a>
+    </div>
   </div>
 </section>
 
@@ -782,6 +883,7 @@ footer a:hover{color:var(--acc)}
     root.setAttribute('data-theme',t);
     themeTx.textContent = t==='dark' ? 'DARK' : 'LIGHT';
     themeIco.textContent = t==='dark' ? '◐' : '◑';
+    try{ localStorage.setItem('mvi-theme', t); }catch(e){}
   }
   themeBtn.addEventListener('click',function(){
     setTheme(root.getAttribute('data-theme')==='dark'?'light':'dark');
@@ -796,6 +898,7 @@ footer a:hover{color:var(--acc)}
     langA.textContent = l.toUpperCase();
     langB.textContent = l==='ru' ? 'EN' : 'RU';
     document.title = l==='ru' ? 'MOHAPX-V-IT — Алексей Марышев, ИИ-инженер' : 'MOHAPX-V-IT — Aleksei Maryshev, AI Engineer';
+    try{ localStorage.setItem('mvi-lang', l); }catch(e){}
     typeTerm();
   }
   langBtn.addEventListener('click',function(){
@@ -831,7 +934,13 @@ footer a:hover{color:var(--acc)}
       }, 110);
     })();
   }
-  typeTerm();
+  /* ---- restore saved preferences ---- */
+  try{
+    var sT=localStorage.getItem('mvi-theme');
+    if(sT) setTheme(sT);
+    var sL=localStorage.getItem('mvi-lang');
+    if(sL && sL!=='ru') setLang(sL);
+  }catch(e){}
 
   /* ---- scroll progress + nav ---- */
   var prog=document.getElementById('prog'), nav=document.getElementById('nav');
