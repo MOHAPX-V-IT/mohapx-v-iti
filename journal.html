@@ -161,6 +161,14 @@ p{color:var(--dim)}
 .muted{color:var(--dim);max-width:72ch}
 .muted + .muted{margin-top:16px}
 .accent{color:var(--acc)}
+.rdct{
+  font-family:var(--mono);font-size:.94em;letter-spacing:.02em;
+  color:transparent;background:var(--tx);border-radius:3px;padding:1px 4px;
+  user-select:none;cursor:help;position:relative;top:-1px;
+  transition:box-shadow .3s var(--ease), background .3s var(--ease)
+}
+.rdct:hover{box-shadow:0 0 0 2px color-mix(in srgb,var(--acc) 45%,transparent);background:var(--acc)}
+.cip{color:var(--acc);font-family:var(--mono);letter-spacing:.08em;text-shadow:0 0 12px var(--glow)}
 
 /* ============ HERO ============ */
 .hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:120px clamp(18px,5vw,56px) 60px;max-width:1180px;margin:0 auto}
@@ -485,36 +493,43 @@ footer a:hover{color:var(--acc)}
     <span class="ru">Заметки о внедрении ИИ в бизнес-процессы: что действительно окупается, что продают под видом работающего и как выглядит работа изнутри. Компании не называю — работаю под NDA. Случаи и цифры настоящие.</span>
     <span class="en">Notes on putting AI into real business processes: what actually pays off, what gets sold as working software, and how the work looks from the inside. I don't name clients — NDA. The cases and numbers are real.</span>
   </p>
-  <p class="muted en" style="margin-top:14px">Posts are published in Russian.</p>
 
   <div class="jfilters">
     <button class="jfil on" data-f="all"><span class="ru">всё</span><span class="en">all</span></button>
-    <button class="jfil" data-f="поле">// поле</button><button class="jfil" data-f="разбор">// разбор</button><button class="jfil" data-f="мнение">// мнение</button><button class="jfil" data-f="инструмент">// инструмент</button><button class="jfil" data-f="цифра">// цифра</button>
+    <button class="jfil" data-f="поле"><span class="ru">// поле</span><span class="en">// field</span></button><button class="jfil" data-f="разбор"><span class="ru">// разбор</span><span class="en">// case</span></button><button class="jfil" data-f="мнение"><span class="ru">// мнение</span><span class="en">// take</span></button><button class="jfil" data-f="инструмент"><span class="ru">// инструмент</span><span class="en">// tool</span></button><button class="jfil" data-f="цифра"><span class="ru">// цифра</span><span class="en">// num</span></button>
   </div>
 </section>
 
 <section style="padding-top:0">
   <div class="jlist" id="jlist">
-    <article class="jcard rv" data-rub="мнение" data-pinned="1" id="p00">
-      <a class="jcover" href="journal/j00.jpg" target="_blank" rel="noopener">
-        <img src="journal/j00.jpg" alt="" width="1200" height="630" loading="lazy" decoding="async">
+    <article class="jcard rv" data-rub="мнение" id="p00">
+      <a class="jcover" href="journal/j00.jpg" data-ru="journal/j00.jpg" data-en="journal/j00e.jpg" target="_blank" rel="noopener">
+        <img src="journal/j00.jpg" data-ru="journal/j00.jpg" data-en="journal/j00e.jpg" alt="" width="1200" height="630" loading="lazy" decoding="async">
       </a>
       <div class="jbody">
         <div class="jmeta">
-          <span class="jrub">// мнение</span>
+          <span class="jrub"><span class="ru">// мнение</span><span class="en">// take</span></span>
           <span class="jdate"><span class="ru">3 августа</span><span class="en">Aug 3</span></span>
           <span class="jpin"><span class="ru">закреплено</span><span class="en">pinned</span></span>
         </div>
-        <h2 class="jtitle">Кто я и о чём здесь</h2>
+        <h2 class="jtitle"><span class="ru">Кто я и о чём здесь</span><span class="en">Who I am and what this is</span></h2>
         <div class="jtext" id="t00">
-          <p>Меня зовут Алексей Марышев. Я ИИ-инженер: беру у заказчика фразу «а что если мы автоматизируем вот это» и превращаю её в работающую систему в проде. Обычно за неделю.</p>
+          <div class="ru"><p>Меня зовут Алексей Марышев. Я ИИ-инженер: беру у заказчика фразу «а что если мы автоматизируем вот это» и превращаю её в работающую систему в проде. Обычно за неделю.</p>
 <p>Я не только пишу код. Сначала я разбираю процесс: считаю, что реально изменится в цифрах, сколько будет стоить сборка, насколько сложно встроить решение в то, что уже работает. И только потом сажусь за редактор — или не сажусь, если считать нечего.</p>
 <p><b>О чём будет канал.</b></p>
 <p>Про внедрение ИИ в компании — без магии и без паники. Про то, где автоматизация окупается, а где её продают ради строчки в презентации. Про инструменты, которыми я реально пользуюсь каждый день, а не про те, о которых красиво писать.</p>
 <p>Я работаю под NDA, поэтому названия компаний здесь появляться не будут. Зато будут случаи, решения и цифры — обезличенно, но честно.</p>
 <p><b>Рубрики.</b></p>
 <p><code>#поле</code> — заметки из практики<br><code>#разбор</code> — как устроено внедрение изнутри<br><code>#мнение</code> — позиция, за которую готов спорить<br><code>#инструмент</code> — стек и способ с ним работать<br><code>#цифра</code> — один результат и что за ним стоит</p>
-<p>Сайт: mohapx-v-it.github.io<br>Написать напрямую: @ELITeeiiNHEIT</p>
+<p>Сайт: mohapx-v-it.github.io<br>Написать напрямую: @ELITeeiiNHEIT</p></div>
+          <div class="en"><p>My name is Aleksei Maryshev. I&#x27;m an AI engineer: I take a client&#x27;s sentence — “what if we automated this” — and turn it into a system running in production. Usually in a week.</p>
+<p>Writing code is not the whole job. First I take the process apart: I work out what actually changes in numbers, what the build will cost, how hard it is to fit the result into what already runs. Only then do I open the editor — or I don&#x27;t, if there&#x27;s nothing worth counting.</p>
+<p><b>What this channel is about.</b></p>
+<p>Putting AI into companies — without the magic and without the panic. Where automation pays for itself and where it gets sold for the sake of a line in a slide deck. About the tools I actually use every day, rather than the ones that are pleasant to write about.</p>
+<p>I work under NDA, so client names will never appear here. Cases, decisions and numbers will — anonymised, but honest.</p>
+<p><b>Sections.</b></p>
+<p><code>#field</code> — notes from practice<br><code>#case</code> — how an implementation works from the inside<br><code>#take</code> — a position I&#x27;m ready to defend<br><code>#tool</code> — the stack and how I work with it<br><code>#number</code> — one result and what sits behind it</p>
+<p>Site: mohapx-v-it.github.io<br>Direct line: @ELITeeiiNHEIT</p></div>
         </div>
         <button class="jmore" data-t="t00">
           <span class="ru">Читать целиком</span><span class="en">Read in full</span>
@@ -523,21 +538,25 @@ footer a:hover{color:var(--acc)}
       </div>
     </article>
     <article class="jcard rv" data-rub="мнение" id="p01">
-      <a class="jcover" href="journal/j01.jpg" target="_blank" rel="noopener">
-        <img src="journal/j01.jpg" alt="" width="1200" height="630" loading="lazy" decoding="async">
+      <a class="jcover" href="journal/j01.jpg" data-ru="journal/j01.jpg" data-en="journal/j01e.jpg" target="_blank" rel="noopener">
+        <img src="journal/j01.jpg" data-ru="journal/j01.jpg" data-en="journal/j01e.jpg" alt="" width="1200" height="630" loading="lazy" decoding="async">
       </a>
       <div class="jbody">
         <div class="jmeta">
-          <span class="jrub">// мнение</span>
+          <span class="jrub"><span class="ru">// мнение</span><span class="en">// take</span></span>
           <span class="jdate"><span class="ru">5 августа</span><span class="en">Aug 5</span></span>
           
         </div>
-        <h2 class="jtitle">Автоматизация ради автоматизации неприемлема</h2>
+        <h2 class="jtitle"><span class="ru">Автоматизация ради автоматизации неприемлема</span><span class="en">Automation for its own sake is unacceptable</span></h2>
         <div class="jtext" id="t01">
-          <p>Это единственное правило, которое я не нарушаю.</p>
+          <div class="ru"><p>Это единственное правило, которое я не нарушаю.</p>
 <p>Половина моей работы — сказать «нет» раньше, чем в идею вложены деньги и месяцы. Не потому что мне лень, а потому что внедрение, которое не двигает ни одной цифры в отчёте, — это не инновация. Это строчка в презентации, которую через полгода никто не откроет.</p>
 <p>Проверка простая. Я спрашиваю: какая метрика изменится и на сколько? Если ответ звучит как «станет удобнее», «будет современнее», «у конкурентов уже есть» — считать нечего. Если ответ звучит как «пять человек перестанут по два часа в день перекладывать данные руками» — уже есть о чём говорить.</p>
-<p>Самая крупная экономия, которую я приношу компании, обычно нигде не отражается. Это проекты, которые не начались.</p>
+<p>Самая крупная экономия, которую я приношу компании, обычно нигде не отражается. Это проекты, которые не начались.</p></div>
+          <div class="en"><p>This is the one rule I don&#x27;t break.</p>
+<p>Half of my job is saying no before money and months go into an idea. Not out of laziness — because an implementation that doesn&#x27;t move a single number in the report isn&#x27;t innovation. It&#x27;s a line in a deck nobody will open again in six months.</p>
+<p>The test is simple. I ask: which metric changes, and by how much? If the answer sounds like “it&#x27;ll be more convenient”, “it&#x27;ll feel modern”, “our competitors already have it” — there&#x27;s nothing to calculate. If the answer sounds like “five people stop moving data by hand for two hours a day” — now we have something to talk about.</p>
+<p>The largest saving I bring a company usually shows up nowhere. It&#x27;s the projects that never started.</p></div>
         </div>
         <button class="jmore" data-t="t01">
           <span class="ru">Читать целиком</span><span class="en">Read in full</span>
@@ -546,21 +565,25 @@ footer a:hover{color:var(--acc)}
       </div>
     </article>
     <article class="jcard rv" data-rub="поле" id="p02">
-      <a class="jcover" href="journal/j02.jpg" target="_blank" rel="noopener">
-        <img src="journal/j02.jpg" alt="" width="1200" height="630" loading="lazy" decoding="async">
+      <a class="jcover" href="journal/j02.jpg" data-ru="journal/j02.jpg" data-en="journal/j02e.jpg" target="_blank" rel="noopener">
+        <img src="journal/j02.jpg" data-ru="journal/j02.jpg" data-en="journal/j02e.jpg" alt="" width="1200" height="630" loading="lazy" decoding="async">
       </a>
       <div class="jbody">
         <div class="jmeta">
-          <span class="jrub">// поле</span>
+          <span class="jrub"><span class="ru">// поле</span><span class="en">// field</span></span>
           <span class="jdate"><span class="ru">7 августа</span><span class="en">Aug 7</span></span>
           
         </div>
-        <h2 class="jtitle">Первый вопрос заказчику</h2>
+        <h2 class="jtitle"><span class="ru">Первый вопрос заказчику</span><span class="en">The first question I ask a client</span></h2>
         <div class="jtext" id="t02">
-          <p>Меня редко зовут словами «нам нужен ИИ». Чаще приходят с готовым решением: «давайте поставим бота», «давайте прикрутим нейросеть к отчётам».</p>
+          <div class="ru"><p>Меня редко зовут словами «нам нужен ИИ». Чаще приходят с готовым решением: «давайте поставим бота», «давайте прикрутим нейросеть к отчётам».</p>
 <p>Я на это всегда отвечаю одним вопросом: <b>где у вас больше всего просадок?</b></p>
 <p>Потому что бот — это ответ. А мне нужен вопрос. И почти всегда оказывается, что настоящая боль лежит на два шага раньше: не в том, что кто-то медленно отвечает клиентам, а в том, что заявка до него доходит через четыре пересылки и половину данных теряет по дороге.</p>
-<p>Автоматизируешь ответ — получишь быстрый ответ на неполные данные. Автоматизируешь маршрут — получишь работающий процесс.</p>
+<p>Автоматизируешь ответ — получишь быстрый ответ на неполные данные. Автоматизируешь маршрут — получишь работающий процесс.</p></div>
+          <div class="en"><p>People rarely come to me saying “we need AI”. More often they arrive with a solution already chosen: “let&#x27;s add a bot”, “let&#x27;s bolt a neural net onto the reports”.</p>
+<p>My answer is always the same question: <b>where do you leak the most?</b></p>
+<p>Because a bot is an answer. What I need is the question. And almost every time the real pain turns out to sit two steps earlier: not in someone replying slowly to clients, but in the request reaching them through four hand-offs and losing half its data on the way.</p>
+<p>Automate the reply and you get a fast reply to incomplete data. Automate the route and you get a working process.</p></div>
         </div>
         <button class="jmore" data-t="t02">
           <span class="ru">Читать целиком</span><span class="en">Read in full</span>
@@ -569,18 +592,18 @@ footer a:hover{color:var(--acc)}
       </div>
     </article>
     <article class="jcard rv" data-rub="разбор" id="p03">
-      <a class="jcover" href="journal/j03.jpg" target="_blank" rel="noopener">
-        <img src="journal/j03.jpg" alt="" width="1200" height="630" loading="lazy" decoding="async">
+      <a class="jcover" href="journal/j03.jpg" data-ru="journal/j03.jpg" data-en="journal/j03e.jpg" target="_blank" rel="noopener">
+        <img src="journal/j03.jpg" data-ru="journal/j03.jpg" data-en="journal/j03e.jpg" alt="" width="1200" height="630" loading="lazy" decoding="async">
       </a>
       <div class="jbody">
         <div class="jmeta">
-          <span class="jrub">// разбор</span>
+          <span class="jrub"><span class="ru">// разбор</span><span class="en">// case</span></span>
           <span class="jdate"><span class="ru">10 августа</span><span class="en">Aug 10</span></span>
           
         </div>
-        <h2 class="jtitle">Неделя от идеи до прода: как это устроено</h2>
+        <h2 class="jtitle"><span class="ru">Неделя от идеи до прода: как это устроено</span><span class="en">A week from idea to production: how it works</span></h2>
         <div class="jtext" id="t03">
-          <p>Мне часто не верят, что полный цикл занимает неделю. Разбираю по шагам, где именно экономится время.</p>
+          <div class="ru"><p>Мне часто не верят, что полный цикл занимает неделю. Разбираю по шагам, где именно экономится время.</p>
 <p><b>1. Запрос.</b> Заказчик приходит с гипотезой. Не с техзаданием — с фразой в одно предложение.</p>
 <p><b>2. Оценка скоупа.</b> Я не беру идею в работу поштучно. Собираю все накопившиеся в общий список и смотрю на них разом: почти всегда три идеи из десяти оказываются одной и той же задачей в разных формулировках.</p>
 <p><b>3. Анализ внедрения.</b> Бизнес-эффект, стоимость сборки, сложность интеграции, ожидаемый ROI. Здесь же срабатывает фильтр — большая часть списка умирает на этом шаге, и это нормально.</p>
@@ -589,7 +612,17 @@ footer a:hover{color:var(--acc)}
 <p><b>6. Демо и обратная связь.</b> Отдаю в руки, смотрю, как пользуются, слушаю. Итерация повторяется столько раз, сколько нужно, — обычно два-три раза.</p>
 <p><b>7. Прод.</b> Заливаю, ставлю мониторинг, передаю в ежедневное пользование.</p>
 <p><b>Где экономится время.</b> Не на скорости печати. Экономия в том, что между аналитиком, менеджером и разработчиком нет передачи контекста — все трое это один человек. В классической схеме на каждой границе теряется по два-три дня: пересказ, уточнение, «я имел в виду другое». Уберите границы — и квартал сжимается в неделю.</p>
-<p>Минус у подхода тоже есть, и честно: он не масштабируется на десять параллельных внедрений. Один человек — одна неделя.</p>
+<p>Минус у подхода тоже есть, и честно: он не масштабируется на десять параллельных внедрений. Один человек — одна неделя.</p></div>
+          <div class="en"><p>People often don&#x27;t believe the full cycle takes a week. Here it is step by step, with the place the time is actually saved.</p>
+<p><b>1. The request.</b> A client arrives with a hypothesis. Not a spec — a single sentence.</p>
+<p><b>2. Scoping.</b> I don&#x27;t take ideas one at a time. I pool everything that has accumulated and look at the list as a whole: almost always three of the ten turn out to be the same task worded differently.</p>
+<p><b>3. Impact analysis.</b> Business effect, build cost, integration complexity, expected ROI. This is where the filter fires — most of the list dies here, and that is fine.</p>
+<p><b>4. Alignment.</b> I come back with a short list of what&#x27;s worth building and an explanation of why the rest isn&#x27;t. The explanation matters more than the list: without it, the rejected ideas come back in a month.</p>
+<p><b>5. MVP.</b> I build a working prototype. Not a presentation about a prototype.</p>
+<p><b>6. Demo and feedback.</b> I put it in their hands, watch them use it, listen. The loop repeats as many times as needed — usually two or three.</p>
+<p><b>7. Production.</b> Deploy, wire up monitoring, hand it over for daily use.</p>
+<p><b>Where the time is saved.</b> Not in typing speed. The saving is that there&#x27;s no context hand-off between analyst, manager and developer — all three are the same person. In the classic setup every boundary costs two or three days: retelling, clarifying, “that&#x27;s not what I meant”. Remove the boundaries and a quarter compresses into a week.</p>
+<p>There&#x27;s a downside, and I&#x27;ll be honest about it: this doesn&#x27;t scale to ten parallel implementations. One person, one week.</p></div>
         </div>
         <button class="jmore" data-t="t03">
           <span class="ru">Читать целиком</span><span class="en">Read in full</span>
@@ -598,21 +631,25 @@ footer a:hover{color:var(--acc)}
       </div>
     </article>
     <article class="jcard rv" data-rub="мнение" id="p04">
-      <a class="jcover" href="journal/j04.jpg" target="_blank" rel="noopener">
-        <img src="journal/j04.jpg" alt="" width="1200" height="630" loading="lazy" decoding="async">
+      <a class="jcover" href="journal/j04.jpg" data-ru="journal/j04.jpg" data-en="journal/j04e.jpg" target="_blank" rel="noopener">
+        <img src="journal/j04.jpg" data-ru="journal/j04.jpg" data-en="journal/j04e.jpg" alt="" width="1200" height="630" loading="lazy" decoding="async">
       </a>
       <div class="jbody">
         <div class="jmeta">
-          <span class="jrub">// мнение</span>
+          <span class="jrub"><span class="ru">// мнение</span><span class="en">// take</span></span>
           <span class="jdate"><span class="ru">12 августа</span><span class="en">Aug 12</span></span>
           
         </div>
-        <h2 class="jtitle">ИИ не отбирает работу</h2>
+        <h2 class="jtitle"><span class="ru">ИИ не отбирает работу</span><span class="en">AI doesn&#x27;t take your job</span></h2>
         <div class="jtext" id="t04">
-          <p>ИИ не отбирает работу. Он отбирает её у тех, кто перестал учиться.</p>
+          <div class="ru"><p>ИИ не отбирает работу. Он отбирает её у тех, кто перестал учиться.</p>
 <p>Работа никуда не девается — меняется её содержание. Пятнадцать лет назад вёрстку таблицами делали руками и это была профессия. Сейчас это чекбокс во фреймворке, а профессия переехала на уровень выше.</p>
 <p>Быть полезной рабочей единицей — это ежедневный выбор, а не разовое достижение в виде диплома. Диплом фиксирует, что ты знал что-то в конкретный день конкретного года. Всё.</p>
-<p>Я не считаю, что каждый обязан бежать. Но если ты не двигаешься, а индустрия двигается, расстояние растёт само — без всякого ИИ.</p>
+<p>Я не считаю, что каждый обязан бежать. Но если ты не двигаешься, а индустрия двигается, расстояние растёт само — без всякого ИИ.</p></div>
+          <div class="en"><p>AI doesn&#x27;t take your job. It takes it from people who stopped learning.</p>
+<p>Work doesn&#x27;t disappear — its content changes. Fifteen years ago building layouts with tables was done by hand and it was a profession. Today it&#x27;s a checkbox in a framework, and the profession moved one level up.</p>
+<p>Staying a useful working unit is a daily choice, not a one-off achievement in the form of a diploma. A diploma records that you knew something on one particular day of one particular year. That&#x27;s all.</p>
+<p>I don&#x27;t think everyone is obliged to run. But if you&#x27;re standing still while the industry moves, the distance grows on its own — no AI required.</p></div>
         </div>
         <button class="jmore" data-t="t04">
           <span class="ru">Читать целиком</span><span class="en">Read in full</span>
@@ -621,21 +658,25 @@ footer a:hover{color:var(--acc)}
       </div>
     </article>
     <article class="jcard rv" data-rub="поле" id="p05">
-      <a class="jcover" href="journal/j05.jpg" target="_blank" rel="noopener">
-        <img src="journal/j05.jpg" alt="" width="1200" height="630" loading="lazy" decoding="async">
+      <a class="jcover" href="journal/j05.jpg" data-ru="journal/j05.jpg" data-en="journal/j05e.jpg" target="_blank" rel="noopener">
+        <img src="journal/j05.jpg" data-ru="journal/j05.jpg" data-en="journal/j05e.jpg" alt="" width="1200" height="630" loading="lazy" decoding="async">
       </a>
       <div class="jbody">
         <div class="jmeta">
-          <span class="jrub">// поле</span>
+          <span class="jrub"><span class="ru">// поле</span><span class="en">// field</span></span>
           <span class="jdate"><span class="ru">14 августа</span><span class="en">Aug 14</span></span>
           
         </div>
-        <h2 class="jtitle">Три признака, что автоматизацию делать не надо</h2>
+        <h2 class="jtitle"><span class="ru">Три признака, что автоматизацию делать не надо</span><span class="en">Three signs the automation shouldn&#x27;t be built</span></h2>
         <div class="jtext" id="t05">
-          <p>Собрал по своей практике. Если совпадает хотя бы два — я разворачиваю задачу обратно.</p>
+          <div class="ru"><p>Собрал по своей практике. Если совпадает хотя бы два — я разворачиваю задачу обратно.</p>
 <p><b>Никто не может назвать, кому станет легче.</b> Не «отделу», не «компании», а конкретной роли. Если ответ размазан по организации, значит боли нет, есть желание.</p>
 <p><b>Процесс меняется чаще, чем ты успеешь его автоматизировать.</b> Есть задачи, где регламент переписывают каждый квартал. Автоматизация там устареет раньше, чем выйдет в прод, и превратится в источник новых ошибок.</p>
-<p><b>Ручная работа занимает меньше часа в неделю.</b> Считай: сборка, отладка, поддержка, обновления. Пара часов экономии в месяц не окупит ни одного из этих пунктов. Иногда самое инженерное решение — оставить как есть.</p>
+<p><b>Ручная работа занимает меньше часа в неделю.</b> Считай: сборка, отладка, поддержка, обновления. Пара часов экономии в месяц не окупит ни одного из этих пунктов. Иногда самое инженерное решение — оставить как есть.</p></div>
+          <div class="en"><p>Collected from my own practice. If at least two match, I hand the task back.</p>
+<p><b>Nobody can name who gets relief.</b> Not “the department”, not “the company”, but a specific role. If the answer is smeared across the org chart, there&#x27;s no pain — there&#x27;s a wish.</p>
+<p><b>The process changes faster than you can automate it.</b> Some workflows get rewritten every quarter. Automation there will be obsolete before it reaches production and will turn into a source of new errors.</p>
+<p><b>The manual work takes less than an hour a week.</b> Do the maths: build, debugging, support, updates. A couple of hours saved per month won&#x27;t pay for any of those. Sometimes the most engineering-minded decision is to leave it alone.</p></div>
         </div>
         <button class="jmore" data-t="t05">
           <span class="ru">Читать целиком</span><span class="en">Read in full</span>
@@ -644,24 +685,31 @@ footer a:hover{color:var(--acc)}
       </div>
     </article>
     <article class="jcard rv" data-rub="разбор" id="p06">
-      <a class="jcover" href="journal/j06.jpg" target="_blank" rel="noopener">
-        <img src="journal/j06.jpg" alt="" width="1200" height="630" loading="lazy" decoding="async">
+      <a class="jcover" href="journal/j06.jpg" data-ru="journal/j06.jpg" data-en="journal/j06e.jpg" target="_blank" rel="noopener">
+        <img src="journal/j06.jpg" data-ru="journal/j06.jpg" data-en="journal/j06e.jpg" alt="" width="1200" height="630" loading="lazy" decoding="async">
       </a>
       <div class="jbody">
         <div class="jmeta">
-          <span class="jrub">// разбор</span>
+          <span class="jrub"><span class="ru">// разбор</span><span class="en">// case</span></span>
           <span class="jdate"><span class="ru">17 августа</span><span class="en">Aug 17</span></span>
           
         </div>
-        <h2 class="jtitle">Как заявки перестали ждать до утра</h2>
+        <h2 class="jtitle"><span class="ru">Как заявки перестали ждать до утра</span><span class="en">How tickets stopped waiting until morning</span></h2>
         <div class="jtext" id="t06">
-          <p>Обезличенный кейс — один из тех, где эффект получился больше, чем ожидали на входе.</p>
+          <div class="ru"><p>Обезличенный кейс — один из тех, где эффект получился больше, чем ожидали на входе.</p>
 <p><b>Что было.</b> Поток заявок от подрядчиков падал в таск-трекер круглосуточно. Разбирал их человек: читал, понимал, к какому типу относится, проверял, все ли данные на месте, дописывал недостающее и назначал исполнителя. Ночью человека нет — заявки лежали до утра. Утром образовывался завал, и первые часы дня уходили на разбор вчерашнего.</p>
 <p><b>Что сделали.</b> Микросервис между API трекера и языковой моделью, развёрнутой локально, на своих мощностях. Обработка в четыре шага: классификация заявки по типу → проверка полноты данных → автодополнение недостающего из контекста → назначение исполнителя.</p>
 <p><b>Почему модель локальная.</b> Заявки содержат внутренние данные. Отправлять их во внешний API — отдельный разговор с безопасностью, который занял бы больше времени, чем вся разработка.</p>
 <p><b>Что получилось.</b> Точность маршрутизации выросла на 35%, автодополнение попадало в цель в 85% случаев, сервис держал 200+ заявок в час. Ночные простои исчезли как класс: к утру всё разобрано и назначено.</p>
 <p><b>Что оказалось важнее цифр.</b> На старте обсуждали найм дополнительных людей на разбор. После запуска необходимость отпала — не потому что кого-то сократили, а потому что новых не потребовалось. Это, кстати, единственная форма «замены человека ИИ», которую я считаю честной.</p>
-<p><b>Чего не получилось с первого раза.</b> Первая версия классификатора уверенно относила к «прочему» всё, что не встречала раньше, и такие заявки уходили в никуда. Пришлось добавить явный сценарий «не уверен» с возвратом человеку. Модель, которая умеет сказать «не знаю», полезнее модели, которая всегда отвечает.</p>
+<p><b>Чего не получилось с первого раза.</b> Первая версия классификатора уверенно относила к «прочему» всё, что не встречала раньше, и такие заявки уходили в никуда. Пришлось добавить явный сценарий «не уверен» с возвратом человеку. Модель, которая умеет сказать «не знаю», полезнее модели, которая всегда отвечает.</p></div>
+          <div class="en"><p>An anonymised case — one where the effect turned out larger than anyone expected going in.</p>
+<p><b>The situation.</b> Contractor tickets landed in the tracker around the clock. A person sorted them: read each one, worked out its type, checked whether the data was complete, filled in what was missing and assigned an owner. At night there was no person — tickets sat until morning. By morning a backlog had formed, and the first hours of the day went on yesterday.</p>
+<p><b>What we built.</b> A microservice between the tracker&#x27;s API and a language model deployed locally, on the company&#x27;s own hardware. Four steps: classify the ticket by type → check data completeness → auto-complete what&#x27;s missing from context → assign an owner.</p>
+<p><b>Why the model was local.</b> Tickets contain internal data. Sending them to an external API would have meant a separate conversation with security that would have taken longer than the entire build.</p>
+<p><b>The result.</b> Routing accuracy rose by 35%, auto-completion hit the mark in 85% of cases, the service handled 200+ tickets an hour. Night-time backlogs disappeared as a category: by morning everything was sorted and assigned.</p>
+<p><b>What mattered more than the numbers.</b> Going in, the company was discussing extra hires for the sorting work. After launch the need went away — not because anyone was let go, but because no one new was required. That, incidentally, is the only honest form of “AI replacing a human” I recognise.</p>
+<p><b>What didn&#x27;t work first time.</b> The first classifier confidently filed everything unfamiliar under “other”, and those tickets went nowhere. We had to add an explicit “not sure” path that hands the ticket back to a person. A model that can say “I don&#x27;t know” is more useful than a model that always answers.</p></div>
         </div>
         <button class="jmore" data-t="t06">
           <span class="ru">Читать целиком</span><span class="en">Read in full</span>
@@ -670,22 +718,27 @@ footer a:hover{color:var(--acc)}
       </div>
     </article>
     <article class="jcard rv" data-rub="инструмент" id="p07">
-      <a class="jcover" href="journal/j07.jpg" target="_blank" rel="noopener">
-        <img src="journal/j07.jpg" alt="" width="1200" height="630" loading="lazy" decoding="async">
+      <a class="jcover" href="journal/j07.jpg" data-ru="journal/j07.jpg" data-en="journal/j07e.jpg" target="_blank" rel="noopener">
+        <img src="journal/j07.jpg" data-ru="journal/j07.jpg" data-en="journal/j07e.jpg" alt="" width="1200" height="630" loading="lazy" decoding="async">
       </a>
       <div class="jbody">
         <div class="jmeta">
-          <span class="jrub">// инструмент</span>
+          <span class="jrub"><span class="ru">// инструмент</span><span class="en">// tool</span></span>
           <span class="jdate"><span class="ru">19 августа</span><span class="en">Aug 19</span></span>
           
         </div>
-        <h2 class="jtitle">Локальная модель или облако</h2>
+        <h2 class="jtitle"><span class="ru">Локальная модель или облако</span><span class="en">Local model or cloud</span></h2>
         <div class="jtext" id="t07">
-          <p>Вопрос, который в проектах всплывает раньше, чем выбор фреймворка.</p>
+          <div class="ru"><p>Вопрос, который в проектах всплывает раньше, чем выбор фреймворка.</p>
 <p><b>Облако выигрывает,</b> когда данные не чувствительные, нагрузка неровная, а качество ответа важнее всего остального. Топовая модель по API почти всегда умнее того, что ты поднимешь у себя на доступном железе.</p>
 <p><b>Локальная модель выигрывает,</b> когда в данных есть то, что не должно покидать контур. И тут дело не только в безопасности: согласование внешнего API внутри компании нередко занимает больше времени, чем вся разработка. Локальный вариант часто быстрее не по инференсу, а по бюрократии.</p>
 <p>Второй аргумент за локальную — предсказуемая стоимость. Облако тарифицируется за токены, и на потоке в сотни запросов в час счёт растёт вместе с успехом внедрения. Своё железо стоит фиксированно.</p>
-<p><b>Как решаю я.</b> Если данные внутренние — локально, даже ценой качества. Если задача про текст из открытых источников — облако. Если сомневаюсь — собираю прототип на облаке, потому что это быстрее, и переношу на локальную, когда становится понятно, что решение вообще жизнеспособно.</p>
+<p><b>Как решаю я.</b> Если данные внутренние — локально, даже ценой качества. Если задача про текст из открытых источников — облако. Если сомневаюсь — собираю прототип на облаке, потому что это быстрее, и переношу на локальную, когда становится понятно, что решение вообще жизнеспособно.</p></div>
+          <div class="en"><p>A question that comes up in projects earlier than the choice of framework.</p>
+<p><b>Cloud wins</b> when the data isn&#x27;t sensitive, the load is uneven, and answer quality matters more than anything else. A top-tier model behind an API is almost always smarter than what you&#x27;ll run on affordable hardware of your own.</p>
+<p><b>Local wins</b> when the data contains something that must not leave the perimeter. And it isn&#x27;t only about security: getting an external API approved inside a company often takes longer than the entire build. The local option is frequently faster — not at inference, but at paperwork.</p>
+<p>The second argument for local is predictable cost. Cloud bills per token, and on a load of hundreds of requests an hour the invoice grows in step with the success of your rollout. Your own hardware costs a fixed amount.</p>
+<p><b>How I decide.</b> If the data is internal — local, even at the cost of quality. If the task is about text from open sources — cloud. If I&#x27;m unsure — I prototype on cloud because it&#x27;s faster, then move to local once it&#x27;s clear the thing is viable at all.</p></div>
         </div>
         <button class="jmore" data-t="t07">
           <span class="ru">Читать целиком</span><span class="en">Read in full</span>
@@ -694,21 +747,25 @@ footer a:hover{color:var(--acc)}
       </div>
     </article>
     <article class="jcard rv" data-rub="мнение" id="p08">
-      <a class="jcover" href="journal/j08.jpg" target="_blank" rel="noopener">
-        <img src="journal/j08.jpg" alt="" width="1200" height="630" loading="lazy" decoding="async">
+      <a class="jcover" href="journal/j08.jpg" data-ru="journal/j08.jpg" data-en="journal/j08e.jpg" target="_blank" rel="noopener">
+        <img src="journal/j08.jpg" data-ru="journal/j08.jpg" data-en="journal/j08e.jpg" alt="" width="1200" height="630" loading="lazy" decoding="async">
       </a>
       <div class="jbody">
         <div class="jmeta">
-          <span class="jrub">// мнение</span>
+          <span class="jrub"><span class="ru">// мнение</span><span class="en">// take</span></span>
           <span class="jdate"><span class="ru">21 августа</span><span class="en">Aug 21</span></span>
           
         </div>
-        <h2 class="jtitle">Человек — рабочая единица, ИИ — инструмент</h2>
+        <h2 class="jtitle"><span class="ru">Человек — рабочая единица, ИИ — инструмент</span><span class="en">A human is the working unit, AI is the tool</span></h2>
         <div class="jtext" id="t08">
-          <p>Меня выводят из себя предложения уволить людей и посадить на их места модели.</p>
+          <div class="ru"><p>Меня выводят из себя предложения уволить людей и посадить на их места модели.</p>
 <p>Это не оптимизация. Это подмена понятий, и она разваливается на первом же нестандартном случае — а нестандартные случаи в любом процессе составляют не пять процентов, как принято думать, а заметно больше.</p>
 <p>Модель не несёт ответственности. Она не может объяснить, почему приняла такое решение, тому, кто спросит с неё через месяц. Она не догадается позвонить и уточнить. Всё это делает человек, и именно за это ему платят, а не за скорость перекладывания данных.</p>
-<p>Правильная постановка вопроса другая: не «кого заменит ИИ», а «что перестанет делать человек, чтобы начать делать то, ради чего его наняли».</p>
+<p>Правильная постановка вопроса другая: не «кого заменит ИИ», а «что перестанет делать человек, чтобы начать делать то, ради чего его наняли».</p></div>
+          <div class="en"><p>Proposals to fire people and seat models in their chairs genuinely infuriate me.</p>
+<p>That isn&#x27;t optimisation. It&#x27;s a category error, and it collapses on the first non-standard case — and non-standard cases in any process account for far more than the five percent people assume.</p>
+<p>A model carries no accountability. It can&#x27;t explain to whoever asks a month later why it decided what it decided. It won&#x27;t think to pick up the phone and check. A person does all of that, and that is what they&#x27;re paid for — not for the speed of moving data around.</p>
+<p>The right framing is different: not “who will AI replace”, but “what will a person stop doing so they can start doing the thing they were hired for”.</p></div>
         </div>
         <button class="jmore" data-t="t08">
           <span class="ru">Читать целиком</span><span class="en">Read in full</span>
@@ -717,23 +774,29 @@ footer a:hover{color:var(--acc)}
       </div>
     </article>
     <article class="jcard rv" data-rub="поле" id="p09">
-      <a class="jcover" href="journal/j09.jpg" target="_blank" rel="noopener">
-        <img src="journal/j09.jpg" alt="" width="1200" height="630" loading="lazy" decoding="async">
+      <a class="jcover" href="journal/j09.jpg" data-ru="journal/j09.jpg" data-en="journal/j09e.jpg" target="_blank" rel="noopener">
+        <img src="journal/j09.jpg" data-ru="journal/j09.jpg" data-en="journal/j09e.jpg" alt="" width="1200" height="630" loading="lazy" decoding="async">
       </a>
       <div class="jbody">
         <div class="jmeta">
-          <span class="jrub">// поле</span>
+          <span class="jrub"><span class="ru">// поле</span><span class="en">// field</span></span>
           <span class="jdate"><span class="ru">24 августа</span><span class="en">Aug 24</span></span>
           
         </div>
-        <h2 class="jtitle">Мой провал: я хотел сделать альтернативу 1С</h2>
+        <h2 class="jtitle"><span class="ru">Мой провал: я хотел сделать альтернативу 1С</span><span class="en">My failure: I tried to build an alternative to 1C</span></h2>
         <div class="jtext" id="t09">
-          <p>Пишу про это спокойно, потому что вывод оттуда оказался дороже любого удачного проекта.</p>
+          <div class="ru"><p>Пишу про это спокойно, потому что вывод оттуда оказался дороже любого удачного проекта.</p>
 <p><b>Идея.</b> Система учёта, где автоматизация и ИИ снимают с человека необходимость держать открытыми десяток вкладок и вручную ловить ошибки, которые в 1С становятся критичными. Мне казалось, что боль очевидна: её испытывает каждый, кто хоть раз работал с типовой конфигурацией.</p>
 <p><b>Что пошло не так.</b> Боль действительно есть у всех. Но она у всех разная, и ни у кого не настолько сильная, чтобы менять систему, в которую вросли бухгалтерия, отчётность и половина процессов компании. Я решал задачу, которую люди предпочитают терпеть.</p>
 <p>Второе: я начал с архитектуры. Мне было интересно, как это устроить технически, и я месяцами строил то, чего ещё никто не просил.</p>
 <p><b>Что я делаю иначе с тех пор.</b> Любая гипотеза теперь начинается не с архитектуры, а с вопроса: кто перестанет страдать и на сколько? Если я не могу назвать конкретную роль и конкретное число, я не открываю редактор.</p>
-<p>Масштаб идеи не заменяет спроса на неё. Это стоило мне нескольких месяцев, и я считаю, что дёшево отделался.</p>
+<p>Масштаб идеи не заменяет спроса на неё. Это стоило мне нескольких месяцев, и я считаю, что дёшево отделался.</p></div>
+          <div class="en"><p>I write about this calmly, because the lesson turned out to be worth more than any successful project.</p>
+<p><b>The idea.</b> An accounting system where automation and AI remove the need to keep a dozen tabs open and manually catch the errors that turn critical in 1C. The pain seemed obvious to me: everyone who has ever touched a standard configuration feels it.</p>
+<p><b>What went wrong.</b> The pain is real and widespread. But it&#x27;s different for everyone, and for nobody is it strong enough to justify replacing a system that accounting, reporting and half the company&#x27;s processes have grown into. I was solving a problem people prefer to endure.</p>
+<p>Second: I started with the architecture. The technical shape of it was interesting to me, so I spent months building something nobody had asked for yet.</p>
+<p><b>What I do differently now.</b> Every hypothesis starts not with architecture but with a question: who stops suffering, and by how much? If I can&#x27;t name a specific role and a specific number, I don&#x27;t open the editor.</p>
+<p>The scale of an idea is not a substitute for demand for it. That cost me several months, and I think I got off lightly.</p></div>
         </div>
         <button class="jmore" data-t="t09">
           <span class="ru">Читать целиком</span><span class="en">Read in full</span>
@@ -742,20 +805,23 @@ footer a:hover{color:var(--acc)}
       </div>
     </article>
     <article class="jcard rv" data-rub="цифра" id="p10">
-      <a class="jcover" href="journal/j10.jpg" target="_blank" rel="noopener">
-        <img src="journal/j10.jpg" alt="" width="1200" height="630" loading="lazy" decoding="async">
+      <a class="jcover" href="journal/j10.jpg" data-ru="journal/j10.jpg" data-en="journal/j10e.jpg" target="_blank" rel="noopener">
+        <img src="journal/j10.jpg" data-ru="journal/j10.jpg" data-en="journal/j10e.jpg" alt="" width="1200" height="630" loading="lazy" decoding="async">
       </a>
       <div class="jbody">
         <div class="jmeta">
-          <span class="jrub">// цифра</span>
+          <span class="jrub"><span class="ru">// цифра</span><span class="en">// num</span></span>
           <span class="jdate"><span class="ru">26 августа</span><span class="en">Aug 26</span></span>
           
         </div>
-        <h2 class="jtitle">4 часа → 1,5 часа</h2>
+        <h2 class="jtitle"><span class="ru">4 часа → 1,5 часа</span><span class="en">4 hours → 1.5 hours</span></h2>
         <div class="jtext" id="t10">
-          <p>Столько стало занимать составление одной технической инструкции после внедрения RAG-системы на локальной модели.</p>
+          <div class="ru"><p>Столько стало занимать составление одной технической инструкции после внедрения RAG-системы на локальной модели.</p>
 <p>За цифрой стоит скучное: документы разложены на фрагменты, фрагменты проиндексированы, поиск идёт по смыслу, а не по вхождению слова. Человек больше не листает базу знаний — он проверяет собранный черновик.</p>
-<p>Самое интересное не в часах. Заказчик планировал нанять технического писателя и после запуска отказался от найма. Экономия оказалась не в 2,5 часах на документе, а в незакрытой вакансии — и такую экономию почти никогда не закладывают в расчёт на входе.</p>
+<p>Самое интересное не в часах. Заказчик планировал нанять технического писателя и после запуска отказался от найма. Экономия оказалась не в 2,5 часах на документе, а в незакрытой вакансии — и такую экономию почти никогда не закладывают в расчёт на входе.</p></div>
+          <div class="en"><p>That&#x27;s how long one technical instruction took after a RAG system on a local model went in.</p>
+<p>Behind the number is something unglamorous: documents split into chunks, chunks indexed, search running on meaning rather than on word matches. A person no longer scrolls the knowledge base — they check a draft that&#x27;s already assembled.</p>
+<p>The interesting part isn&#x27;t the hours. The client had planned to hire a technical writer and, after launch, dropped the hire. The saving wasn&#x27;t 2.5 hours per document — it was an unfilled vacancy, and that kind of saving almost never makes it into the business case up front.</p></div>
         </div>
         <button class="jmore" data-t="t10">
           <span class="ru">Читать целиком</span><span class="en">Read in full</span>
@@ -764,22 +830,27 @@ footer a:hover{color:var(--acc)}
       </div>
     </article>
     <article class="jcard rv" data-rub="мнение" id="p11">
-      <a class="jcover" href="journal/j11.jpg" target="_blank" rel="noopener">
-        <img src="journal/j11.jpg" alt="" width="1200" height="630" loading="lazy" decoding="async">
+      <a class="jcover" href="journal/j11.jpg" data-ru="journal/j11.jpg" data-en="journal/j11e.jpg" target="_blank" rel="noopener">
+        <img src="journal/j11.jpg" data-ru="journal/j11.jpg" data-en="journal/j11e.jpg" alt="" width="1200" height="630" loading="lazy" decoding="async">
       </a>
       <div class="jbody">
         <div class="jmeta">
-          <span class="jrub">// мнение</span>
+          <span class="jrub"><span class="ru">// мнение</span><span class="en">// take</span></span>
           <span class="jdate"><span class="ru">28 августа</span><span class="en">Aug 28</span></span>
           
         </div>
-        <h2 class="jtitle">Прохождение пары курсов — не достижение</h2>
+        <h2 class="jtitle"><span class="ru">Прохождение пары курсов — не достижение</span><span class="en">Finishing a couple of courses is not an achievement</span></h2>
         <div class="jtext" id="t11">
-          <p>Знаю, что это непопулярно, но скажу.</p>
+          <div class="ru"><p>Знаю, что это непопулярно, но скажу.</p>
 <p>Айтишник учится каждый день и каждый день что-то выкладывает. Гордиться прохождением одного-двух курсов — примерно как гордиться тем, что прочитал две книги. Хорошо, что прочитал. Но это не строчка в резюме.</p>
 <p>Сертификат показывает, что ты продержался до конца программы. Он не показывает, что ты умеешь. Умение показывает работающая штука, которую можно открыть и потыкать.</p>
 <p>Отдельная категория — люди, которые учат других, не зная базы. Не тонкостей, не редких кейсов — базы. Когда преподаватель не может объяснить, чем список отличается от массива по памяти, но ведёт курс «войти в IT за три месяца», это не образование. Это продажа надежды.</p>
-<p>Если ты сейчас учишься: не собирай сертификаты. Собирай то, что запускается.</p>
+<p>Если ты сейчас учишься: не собирай сертификаты. Собирай то, что запускается.</p></div>
+          <div class="en"><p>I know this isn&#x27;t a popular thing to say, so I&#x27;ll say it.</p>
+<p>An engineer learns every day and ships something every day. Being proud of finishing one or two courses is roughly like being proud of having read two books. Good that you read them. It isn&#x27;t a line on a CV.</p>
+<p>A certificate shows you lasted to the end of a programme. It doesn&#x27;t show you can do the thing. What shows that is a working piece of software someone can open and poke.</p>
+<p>A separate category is people who teach others without knowing the fundamentals. Not the subtleties, not the rare cases — the fundamentals. When an instructor can&#x27;t explain how a list differs from an array in memory but runs a “break into tech in three months” course, that isn&#x27;t education. It&#x27;s selling hope.</p>
+<p>If you&#x27;re studying right now: don&#x27;t collect certificates. Collect things that run.</p></div>
         </div>
         <button class="jmore" data-t="t11">
           <span class="ru">Читать целиком</span><span class="en">Read in full</span>
@@ -788,18 +859,18 @@ footer a:hover{color:var(--acc)}
       </div>
     </article>
     <article class="jcard rv" data-rub="инструмент" id="p12">
-      <a class="jcover" href="journal/j12.jpg" target="_blank" rel="noopener">
-        <img src="journal/j12.jpg" alt="" width="1200" height="630" loading="lazy" decoding="async">
+      <a class="jcover" href="journal/j12.jpg" data-ru="journal/j12.jpg" data-en="journal/j12e.jpg" target="_blank" rel="noopener">
+        <img src="journal/j12.jpg" data-ru="journal/j12.jpg" data-en="journal/j12e.jpg" alt="" width="1200" height="630" loading="lazy" decoding="async">
       </a>
       <div class="jbody">
         <div class="jmeta">
-          <span class="jrub">// инструмент</span>
+          <span class="jrub"><span class="ru">// инструмент</span><span class="en">// tool</span></span>
           <span class="jdate"><span class="ru">31 августа</span><span class="en">Aug 31</span></span>
           
         </div>
-        <h2 class="jtitle">Как я на самом деле работаю с ИИ-агентами</h2>
+        <h2 class="jtitle"><span class="ru">Как я на самом деле работаю с ИИ-агентами</span><span class="en">How I actually work with AI agents</span></h2>
         <div class="jtext" id="t12">
-          <p>Я писал чистый код до того, как появились агенты, и пишу с ними сейчас. Изменилась производительность, а не роль: фуллстек тогда, фуллстек сейчас — просто с помощником.</p>
+          <div class="ru"><p>Я писал чистый код до того, как появились агенты, и пишу с ними сейчас. Изменилась производительность, а не роль: фуллстек тогда, фуллстек сейчас — просто с помощником.</p>
 <p>Но помощник работает ровно настолько, насколько структурно ты с ним обращаешься. Разница между «напиши, чтобы работало» и рабочим процессом примерно как между «сделай красиво» и техзаданием.</p>
 <p><b>Что я делаю до того, как что-то попросить.</b></p>
 <p>Описываю контекст: что за система, какие ограничения, что уже есть. Агент не телепат, а большинство плохих ответов — это хорошие ответы на плохо заданный вопрос.</p>
@@ -809,7 +880,18 @@ footer a:hover{color:var(--acc)}
 <p>Не прошу написать то, чего сам не смогу прочитать. Код, который ты не в состоянии проверить, — это не ускорение, это долг с процентами.</p>
 <p>Не доверяю цифрам и фактам без проверки. Модель уверенно ошибается в мелочах, и именно мелочи ломают прод.</p>
 <p>Не спорю с моделью. Если два раза не получилось — виноват мой запрос, а не она.</p>
-<p><b>Главное.</b> Инструмент увеличивает то, что уже есть. Если у тебя есть понимание предметной области — он умножит его. Если нет — он умножит его отсутствие, только быстрее.</p>
+<p><b>Главное.</b> Инструмент увеличивает то, что уже есть. Если у тебя есть понимание предметной области — он умножит его. Если нет — он умножит его отсутствие, только быстрее.</p></div>
+          <div class="en"><p>I wrote clean code before agents existed and I write it with them now. What changed is throughput, not the role: full-stack then, full-stack now — just with an assistant.</p>
+<p>But the assistant works exactly as well as the structure you bring to it. The difference between “write this and make it work” and an actual process is roughly the difference between “make it look nice” and a specification.</p>
+<p><b>What I do before asking for anything.</b></p>
+<p>I describe the context: what the system is, what the constraints are, what already exists. An agent isn&#x27;t telepathic, and most bad answers are good answers to a badly asked question.</p>
+<p>I cut the task into pieces I can verify separately. If I don&#x27;t know how I&#x27;ll check the result, I&#x27;m not ready to ask for it yet.</p>
+<p>I specify the output format. Structured output saves me more time than any prompt tuning: parsing JSON is faster than digging meaning out of a paragraph.</p>
+<p><b>What I don&#x27;t do.</b></p>
+<p>I don&#x27;t ask for code I couldn&#x27;t read myself. Code you can&#x27;t verify isn&#x27;t acceleration — it&#x27;s debt with interest.</p>
+<p>I don&#x27;t trust numbers or facts without checking. Models are confidently wrong about small things, and small things are what break production.</p>
+<p>I don&#x27;t argue with the model. If it fails twice, my request is at fault, not the model.</p>
+<p><b>The main thing.</b> The tool multiplies what&#x27;s already there. If you have domain understanding, it multiplies that. If you don&#x27;t, it multiplies the absence — only faster.</p></div>
         </div>
         <button class="jmore" data-t="t12">
           <span class="ru">Читать целиком</span><span class="en">Read in full</span>
@@ -818,24 +900,31 @@ footer a:hover{color:var(--acc)}
       </div>
     </article>
     <article class="jcard rv" data-rub="поле" id="p13">
-      <a class="jcover" href="journal/j13.jpg" target="_blank" rel="noopener">
-        <img src="journal/j13.jpg" alt="" width="1200" height="630" loading="lazy" decoding="async">
+      <a class="jcover" href="journal/j13.jpg" data-ru="journal/j13.jpg" data-en="journal/j13e.jpg" target="_blank" rel="noopener">
+        <img src="journal/j13.jpg" data-ru="journal/j13.jpg" data-en="journal/j13e.jpg" alt="" width="1200" height="630" loading="lazy" decoding="async">
       </a>
       <div class="jbody">
         <div class="jmeta">
-          <span class="jrub">// поле</span>
+          <span class="jrub"><span class="ru">// поле</span><span class="en">// field</span></span>
           <span class="jdate"><span class="ru">2 сентября</span><span class="en">Sep 2</span></span>
           
         </div>
-        <h2 class="jtitle">Что я спрашиваю до того, как открыть редактор</h2>
+        <h2 class="jtitle"><span class="ru">Что я спрашиваю до того, как открыть редактор</span><span class="en">What I ask before opening the editor</span></h2>
         <div class="jtext" id="t13">
-          <p>Короткий список. Проходит минут за двадцать разговора и экономит недели.</p>
+          <div class="ru"><p>Короткий список. Проходит минут за двадцать разговора и экономит недели.</p>
 <p>Кто именно выполняет эту работу сейчас и сколько времени она у него занимает в неделю?</p>
 <p>Что произойдёт, если её просто перестать делать? Иногда выясняется, что ничего.</p>
 <p>Какая цифра в отчёте изменится, если получится? Назови число.</p>
 <p>Кто будет пользоваться результатом каждый день? Не кто заказывает — кто пользуется.</p>
 <p>Что должно случиться, чтобы мы признали, что не получилось?</p>
-<p>Последний вопрос обычно самый неудобный и самый полезный. Если у внедрения нет условия провала, у него нет и условия успеха — есть только ощущение.</p>
+<p>Последний вопрос обычно самый неудобный и самый полезный. Если у внедрения нет условия провала, у него нет и условия успеха — есть только ощущение.</p></div>
+          <div class="en"><p>A short list. It takes about twenty minutes of conversation and saves weeks.</p>
+<p>Who does this work today, and how many hours a week does it take them?</p>
+<p>What happens if we simply stop doing it? Sometimes the answer is: nothing.</p>
+<p>Which number in the report changes if this works? Give me a figure.</p>
+<p>Who will use the result every day? Not who&#x27;s ordering it — who uses it.</p>
+<p>What has to happen for us to admit it didn&#x27;t work?</p>
+<p>The last question is usually the most uncomfortable and the most useful. If an implementation has no condition for failure, it has no condition for success either — only a feeling.</p></div>
         </div>
         <button class="jmore" data-t="t13">
           <span class="ru">Читать целиком</span><span class="en">Read in full</span>
@@ -844,25 +933,33 @@ footer a:hover{color:var(--acc)}
       </div>
     </article>
     <article class="jcard rv" data-rub="разбор" id="p14">
-      <a class="jcover" href="journal/j14.jpg" target="_blank" rel="noopener">
-        <img src="journal/j14.jpg" alt="" width="1200" height="630" loading="lazy" decoding="async">
+      <a class="jcover" href="journal/j14.jpg" data-ru="journal/j14.jpg" data-en="journal/j14e.jpg" target="_blank" rel="noopener">
+        <img src="journal/j14.jpg" data-ru="journal/j14.jpg" data-en="journal/j14e.jpg" alt="" width="1200" height="630" loading="lazy" decoding="async">
       </a>
       <div class="jbody">
         <div class="jmeta">
-          <span class="jrub">// разбор</span>
+          <span class="jrub"><span class="ru">// разбор</span><span class="en">// case</span></span>
           <span class="jdate"><span class="ru">4 сентября</span><span class="en">Sep 4</span></span>
           
         </div>
-        <h2 class="jtitle">Почему у больших компаний это занимает квартал</h2>
+        <h2 class="jtitle"><span class="ru">Почему у больших компаний это занимает квартал</span><span class="en">Why it takes big companies a quarter</span></h2>
         <div class="jtext" id="t14">
-          <p>Меня спрашивают, в чём подвох недельного цикла. Подвоха нет — есть разница в том, где теряется время. Разбираю, куда уходит квартал.</p>
+          <div class="ru"><p>Меня спрашивают, в чём подвох недельного цикла. Подвоха нет — есть разница в том, где теряется время. Разбираю, куда уходит квартал.</p>
 <p><b>Неделя на формулировку.</b> Идея от бизнеса приходит одной фразой. Аналитик превращает её в документ. Документ согласуют. На этом этапе исходная мысль обычно уже слегка не та.</p>
 <p><b>Две недели на очередь.</b> Задача попадает в бэклог, бэклог приоритизируют раз в спринт, спринт уже набран.</p>
 <p><b>Неделя на передачу контекста.</b> Разработчик читает документ, задаёт вопросы аналитику, аналитик уточняет у бизнеса, бизнес отвечает через три дня. Каждая граница между ролями стоит примерно три дня — не из-за людей, а из-за самого факта пересказа.</p>
 <p><b>Разработка.</b> Собственно код. Обычно это самая короткая часть — и именно её все считают узким местом.</p>
 <p><b>Приёмка.</b> Бизнес видит результат впервые за два месяца и говорит: «я имел в виду другое». Круг повторяется.</p>
 <p><b>Где сжимается.</b> Я не пишу код быстрее команды. Я убираю границы: формулировка, анализ, сборка и демо происходят в одной голове, поэтому пересказывать нечего. Заказчик видит работающий вариант на третий-четвёртый день, а не на шестидесятый, и говорит «не то» тогда, когда переделать стоит несколько часов.</p>
-<p><b>Честная оговорка.</b> Это не универсально лучше. На одном человеке нельзя вести десять параллельных внедрений, и такой процесс плохо переживает отпуск. Большие компании платят кварталом за устойчивость. Вопрос в том, за какую задачу вы платите — и не переплачиваете ли за устойчивость там, где нужна скорость.</p>
+<p><b>Честная оговорка.</b> Это не универсально лучше. На одном человеке нельзя вести десять параллельных внедрений, и такой процесс плохо переживает отпуск. Большие компании платят кварталом за устойчивость. Вопрос в том, за какую задачу вы платите — и не переплачиваете ли за устойчивость там, где нужна скорость.</p></div>
+          <div class="en"><p>People ask what the catch is in the one-week cycle. There is no catch — there&#x27;s a difference in where the time goes. Here&#x27;s where a quarter disappears.</p>
+<p><b>A week on wording.</b> The idea arrives from the business as one sentence. An analyst turns it into a document. The document gets approved. By this point the original thought is already slightly not the same thought.</p>
+<p><b>Two weeks in the queue.</b> The task lands in the backlog, the backlog is prioritised once per sprint, and the sprint is already full.</p>
+<p><b>A week on context hand-off.</b> The developer reads the document, asks the analyst questions, the analyst checks with the business, the business answers in three days. Every boundary between roles costs about three days — not because of the people, but because of the retelling itself.</p>
+<p><b>Development.</b> The actual code. Usually the shortest part — and the one everybody assumes is the bottleneck.</p>
+<p><b>Acceptance.</b> The business sees the result for the first time in two months and says: “that&#x27;s not what I meant.” The loop starts again.</p>
+<p><b>Where it compresses.</b> I don&#x27;t write code faster than a team. I remove the boundaries: wording, analysis, build and demo happen in one head, so there&#x27;s nothing to retell. The client sees a working version on day three or four instead of day sixty, and says “not this” at a point where redoing it costs a few hours.</p>
+<p><b>An honest caveat.</b> This isn&#x27;t universally better. One person can&#x27;t run ten parallel implementations, and a process like this survives holidays badly. Big companies pay a quarter for resilience. The question is which one you&#x27;re buying — and whether you&#x27;re overpaying for resilience where you actually need speed.</p></div>
         </div>
         <button class="jmore" data-t="t14">
           <span class="ru">Читать целиком</span><span class="en">Read in full</span>
@@ -900,7 +997,12 @@ footer a:hover{color:var(--acc)}
 
   var langBtn=document.getElementById('langBtn'),langA=document.getElementById('langA'),langB=document.getElementById('langB');
   function setLang(l){root.setAttribute('lang',l);langA.textContent=l.toUpperCase();langB.textContent=l==='ru'?'EN':'RU';
-    document.title=l==='ru'?'Журнал — MOHAPX-V-IT':'Journal — MOHAPX-V-IT';}
+    document.title=l==='ru'?'Журнал — MOHAPX-V-IT':'Journal — MOHAPX-V-IT';
+    document.querySelectorAll('.jcover, .jcover img').forEach(function(el){
+      var v=el.dataset[l]; if(!v) return;
+      if(el.tagName==='IMG') el.src=v; else el.href=v;
+    });
+    setTimeout(fitText,60);}
   langBtn.addEventListener('click',function(){setLang(root.getAttribute('lang')==='ru'?'en':'ru');});
 
   var prog=document.getElementById('prog'),nav=document.getElementById('nav');
@@ -925,13 +1027,18 @@ footer a:hover{color:var(--acc)}
     });
   });
   // hide the button when the text already fits
-  document.querySelectorAll('.jtext').forEach(function(t){
-    if(t.scrollHeight<=t.clientHeight+6){
+  function fitText(){
+    document.querySelectorAll('.jtext').forEach(function(t){
       var b=document.querySelector('.jmore[data-t="'+t.id+'"]');
-      if(b) b.style.display='none';
-      t.style.maxHeight='none'; t.classList.add('open');
-    }
-  });
+      if(t.classList.contains('open') && b && b.classList.contains('open')) return;
+      t.classList.remove('open'); t.style.maxHeight='';
+      if(t.scrollHeight<=t.clientHeight+6){
+        if(b) b.style.display='none';
+        t.style.maxHeight='none'; t.classList.add('open');
+      } else if(b){ b.style.display=''; }
+    });
+  }
+  fitText();
 
   // filters
   var cards=[].slice.call(document.querySelectorAll('.jcard'));
