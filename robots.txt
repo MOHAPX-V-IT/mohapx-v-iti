@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bisit22.github.io/mohapx-v-it/sitemap.xml
