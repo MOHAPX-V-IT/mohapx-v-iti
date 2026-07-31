@@ -1,0 +1,48 @@
+name: Пересборка сайта из posts.json
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'posts.json'
+      - 'index.html'
+      - 'build/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: site-build
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Установить зависимости
+        run: |
+          python -m pip install --quiet pillow
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-dejavu-core fonts-dejavu
+
+      - name: Пересобрать журнал, страницы, RSS, карту сайта и обложки
+        run: bash build/build.sh
+
+      - name: Закоммитить изменения
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add journal.html calculator.html rss.xml sitemap.xml journal/
+          if git diff --cached --quiet; then
+            echo "Изменений нет."
+            exit 0
+          fi
+          git commit -m "site: пересборка из posts.json"
+          git push
