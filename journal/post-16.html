@@ -4,16 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="google-site-verification" content="gfF-3K0brwq0ksgsUm2XDY8JaIDZLYQyMe7ndnqUSBs">
-<title>Кто я и о чём здесь — MOHAPX-V-IT</title>
-<meta name="description" content="Меня зовут Алексей Марышев. Я ИИ-инженер: беру у заказчика фразу «а что если мы автоматизируем вот это» и превращаю её в работающую систему в проде. Обычно за неделю.">
+<title>Как я собираю RAG, чтобы он не врал — MOHAPX-V-IT</title>
+<meta name="description" content="RAG собирается за вечер и работает плохо. Чтобы он работал хорошо, нужно понимать, на каком шаге теряется качество. Разбираю по шагам, в порядке влияния на результат.">
 <meta name="theme-color" content="#07070B">
-<link rel="canonical" href="https://mohapx-v-it.github.io/mohapx-v-iti/journal/post-00.html">
+<link rel="canonical" href="https://mohapx-v-it.github.io/mohapx-v-iti/journal/post-16.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="MOHAPX-V-IT">
-<meta property="og:title" content="Кто я и о чём здесь — MOHAPX-V-IT">
-<meta property="og:description" content="Меня зовут Алексей Марышев. Я ИИ-инженер: беру у заказчика фразу «а что если мы автоматизируем вот это» и превращаю её в работающую систему в проде. Обычно за неделю.">
-<meta property="og:url" content="https://mohapx-v-it.github.io/mohapx-v-iti/journal/post-00.html">
-<meta property="og:image" content="https://mohapx-v-it.github.io/mohapx-v-iti/journal/j00.jpg">
+<meta property="og:title" content="Как я собираю RAG, чтобы он не врал — MOHAPX-V-IT">
+<meta property="og:description" content="RAG собирается за вечер и работает плохо. Чтобы он работал хорошо, нужно понимать, на каком шаге теряется качество. Разбираю по шагам, в порядке влияния на результат.">
+<meta property="og:url" content="https://mohapx-v-it.github.io/mohapx-v-iti/journal/post-16.html">
+<meta property="og:image" content="https://mohapx-v-it.github.io/mohapx-v-iti/journal/j16.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2307070B'/%3E%3Cpath d='M12 42V18l11 9 9-14 9 14 11-9v24z' fill='%23FF9A1F'/%3E%3Crect x='12' y='46' width='40' height='5' rx='2.5' fill='%23FF9A1F'/%3E%3C/svg%3E">
 
@@ -572,7 +572,7 @@ footer a:hover{color:var(--acc)}
 </style>
 <script>try{var _t=localStorage.getItem('mvi-theme');if(_t)document.documentElement.setAttribute('data-theme',_t);var _l=localStorage.getItem('mvi-lang');if(_l)document.documentElement.setAttribute('lang',_l);}catch(e){}</script>
 </head>
-<body data-title-ru="Кто я и о чём здесь — MOHAPX-V-IT" data-title-en="Who I am and what this is — MOHAPX-V-IT">
+<body data-title-ru="Как я собираю RAG, чтобы он не врал — MOHAPX-V-IT" data-title-en="How I build RAG so it doesn&#x27;t lie — MOHAPX-V-IT">
 <div class="bg-fx"><div class="vign"></div><div class="floor"></div><div class="scan"></div><div class="noise"></div></div>
 <div id="cursorGlow"></div>
 <div class="progress" id="prog"></div>
@@ -598,34 +598,34 @@ footer a:hover{color:var(--acc)}
 <main>
 <article class="article">
   <div class="jmeta" style="margin-bottom:16px">
-    <span class="jrub"><span class="ru">// мнение</span><span class="en">// take</span></span>
-    <span class="jdate"><span class="ru">3 августа 2026</span><span class="en">Aug 3, 2026</span></span>
+    <span class="jrub"><span class="ru">// разбор</span><span class="en">// case</span></span>
+    <span class="jdate"><span class="ru">9 сентября 2026</span><span class="en">Sep 9, 2026</span></span>
   </div>
   <h1 style="font-family:var(--disp);font-weight:800;font-size:clamp(28px,4.6vw,48px);line-height:1.12;letter-spacing:-.025em">
-    <span class="ru">Кто я и о чём здесь</span><span class="en">Who I am and what this is</span></h1>
-  <div class="acover"><img id="acov" src="j00.jpg" data-ru="j00.jpg" data-en="j00e.jpg" alt="" width="1200" height="630"></div>
+    <span class="ru">Как я собираю RAG, чтобы он не врал</span><span class="en">How I build RAG so it doesn&#x27;t lie</span></h1>
+  <div class="acover"><img id="acov" src="j16.jpg" data-ru="j16.jpg" data-en="j16e.jpg" alt="" width="1200" height="630"></div>
   <div class="atext">
-    <div class="ru"><p>Меня зовут Алексей Марышев. Я ИИ-инженер: беру у заказчика фразу «а что если мы автоматизируем вот это» и превращаю её в работающую систему в проде. Обычно за неделю.</p>
-<p>Я не только пишу код. Сначала я разбираю процесс: считаю, что реально изменится в цифрах, сколько будет стоить сборка, насколько сложно встроить решение в то, что уже работает. И только потом сажусь за редактор — или не сажусь, если считать нечего.</p>
-<p><b>О чём будет канал.</b></p>
-<p>Про внедрение ИИ в компании — без магии и без паники. Про то, где автоматизация окупается, а где её продают ради строчки в презентации. Про инструменты, которыми я реально пользуюсь каждый день, а не про те, о которых красиво писать.</p>
-<p>Я работаю под NDA, поэтому названия компаний здесь появляться не будут. Зато будут случаи, решения и цифры — обезличенно, но честно.</p>
-<p><b>Рубрики.</b></p>
-<p><code>#поле</code> — заметки из практики<br><code>#разбор</code> — как устроено внедрение изнутри<br><code>#мнение</code> — позиция, за которую готов спорить<br><code>#инструмент</code> — стек и способ с ним работать<br><code>#цифра</code> — один результат и что за ним стоит</p>
-<p>Сайт: mohapx-v-it.github.io<br>Написать напрямую: @ELITeeiiNHEIT</p></div>
-    <div class="en"><p>My name is Aleksei Maryshev. I&#x27;m an AI engineer: I take a client&#x27;s sentence — “what if we automated this” — and turn it into a system running in production. Usually in a week.</p>
-<p>Writing code is not the whole job. First I take the process apart: I work out what actually changes in numbers, what the build will cost, how hard it is to fit the result into what already runs. Only then do I open the editor — or I don&#x27;t, if there&#x27;s nothing worth counting.</p>
-<p><b>What this channel is about.</b></p>
-<p>Putting AI into companies — without the magic and without the panic. Where automation pays for itself and where it gets sold for the sake of a line in a slide deck. About the tools I actually use every day, rather than the ones that are pleasant to write about.</p>
-<p>I work under NDA, so client names will never appear here. Cases, decisions and numbers will — anonymised, but honest.</p>
-<p><b>Sections.</b></p>
-<p><code>#field</code> — notes from practice<br><code>#case</code> — how an implementation works from the inside<br><code>#take</code> — a position I&#x27;m ready to defend<br><code>#tool</code> — the stack and how I work with it<br><code>#number</code> — one result and what sits behind it</p>
-<p>Site: mohapx-v-it.github.io<br>Direct line: @ELITeeiiNHEIT</p></div>
+    <div class="ru"><p>RAG собирается за вечер и работает плохо. Чтобы он работал хорошо, нужно понимать, на каком шаге теряется качество. Разбираю по шагам, в порядке влияния на результат.</p>
+<p><b>1. Подготовка документов — здесь теряется больше всего.</b> Не текст, а исходники. PDF, выгруженный в плоский текст, теряет структуру таблиц, и модель начинает склеивать строки из разных колонок. Заголовки разделов должны оставаться при фрагментах, иначе фрагмент «Требуется 4 болта М6» не имеет смысла в отрыве от раздела «Крепление задней панели».</p>
+<p><b>2. Разбиение на фрагменты.</b> Дефолт в туториалах — резать по 1000 символов с перекрытием 200. Это работает ровно до первой таблицы. Я режу по смысловым границам: раздел, подраздел, элемент списка. Фрагмент должен быть самодостаточным настолько, чтобы человек, прочитав его в отрыве от документа, понял, о чём речь. Если не понял — модель тоже не поймёт.</p>
+<p><b>3. Поиск.</b> Один только векторный поиск проваливается на точных совпадениях: артикулы, коды ошибок, названия полей. Гибрид из векторного и полнотекстового решает это почти полностью. Если у тебя PostgreSQL, оба вида поиска живут в одной базе.</p>
+<p><b>4. Реранкинг.</b> Достаёшь двадцать кандидатов, переупорядочиваешь их отдельной моделью, отдаёшь в контекст пять лучших. Шаг, который дешевле всех остальных и почти всегда даёт заметный прирост.</p>
+<p><b>5. Генерация.</b> В системном сообщении явно сказано: отвечай только тем, что есть в источниках, и если ответа там нет — так и скажи. Плюс требование указывать, из какого фрагмента взят ответ. Ссылка на источник нужна не для красоты: она позволяет человеку за десять секунд проверить, не выдумала ли модель.</p>
+<p><b>Как понять, что стало лучше.</b> На глаз — никак. Нужна выборка из полусотни реальных вопросов с эталонными ответами и две группы метрик. Поиск меряется Precision@K и Recall@K: дошёл ли нужный фрагмент до контекста вообще. Генерация меряется faithfulness и groundedness: не сказала ли модель того, чего в источниках не было. Обе группы нужны, потому что ломаются они по-разному: поиск может принести правильный фрагмент, а модель всё равно допишет от себя.</p>
+<p><b>Главный вывод из практики.</b> Девять из десяти жалоб «RAG врёт» на деле означают, что нужный фрагмент не попал в контекст. Прежде чем менять модель или переписывать промпт, посмотри, что вообще пришло в контекст. Обычно там сразу видно ответ.</p></div>
+    <div class="en"><p>RAG comes together in an evening and works badly. To make it work well, you need to know at which step the quality leaks out. Here it is step by step, ordered by impact.</p>
+<p><b>1. Document preparation — this is where most of it is lost.</b> Not text, but sources. A PDF dumped into flat text loses table structure, and the model starts gluing rows from different columns together. Section headings must travel with their chunks, otherwise a chunk reading “four M6 bolts required” means nothing detached from the section “Rear panel mounting”.</p>
+<p><b>2. Chunking.</b> The tutorial default is 1000 characters with 200 of overlap. That works right up until the first table. I split on meaning: section, subsection, list item. A chunk should be self-contained enough that a person reading it out of context understands what it is about. If they don&#x27;t, the model won&#x27;t either.</p>
+<p><b>3. Retrieval.</b> Vector search alone fails on exact matches: part numbers, error codes, field names. A hybrid of vector and full-text search fixes almost all of it. If you&#x27;re on PostgreSQL, both kinds of search live in the same database.</p>
+<p><b>4. Reranking.</b> Pull twenty candidates, reorder them with a separate model, put the best five into context. The cheapest step of all, and almost always a visible gain.</p>
+<p><b>5. Generation.</b> The system message says it plainly: answer only from the sources, and if the answer isn&#x27;t there, say so. Plus a requirement to name the chunk the answer came from. Citations aren&#x27;t decoration: they let a person verify in ten seconds whether the model made it up.</p>
+<p><b>How to know it got better.</b> By eye, you can&#x27;t. You need a set of fifty real questions with reference answers and two groups of metrics. Retrieval is measured by Precision@K and Recall@K: did the right chunk reach the context at all. Generation is measured by faithfulness and groundedness: did the model state something the sources didn&#x27;t. You need both, because they break differently: retrieval can deliver the right chunk and the model will still embellish.</p>
+<p><b>The main lesson from practice.</b> Nine complaints out of ten that “RAG lies” actually mean the right chunk never made it into context. Before swapping models or rewriting the prompt, look at what actually arrived in the context. The answer is usually right there.</p></div>
   </div>
 
   <div class="anav">
-    <span></span>
-    <a class="nx" href="post-01.html"><span class="dir">следующий →</span><span class="t"><span class="ru">Автоматизация ради автоматизации неприемлема</span><span class="en">Automation for its own sake is unacceptable</span></span></a>
+    <a class="pv" href="post-15.html"><span class="dir">← предыдущий</span><span class="t"><span class="ru">Структурированный вывод экономит больше, чем тюнинг промпта</span><span class="en">Structured output saves more time than prompt tuning</span></span></a>
+    <a class="nx" href="post-17.html"><span class="dir">следующий →</span><span class="t"><span class="ru">Почему я держу векторы в PostgreSQL</span><span class="en">Why I keep vectors in PostgreSQL</span></span></a>
   </div>
 
   <div class="jsub rv" style="margin-top:48px">

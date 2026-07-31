@@ -4,16 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="google-site-verification" content="gfF-3K0brwq0ksgsUm2XDY8JaIDZLYQyMe7ndnqUSBs">
-<title>Кто я и о чём здесь — MOHAPX-V-IT</title>
-<meta name="description" content="Меня зовут Алексей Марышев. Я ИИ-инженер: беру у заказчика фразу «а что если мы автоматизируем вот это» и превращаю её в работающую систему в проде. Обычно за неделю.">
+<title>Redis в ИИ-сервисе нужен не для кеша — MOHAPX-V-IT</title>
+<meta name="description" content="Redis обычно ставят как кеш и на этом останавливаются. В сервисе поверх LLM у него есть три работы поважнее.">
 <meta name="theme-color" content="#07070B">
-<link rel="canonical" href="https://mohapx-v-it.github.io/mohapx-v-iti/journal/post-00.html">
+<link rel="canonical" href="https://mohapx-v-it.github.io/mohapx-v-iti/journal/post-18.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="MOHAPX-V-IT">
-<meta property="og:title" content="Кто я и о чём здесь — MOHAPX-V-IT">
-<meta property="og:description" content="Меня зовут Алексей Марышев. Я ИИ-инженер: беру у заказчика фразу «а что если мы автоматизируем вот это» и превращаю её в работающую систему в проде. Обычно за неделю.">
-<meta property="og:url" content="https://mohapx-v-it.github.io/mohapx-v-iti/journal/post-00.html">
-<meta property="og:image" content="https://mohapx-v-it.github.io/mohapx-v-iti/journal/j00.jpg">
+<meta property="og:title" content="Redis в ИИ-сервисе нужен не для кеша — MOHAPX-V-IT">
+<meta property="og:description" content="Redis обычно ставят как кеш и на этом останавливаются. В сервисе поверх LLM у него есть три работы поважнее.">
+<meta property="og:url" content="https://mohapx-v-it.github.io/mohapx-v-iti/journal/post-18.html">
+<meta property="og:image" content="https://mohapx-v-it.github.io/mohapx-v-iti/journal/j18.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2307070B'/%3E%3Cpath d='M12 42V18l11 9 9-14 9 14 11-9v24z' fill='%23FF9A1F'/%3E%3Crect x='12' y='46' width='40' height='5' rx='2.5' fill='%23FF9A1F'/%3E%3C/svg%3E">
 
@@ -572,7 +572,7 @@ footer a:hover{color:var(--acc)}
 </style>
 <script>try{var _t=localStorage.getItem('mvi-theme');if(_t)document.documentElement.setAttribute('data-theme',_t);var _l=localStorage.getItem('mvi-lang');if(_l)document.documentElement.setAttribute('lang',_l);}catch(e){}</script>
 </head>
-<body data-title-ru="Кто я и о чём здесь — MOHAPX-V-IT" data-title-en="Who I am and what this is — MOHAPX-V-IT">
+<body data-title-ru="Redis в ИИ-сервисе нужен не для кеша — MOHAPX-V-IT" data-title-en="Redis in an AI service isn&#x27;t there for caching — MOHAPX-V-IT">
 <div class="bg-fx"><div class="vign"></div><div class="floor"></div><div class="scan"></div><div class="noise"></div></div>
 <div id="cursorGlow"></div>
 <div class="progress" id="prog"></div>
@@ -598,34 +598,30 @@ footer a:hover{color:var(--acc)}
 <main>
 <article class="article">
   <div class="jmeta" style="margin-bottom:16px">
-    <span class="jrub"><span class="ru">// мнение</span><span class="en">// take</span></span>
-    <span class="jdate"><span class="ru">3 августа 2026</span><span class="en">Aug 3, 2026</span></span>
+    <span class="jrub"><span class="ru">// инструмент</span><span class="en">// tool</span></span>
+    <span class="jdate"><span class="ru">14 сентября 2026</span><span class="en">Sep 14, 2026</span></span>
   </div>
   <h1 style="font-family:var(--disp);font-weight:800;font-size:clamp(28px,4.6vw,48px);line-height:1.12;letter-spacing:-.025em">
-    <span class="ru">Кто я и о чём здесь</span><span class="en">Who I am and what this is</span></h1>
-  <div class="acover"><img id="acov" src="j00.jpg" data-ru="j00.jpg" data-en="j00e.jpg" alt="" width="1200" height="630"></div>
+    <span class="ru">Redis в ИИ-сервисе нужен не для кеша</span><span class="en">Redis in an AI service isn&#x27;t there for caching</span></h1>
+  <div class="acover"><img id="acov" src="j18.jpg" data-ru="j18.jpg" data-en="j18e.jpg" alt="" width="1200" height="630"></div>
   <div class="atext">
-    <div class="ru"><p>Меня зовут Алексей Марышев. Я ИИ-инженер: беру у заказчика фразу «а что если мы автоматизируем вот это» и превращаю её в работающую систему в проде. Обычно за неделю.</p>
-<p>Я не только пишу код. Сначала я разбираю процесс: считаю, что реально изменится в цифрах, сколько будет стоить сборка, насколько сложно встроить решение в то, что уже работает. И только потом сажусь за редактор — или не сажусь, если считать нечего.</p>
-<p><b>О чём будет канал.</b></p>
-<p>Про внедрение ИИ в компании — без магии и без паники. Про то, где автоматизация окупается, а где её продают ради строчки в презентации. Про инструменты, которыми я реально пользуюсь каждый день, а не про те, о которых красиво писать.</p>
-<p>Я работаю под NDA, поэтому названия компаний здесь появляться не будут. Зато будут случаи, решения и цифры — обезличенно, но честно.</p>
-<p><b>Рубрики.</b></p>
-<p><code>#поле</code> — заметки из практики<br><code>#разбор</code> — как устроено внедрение изнутри<br><code>#мнение</code> — позиция, за которую готов спорить<br><code>#инструмент</code> — стек и способ с ним работать<br><code>#цифра</code> — один результат и что за ним стоит</p>
-<p>Сайт: mohapx-v-it.github.io<br>Написать напрямую: @ELITeeiiNHEIT</p></div>
-    <div class="en"><p>My name is Aleksei Maryshev. I&#x27;m an AI engineer: I take a client&#x27;s sentence — “what if we automated this” — and turn it into a system running in production. Usually in a week.</p>
-<p>Writing code is not the whole job. First I take the process apart: I work out what actually changes in numbers, what the build will cost, how hard it is to fit the result into what already runs. Only then do I open the editor — or I don&#x27;t, if there&#x27;s nothing worth counting.</p>
-<p><b>What this channel is about.</b></p>
-<p>Putting AI into companies — without the magic and without the panic. Where automation pays for itself and where it gets sold for the sake of a line in a slide deck. About the tools I actually use every day, rather than the ones that are pleasant to write about.</p>
-<p>I work under NDA, so client names will never appear here. Cases, decisions and numbers will — anonymised, but honest.</p>
-<p><b>Sections.</b></p>
-<p><code>#field</code> — notes from practice<br><code>#case</code> — how an implementation works from the inside<br><code>#take</code> — a position I&#x27;m ready to defend<br><code>#tool</code> — the stack and how I work with it<br><code>#number</code> — one result and what sits behind it</p>
-<p>Site: mohapx-v-it.github.io<br>Direct line: @ELITeeiiNHEIT</p></div>
+    <div class="ru"><p>Redis обычно ставят как кеш и на этом останавливаются. В сервисе поверх LLM у него есть три работы поважнее.</p>
+<p><b>Дедупликация.</b> Внешние системы любят прислать одно и то же событие дважды. Заявка приходит по вебхуку, вебхук ретраится, и сервис честно обрабатывает её второй раз: второй вызов модели, второе назначение исполнителя, второе уведомление. Ключ с идентификатором события и коротким сроком жизни закрывает вопрос в три строки.</p>
+<p><b>Ограничение параллелизма.</b> У модели есть предел, за которым она начинает отвечать медленнее или отдавать ошибки. Счётчик активных запросов в Redis позволяет держать очередь на уровне сервиса, а не надеяться на провайдера. Лучше подождать в очереди двести миллисекунд, чем получить таймаут.</p>
+<p><b>Кеш ответов, но по смыслу, а не по строке.</b> Обычный кеш по точному тексту запроса в реальной жизни почти не срабатывает: люди формулируют по-разному. А вот кеш по нормализованному запросу или по хешу подобранного контекста попадает часто — особенно там, где сотрудники спрашивают об одном и том же в разных словах.</p>
+<p><b>Чего я в Redis не кладу.</b> Ничего, что нельзя потерять. Это память, и она может исчезнуть. Состояние диалога, историю обработки, всё, за что придётся отчитываться — в PostgreSQL. Redis для того, что можно пересчитать.</p>
+<p>Побочный эффект, которого я не ожидал: счётчики в Redis оказались лучшей телеметрией на старте. Сколько запросов пришло, сколько попало в кеш, сколько ушло в ретрай — видно до того, как настроен нормальный мониторинг.</p></div>
+    <div class="en"><p>Redis usually gets added as a cache and that&#x27;s where it stops. In a service built on an LLM it has three more important jobs.</p>
+<p><b>Deduplication.</b> External systems love sending the same event twice. A ticket arrives by webhook, the webhook retries, and your service dutifully processes it a second time: second model call, second assignment, second notification. A key holding the event id with a short TTL closes this in three lines.</p>
+<p><b>Concurrency limiting.</b> Every model has a ceiling past which it slows down or starts erroring. A counter of in-flight requests in Redis lets you queue at the service level instead of hoping the provider handles it. Better to wait two hundred milliseconds in a queue than to eat a timeout.</p>
+<p><b>A response cache, but keyed by meaning rather than by string.</b> A plain cache on exact request text almost never hits in real life: people phrase things differently. A cache keyed on a normalised query, or on a hash of the retrieved context, hits often — especially where staff ask the same thing in different words.</p>
+<p><b>What I don&#x27;t put in Redis.</b> Anything I can&#x27;t afford to lose. It&#x27;s memory, and memory can vanish. Conversation state, processing history, anything you&#x27;ll have to account for later goes in PostgreSQL. Redis is for what can be recomputed.</p>
+<p>An unexpected side effect: the Redis counters turned out to be the best telemetry early on. How many requests arrived, how many hit cache, how many went to retry — all visible before proper monitoring exists.</p></div>
   </div>
 
   <div class="anav">
-    <span></span>
-    <a class="nx" href="post-01.html"><span class="dir">следующий →</span><span class="t"><span class="ru">Автоматизация ради автоматизации неприемлема</span><span class="en">Automation for its own sake is unacceptable</span></span></a>
+    <a class="pv" href="post-17.html"><span class="dir">← предыдущий</span><span class="t"><span class="ru">Почему я держу векторы в PostgreSQL</span><span class="en">Why I keep vectors in PostgreSQL</span></span></a>
+    <a class="nx" href="post-19.html"><span class="dir">следующий →</span><span class="t"><span class="ru">85% — это не точность модели</span><span class="en">85% is not the model&#x27;s accuracy</span></span></a>
   </div>
 
   <div class="jsub rv" style="margin-top:48px">

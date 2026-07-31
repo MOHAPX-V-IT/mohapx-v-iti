@@ -4,16 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="google-site-verification" content="gfF-3K0brwq0ksgsUm2XDY8JaIDZLYQyMe7ndnqUSBs">
-<title>Кто я и о чём здесь — MOHAPX-V-IT</title>
-<meta name="description" content="Меня зовут Алексей Марышев. Я ИИ-инженер: беру у заказчика фразу «а что если мы автоматизируем вот это» и превращаю её в работающую систему в проде. Обычно за неделю.">
+<title>CI/CD для сервиса с моделью внутри — MOHAPX-V-IT</title>
+<meta name="description" content="Обычный пайплайн проверяет, что код собирается и тесты зелёные. Для сервиса, внутри которого языковая модель, этого мало: код может быть исправен, а сервис при этом отвечать хуже, чем вчера. Разбираю, что я добавляю к обычному конвейеру.">
 <meta name="theme-color" content="#07070B">
-<link rel="canonical" href="https://mohapx-v-it.github.io/mohapx-v-iti/journal/post-00.html">
+<link rel="canonical" href="https://mohapx-v-it.github.io/mohapx-v-iti/journal/post-24.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="MOHAPX-V-IT">
-<meta property="og:title" content="Кто я и о чём здесь — MOHAPX-V-IT">
-<meta property="og:description" content="Меня зовут Алексей Марышев. Я ИИ-инженер: беру у заказчика фразу «а что если мы автоматизируем вот это» и превращаю её в работающую систему в проде. Обычно за неделю.">
-<meta property="og:url" content="https://mohapx-v-it.github.io/mohapx-v-iti/journal/post-00.html">
-<meta property="og:image" content="https://mohapx-v-it.github.io/mohapx-v-iti/journal/j00.jpg">
+<meta property="og:title" content="CI/CD для сервиса с моделью внутри — MOHAPX-V-IT">
+<meta property="og:description" content="Обычный пайплайн проверяет, что код собирается и тесты зелёные. Для сервиса, внутри которого языковая модель, этого мало: код может быть исправен, а сервис при этом отвечать хуже, чем вчера. Разбираю, что я добавляю к обычному конвейеру.">
+<meta property="og:url" content="https://mohapx-v-it.github.io/mohapx-v-iti/journal/post-24.html">
+<meta property="og:image" content="https://mohapx-v-it.github.io/mohapx-v-iti/journal/j24.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2307070B'/%3E%3Cpath d='M12 42V18l11 9 9-14 9 14 11-9v24z' fill='%23FF9A1F'/%3E%3Crect x='12' y='46' width='40' height='5' rx='2.5' fill='%23FF9A1F'/%3E%3C/svg%3E">
 
@@ -572,7 +572,7 @@ footer a:hover{color:var(--acc)}
 </style>
 <script>try{var _t=localStorage.getItem('mvi-theme');if(_t)document.documentElement.setAttribute('data-theme',_t);var _l=localStorage.getItem('mvi-lang');if(_l)document.documentElement.setAttribute('lang',_l);}catch(e){}</script>
 </head>
-<body data-title-ru="Кто я и о чём здесь — MOHAPX-V-IT" data-title-en="Who I am and what this is — MOHAPX-V-IT">
+<body data-title-ru="CI/CD для сервиса с моделью внутри — MOHAPX-V-IT" data-title-en="CI/CD for a service with a model inside it — MOHAPX-V-IT">
 <div class="bg-fx"><div class="vign"></div><div class="floor"></div><div class="scan"></div><div class="noise"></div></div>
 <div id="cursorGlow"></div>
 <div class="progress" id="prog"></div>
@@ -598,34 +598,32 @@ footer a:hover{color:var(--acc)}
 <main>
 <article class="article">
   <div class="jmeta" style="margin-bottom:16px">
-    <span class="jrub"><span class="ru">// мнение</span><span class="en">// take</span></span>
-    <span class="jdate"><span class="ru">3 августа 2026</span><span class="en">Aug 3, 2026</span></span>
+    <span class="jrub"><span class="ru">// разбор</span><span class="en">// case</span></span>
+    <span class="jdate"><span class="ru">28 сентября 2026</span><span class="en">Sep 28, 2026</span></span>
   </div>
   <h1 style="font-family:var(--disp);font-weight:800;font-size:clamp(28px,4.6vw,48px);line-height:1.12;letter-spacing:-.025em">
-    <span class="ru">Кто я и о чём здесь</span><span class="en">Who I am and what this is</span></h1>
-  <div class="acover"><img id="acov" src="j00.jpg" data-ru="j00.jpg" data-en="j00e.jpg" alt="" width="1200" height="630"></div>
+    <span class="ru">CI/CD для сервиса с моделью внутри</span><span class="en">CI/CD for a service with a model inside it</span></h1>
+  <div class="acover"><img id="acov" src="j24.jpg" data-ru="j24.jpg" data-en="j24e.jpg" alt="" width="1200" height="630"></div>
   <div class="atext">
-    <div class="ru"><p>Меня зовут Алексей Марышев. Я ИИ-инженер: беру у заказчика фразу «а что если мы автоматизируем вот это» и превращаю её в работающую систему в проде. Обычно за неделю.</p>
-<p>Я не только пишу код. Сначала я разбираю процесс: считаю, что реально изменится в цифрах, сколько будет стоить сборка, насколько сложно встроить решение в то, что уже работает. И только потом сажусь за редактор — или не сажусь, если считать нечего.</p>
-<p><b>О чём будет канал.</b></p>
-<p>Про внедрение ИИ в компании — без магии и без паники. Про то, где автоматизация окупается, а где её продают ради строчки в презентации. Про инструменты, которыми я реально пользуюсь каждый день, а не про те, о которых красиво писать.</p>
-<p>Я работаю под NDA, поэтому названия компаний здесь появляться не будут. Зато будут случаи, решения и цифры — обезличенно, но честно.</p>
-<p><b>Рубрики.</b></p>
-<p><code>#поле</code> — заметки из практики<br><code>#разбор</code> — как устроено внедрение изнутри<br><code>#мнение</code> — позиция, за которую готов спорить<br><code>#инструмент</code> — стек и способ с ним работать<br><code>#цифра</code> — один результат и что за ним стоит</p>
-<p>Сайт: mohapx-v-it.github.io<br>Написать напрямую: @ELITeeiiNHEIT</p></div>
-    <div class="en"><p>My name is Aleksei Maryshev. I&#x27;m an AI engineer: I take a client&#x27;s sentence — “what if we automated this” — and turn it into a system running in production. Usually in a week.</p>
-<p>Writing code is not the whole job. First I take the process apart: I work out what actually changes in numbers, what the build will cost, how hard it is to fit the result into what already runs. Only then do I open the editor — or I don&#x27;t, if there&#x27;s nothing worth counting.</p>
-<p><b>What this channel is about.</b></p>
-<p>Putting AI into companies — without the magic and without the panic. Where automation pays for itself and where it gets sold for the sake of a line in a slide deck. About the tools I actually use every day, rather than the ones that are pleasant to write about.</p>
-<p>I work under NDA, so client names will never appear here. Cases, decisions and numbers will — anonymised, but honest.</p>
-<p><b>Sections.</b></p>
-<p><code>#field</code> — notes from practice<br><code>#case</code> — how an implementation works from the inside<br><code>#take</code> — a position I&#x27;m ready to defend<br><code>#tool</code> — the stack and how I work with it<br><code>#number</code> — one result and what sits behind it</p>
-<p>Site: mohapx-v-it.github.io<br>Direct line: @ELITeeiiNHEIT</p></div>
+    <div class="ru"><p>Обычный пайплайн проверяет, что код собирается и тесты зелёные. Для сервиса, внутри которого языковая модель, этого мало: код может быть исправен, а сервис при этом отвечать хуже, чем вчера. Разбираю, что я добавляю к обычному конвейеру.</p>
+<p><b>Обычная часть, без неё нельзя.</b> Линтер, типы, юнит-тесты на всё, что не связано с моделью: парсинг, работа с базой, интеграция с внешним API. Эта часть большая — в реальном сервисе кода вокруг модели заметно больше, чем кода вызова модели.</p>
+<p><b>Первое, что добавляется: контрактные тесты на вызовы модели.</b> Ответ модели подменяется заглушкой, и проверяется, что сервис правильно обрабатывает валидный ответ, невалидный JSON, таймаут и отказ по лимиту. Эти тесты быстрые, не требуют модели и ловят большую часть аварий в проде. Их почти никто не пишет.</p>
+<p><b>Второе: регрессия на выборке.</b> Тридцать-пятьдесят реальных примеров с эталонными ответами прогоняются на настоящей модели. Считается доля попаданий и сравнивается с предыдущим значением, которое хранится в репозитории. Падение больше порога — пайплайн красный. Прогон стоит денег и времени, поэтому он запускается не на каждый коммит, а на ветке перед слиянием.</p>
+<p><b>Третье: закрепление версии модели.</b> Версия модели указана явно и меняется отдельным коммитом. Плавающий тег вроде <code>latest</code> означает, что однажды утром сервис начнёт вести себя иначе без единого изменения в коде — и ты будешь искать причину в своём коде.</p>
+<p><b>Четвёртое: деплой на staging и дым-тест на живой модели.</b> Один реальный запрос через весь путь: API, поиск, модель, запись в базу. Ловит всё, что связано с окружением, — от неверного ключа до недоступного хоста.</p>
+<p><b>Сколько это дало.</b> На проекте с системой учёта времени обычный конвейер — линтинг, автотесты, деплой на staging — сократил время интеграции изменений вдвое. Регрессионная часть до этого проекта не относится, но эффект от неё того же порядка: она убирает страх трогать промпт, а страх трогать код стоит дороже любого прогона.</p></div>
+    <div class="en"><p>A normal pipeline checks that the code builds and the tests are green. For a service with a language model inside, that isn&#x27;t enough: the code can be fine while the service answers worse than it did yesterday. Here&#x27;s what I add to the usual conveyor.</p>
+<p><b>The ordinary part, which you can&#x27;t skip.</b> Linting, types, unit tests on everything unrelated to the model: parsing, database work, external API integration. This part is large — in a real service there is considerably more code around the model than code that calls it.</p>
+<p><b>First addition: contract tests on model calls.</b> The model&#x27;s response is stubbed, and you check that the service handles a valid response, invalid JSON, a timeout and a rate-limit refusal. These tests are fast, need no model, and catch most production incidents. Almost nobody writes them.</p>
+<p><b>Second: regression on a test set.</b> Thirty to fifty real examples with reference answers run against the actual model. You compute the hit rate and compare it to the previous value stored in the repository. A drop beyond a threshold turns the pipeline red. The run costs money and time, so it doesn&#x27;t fire on every commit — it runs on the branch before merge.</p>
+<p><b>Third: pinning the model version.</b> The model version is explicit and changes in its own commit. A floating tag like <code>latest</code> means that one morning your service starts behaving differently with no change in the code — and you&#x27;ll go looking for the cause in your code.</p>
+<p><b>Fourth: deploy to staging plus a smoke test against the live model.</b> One real request through the whole path: API, retrieval, model, database write. It catches everything environmental, from a wrong key to an unreachable host.</p>
+<p><b>What it bought.</b> On the time-tracking project the ordinary pipeline — lint, tests, staging deploy — cut change integration time in half. The regression part didn&#x27;t apply to that project, but its effect is of the same order: it removes the fear of touching the prompt, and fear of touching code costs more than any test run.</p></div>
   </div>
 
   <div class="anav">
+    <a class="pv" href="post-23.html"><span class="dir">← предыдущий</span><span class="t"><span class="ru">Локальная модель: сколько на самом деле нужно железа</span><span class="en">Local models: how much hardware you actually need</span></span></a>
     <span></span>
-    <a class="nx" href="post-01.html"><span class="dir">следующий →</span><span class="t"><span class="ru">Автоматизация ради автоматизации неприемлема</span><span class="en">Automation for its own sake is unacceptable</span></span></a>
   </div>
 
   <div class="jsub rv" style="margin-top:48px">

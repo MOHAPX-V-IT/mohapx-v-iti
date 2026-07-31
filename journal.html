@@ -3,16 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="gfF-3K0brwq0ksgsUm2XDY8JaIDZLYQyMe7ndnqUSBs">
 <title>Журнал — MOHAPX-V-IT</title>
 <meta name="description" content="Заметки о внедрении ИИ в бизнес-процессы: кейсы, инструменты и позиция. Без магии и без паники.">
 <meta name="theme-color" content="#07070B">
-<link rel="canonical" href="https://mohapx-v-it.github.io/journal.html">
+<link rel="canonical" href="https://mohapx-v-it.github.io/mohapx-v-iti/journal.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="MOHAPX-V-IT">
 <meta property="og:title" content="Журнал — MOHAPX-V-IT">
 <meta property="og:description" content="Заметки о внедрении ИИ в бизнес-процессы: кейсы, инструменты и позиция.">
-<meta property="og:url" content="https://mohapx-v-it.github.io/journal.html">
-<meta property="og:image" content="https://mohapx-v-it.github.io/journal/j03.jpg">
+<meta property="og:url" content="https://mohapx-v-it.github.io/mohapx-v-iti/journal.html">
+<meta property="og:image" content="https://mohapx-v-it.github.io/mohapx-v-iti/journal/j03.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2307070B'/%3E%3Cpath d='M12 42V18l11 9 9-14 9 14 11-9v24z' fill='%23FF9A1F'/%3E%3Crect x='12' y='46' width='40' height='5' rx='2.5' fill='%23FF9A1F'/%3E%3C/svg%3E">
 <link rel="alternate" type="application/rss+xml" title="MOHAPX-V-IT" href="rss.xml">
@@ -356,6 +357,7 @@ html[data-theme="light"] .pframe .lines{background:repeating-linear-gradient(to 
   background:var(--acc);animation:pulse 2s infinite
 }
 @media(max-width:560px){.tl{padding-left:30px}.tli::before{left:-27px}.tli.now::after{left:-24px}}
+
 
 /* PROCESS */
 .steps{display:grid;gap:0;margin-top:36px;border-top:1px solid var(--line)}
@@ -1085,6 +1087,338 @@ footer a:hover{color:var(--acc)}
         </button>
       </div>
     </article>
+    <article class="jcard rv" data-rub="инструмент" id="p15">
+      <a class="jcover" href="journal/j15.jpg" data-ru="journal/j15.jpg" data-en="journal/j15e.jpg" target="_blank" rel="noopener">
+        <img src="journal/j15.jpg" data-ru="journal/j15.jpg" data-en="journal/j15e.jpg" alt="" width="1200" height="630" loading="lazy" decoding="async">
+      </a>
+      <div class="jbody">
+        <div class="jmeta">
+          <span class="jrub"><span class="ru">// инструмент</span><span class="en">// tool</span></span>
+          <span class="jdate"><span class="ru">7 сентября</span><span class="en">Sep 7</span></span>
+          
+          <a class="jperm" href="journal/post-15.html"><span class="ru">страница ↗</span><span class="en">page ↗</span></a>
+        </div>
+        <h2 class="jtitle"><a href="journal/post-15.html"><span class="ru">Структурированный вывод экономит больше, чем тюнинг промпта</span><span class="en">Structured output saves more time than prompt tuning</span></a></h2>
+        <div class="jtext" id="t15">
+          <div class="ru"><p>Самое частое, что я вижу у людей, которые начали работать с LLM: модель просят ответить текстом, а потом парсят этот текст регулярками. Дальше жизнь состоит из починки регулярок.</p>
+<p>Правильный путь короче. У всех рабочих провайдеров есть режим, где ты отдаёшь модели JSON Schema и получаешь ответ, гарантированно ей соответствующий. В связке с Python это выглядит так: описываешь Pydantic-модель, отдаёшь её схему, получаешь обратно готовый объект.</p>
+<p>``<code><br>class Ticket(BaseModel):<br>    type: Literal[&quot;incident&quot;, &quot;request&quot;, &quot;question&quot;]<br>    missing_fields: list[str]<br>    assignee_hint: str | None<br>    confidence: float<br></code>``</p>
+<p><b>Что меняется на практике.</b></p>
+<p>Исчезает целый класс ошибок. Модель больше не может вернуть «Тип: инцидент (возможно, запрос)» — либо валидное значение из перечисления, либо ошибка на уровне API, которую видно сразу, а не через неделю в проде.</p>
+<p>Появляется место для честного «не знаю». Поле <code>confidence</code> и нулевой <code>assignee_hint</code> дают сервису право вернуть заявку человеку. Модель, которая умеет сказать «не уверен», полезнее модели, которая всегда отвечает — я это уже писал и повторю столько раз, сколько понадобится.</p>
+<p>Схема становится документацией. Через полгода не нужно вспоминать, что именно возвращает этот вызов: смотришь на класс.</p>
+<p><b>Чего структурированный вывод не делает.</b> Он не улучшает качество решения. Модель по-прежнему может уверенно положить заявку не в ту категорию — просто теперь она сделает это в валидном JSON. За качество отвечают контекст, примеры и тестовая выборка, а не формат.</p>
+<p><b>Оговорка про локальные модели.</b> У облачных провайдеров строгий режим схемы работает надёжно. У локальных через Ollama поддержка есть, но качество зависит от модели: маленькие модели иногда сползают на невалидный JSON под нагрузкой. Я в таких случаях оставляю ретрай с одной попыткой и падение в человеческий разбор, если и она не прошла.</p></div>
+          <div class="en"><p>The most common thing I see from people starting out with LLMs: they ask the model for a text answer and then parse that text with regexes. Life after that consists of fixing regexes.</p>
+<p>The right path is shorter. Every working provider has a mode where you hand the model a JSON Schema and get back a response guaranteed to match it. With Python it looks like this: describe a Pydantic model, pass its schema, get an object back.</p>
+<p>``<code><br>class Ticket(BaseModel):<br>    type: Literal[&quot;incident&quot;, &quot;request&quot;, &quot;question&quot;]<br>    missing_fields: list[str]<br>    assignee_hint: str | None<br>    confidence: float<br></code>``</p>
+<p><b>What changes in practice.</b></p>
+<p>An entire class of bugs disappears. The model can no longer return “Type: incident (possibly a request)” — either a valid enum value, or an API-level error you see immediately rather than in production a week later.</p>
+<p>You get somewhere to put an honest “I don&#x27;t know”. A <code>confidence</code> field and a null <code>assignee_hint</code> give the service permission to hand the ticket back to a person. A model that can say “not sure” is more useful than one that always answers, and I&#x27;ll repeat that as often as needed.</p>
+<p>The schema becomes documentation. Six months later you don&#x27;t have to remember what this call returns: you look at the class.</p>
+<p><b>What structured output does not do.</b> It does not improve the quality of the decision. The model can still confidently file a ticket under the wrong category — it will simply now do so in valid JSON. Quality comes from context, examples and a test set, not from the format.</p>
+<p><b>A caveat about local models.</b> With cloud providers strict schema mode is reliable. Local models via Ollama support it, but quality depends on the model: small ones sometimes slip into invalid JSON under load. In those cases I keep a single retry and fall back to human triage if that fails too.</p></div>
+        </div>
+        <button class="jmore" data-t="t15">
+          <span class="ru">Читать целиком</span><span class="en">Read in full</span>
+          <span class="chev">▾</span>
+        </button>
+      </div>
+    </article>
+    <article class="jcard rv" data-rub="разбор" id="p16">
+      <a class="jcover" href="journal/j16.jpg" data-ru="journal/j16.jpg" data-en="journal/j16e.jpg" target="_blank" rel="noopener">
+        <img src="journal/j16.jpg" data-ru="journal/j16.jpg" data-en="journal/j16e.jpg" alt="" width="1200" height="630" loading="lazy" decoding="async">
+      </a>
+      <div class="jbody">
+        <div class="jmeta">
+          <span class="jrub"><span class="ru">// разбор</span><span class="en">// case</span></span>
+          <span class="jdate"><span class="ru">9 сентября</span><span class="en">Sep 9</span></span>
+          
+          <a class="jperm" href="journal/post-16.html"><span class="ru">страница ↗</span><span class="en">page ↗</span></a>
+        </div>
+        <h2 class="jtitle"><a href="journal/post-16.html"><span class="ru">Как я собираю RAG, чтобы он не врал</span><span class="en">How I build RAG so it doesn&#x27;t lie</span></a></h2>
+        <div class="jtext" id="t16">
+          <div class="ru"><p>RAG собирается за вечер и работает плохо. Чтобы он работал хорошо, нужно понимать, на каком шаге теряется качество. Разбираю по шагам, в порядке влияния на результат.</p>
+<p><b>1. Подготовка документов — здесь теряется больше всего.</b> Не текст, а исходники. PDF, выгруженный в плоский текст, теряет структуру таблиц, и модель начинает склеивать строки из разных колонок. Заголовки разделов должны оставаться при фрагментах, иначе фрагмент «Требуется 4 болта М6» не имеет смысла в отрыве от раздела «Крепление задней панели».</p>
+<p><b>2. Разбиение на фрагменты.</b> Дефолт в туториалах — резать по 1000 символов с перекрытием 200. Это работает ровно до первой таблицы. Я режу по смысловым границам: раздел, подраздел, элемент списка. Фрагмент должен быть самодостаточным настолько, чтобы человек, прочитав его в отрыве от документа, понял, о чём речь. Если не понял — модель тоже не поймёт.</p>
+<p><b>3. Поиск.</b> Один только векторный поиск проваливается на точных совпадениях: артикулы, коды ошибок, названия полей. Гибрид из векторного и полнотекстового решает это почти полностью. Если у тебя PostgreSQL, оба вида поиска живут в одной базе.</p>
+<p><b>4. Реранкинг.</b> Достаёшь двадцать кандидатов, переупорядочиваешь их отдельной моделью, отдаёшь в контекст пять лучших. Шаг, который дешевле всех остальных и почти всегда даёт заметный прирост.</p>
+<p><b>5. Генерация.</b> В системном сообщении явно сказано: отвечай только тем, что есть в источниках, и если ответа там нет — так и скажи. Плюс требование указывать, из какого фрагмента взят ответ. Ссылка на источник нужна не для красоты: она позволяет человеку за десять секунд проверить, не выдумала ли модель.</p>
+<p><b>Как понять, что стало лучше.</b> На глаз — никак. Нужна выборка из полусотни реальных вопросов с эталонными ответами и две группы метрик. Поиск меряется Precision@K и Recall@K: дошёл ли нужный фрагмент до контекста вообще. Генерация меряется faithfulness и groundedness: не сказала ли модель того, чего в источниках не было. Обе группы нужны, потому что ломаются они по-разному: поиск может принести правильный фрагмент, а модель всё равно допишет от себя.</p>
+<p><b>Главный вывод из практики.</b> Девять из десяти жалоб «RAG врёт» на деле означают, что нужный фрагмент не попал в контекст. Прежде чем менять модель или переписывать промпт, посмотри, что вообще пришло в контекст. Обычно там сразу видно ответ.</p></div>
+          <div class="en"><p>RAG comes together in an evening and works badly. To make it work well, you need to know at which step the quality leaks out. Here it is step by step, ordered by impact.</p>
+<p><b>1. Document preparation — this is where most of it is lost.</b> Not text, but sources. A PDF dumped into flat text loses table structure, and the model starts gluing rows from different columns together. Section headings must travel with their chunks, otherwise a chunk reading “four M6 bolts required” means nothing detached from the section “Rear panel mounting”.</p>
+<p><b>2. Chunking.</b> The tutorial default is 1000 characters with 200 of overlap. That works right up until the first table. I split on meaning: section, subsection, list item. A chunk should be self-contained enough that a person reading it out of context understands what it is about. If they don&#x27;t, the model won&#x27;t either.</p>
+<p><b>3. Retrieval.</b> Vector search alone fails on exact matches: part numbers, error codes, field names. A hybrid of vector and full-text search fixes almost all of it. If you&#x27;re on PostgreSQL, both kinds of search live in the same database.</p>
+<p><b>4. Reranking.</b> Pull twenty candidates, reorder them with a separate model, put the best five into context. The cheapest step of all, and almost always a visible gain.</p>
+<p><b>5. Generation.</b> The system message says it plainly: answer only from the sources, and if the answer isn&#x27;t there, say so. Plus a requirement to name the chunk the answer came from. Citations aren&#x27;t decoration: they let a person verify in ten seconds whether the model made it up.</p>
+<p><b>How to know it got better.</b> By eye, you can&#x27;t. You need a set of fifty real questions with reference answers and two groups of metrics. Retrieval is measured by Precision@K and Recall@K: did the right chunk reach the context at all. Generation is measured by faithfulness and groundedness: did the model state something the sources didn&#x27;t. You need both, because they break differently: retrieval can deliver the right chunk and the model will still embellish.</p>
+<p><b>The main lesson from practice.</b> Nine complaints out of ten that “RAG lies” actually mean the right chunk never made it into context. Before swapping models or rewriting the prompt, look at what actually arrived in the context. The answer is usually right there.</p></div>
+        </div>
+        <button class="jmore" data-t="t16">
+          <span class="ru">Читать целиком</span><span class="en">Read in full</span>
+          <span class="chev">▾</span>
+        </button>
+      </div>
+    </article>
+    <article class="jcard rv" data-rub="поле" id="p17">
+      <a class="jcover" href="journal/j17.jpg" data-ru="journal/j17.jpg" data-en="journal/j17e.jpg" target="_blank" rel="noopener">
+        <img src="journal/j17.jpg" data-ru="journal/j17.jpg" data-en="journal/j17e.jpg" alt="" width="1200" height="630" loading="lazy" decoding="async">
+      </a>
+      <div class="jbody">
+        <div class="jmeta">
+          <span class="jrub"><span class="ru">// поле</span><span class="en">// field</span></span>
+          <span class="jdate"><span class="ru">11 сентября</span><span class="en">Sep 11</span></span>
+          
+          <a class="jperm" href="journal/post-17.html"><span class="ru">страница ↗</span><span class="en">page ↗</span></a>
+        </div>
+        <h2 class="jtitle"><a href="journal/post-17.html"><span class="ru">Почему я держу векторы в PostgreSQL</span><span class="en">Why I keep vectors in PostgreSQL</span></a></h2>
+        <div class="jtext" id="t17">
+          <div class="ru"><p>Стандартный совет для RAG: поставь векторную базу. Я почти всегда этого не делаю и держу векторы в том же PostgreSQL, где лежит всё остальное.</p>
+<p>Причина не в производительности. На объёмах внутренней базы знаний компании — десятки тысяч фрагментов, а не десятки миллионов — специализированная база не даёт выигрыша, который бы почувствовал пользователь.</p>
+<p>Причина в том, что отдельная база это отдельная сущность в инфраструктуре. Её надо разворачивать, обновлять, бэкапить, мониторить и синхронизировать с основной. Появляется класс ошибок «документ удалён в основной базе, но остался в векторной», и его надо специально ловить. Когда всё в одной базе, удаление документа удаляет и его векторы одной транзакцией.</p>
+<p>Вторая причина — гибридный поиск. Полнотекстовый поиск и векторный в одной базе объединяются одним запросом. Когда базы разные, приходится тянуть два набора результатов в приложение и сливать их руками.</p>
+<p><b>Когда отдельная база оправдана.</b> Когда фрагментов миллионы и латентность поиска стала заметной. Когда нужны фильтры по метаданным такой сложности, что запрос перестаёт укладываться в голову. Когда команда уже эксплуатирует такую базу для других задач и умеет это делать.</p>
+<p>Я пользовался ChromaDB и не имею к ней претензий — для прототипа она разворачивается за минуту. Вопрос в том, что прототип потом живёт в проде годами, и каждая лишняя движущаяся часть в нём стоит времени.</p></div>
+          <div class="en"><p>The standard RAG advice is to add a vector database. I almost never do, and keep vectors in the same PostgreSQL that holds everything else.</p>
+<p>The reason isn&#x27;t performance. At the scale of a company&#x27;s internal knowledge base — tens of thousands of chunks, not tens of millions — a specialised database gives no advantage a user would notice.</p>
+<p>The reason is that a separate database is a separate thing in your infrastructure. It has to be deployed, upgraded, backed up, monitored and kept in sync with the main one. A whole class of bugs appears — “document deleted in the main database, still present in the vector one” — and you have to hunt it deliberately. When everything is in one database, deleting a document deletes its vectors in the same transaction.</p>
+<p>The second reason is hybrid search. Full-text and vector search in one database combine in a single query. With two databases you pull two result sets into the application and merge them by hand.</p>
+<p><b>When a separate database is justified.</b> When you have millions of chunks and search latency has become noticeable. When you need metadata filters complex enough that the query stops fitting in your head. When the team already runs one for other work and knows how.</p>
+<p>I&#x27;ve used ChromaDB and have no complaints about it — for a prototype it stands up in a minute. The catch is that prototypes then live in production for years, and every extra moving part costs time.</p></div>
+        </div>
+        <button class="jmore" data-t="t17">
+          <span class="ru">Читать целиком</span><span class="en">Read in full</span>
+          <span class="chev">▾</span>
+        </button>
+      </div>
+    </article>
+    <article class="jcard rv" data-rub="инструмент" id="p18">
+      <a class="jcover" href="journal/j18.jpg" data-ru="journal/j18.jpg" data-en="journal/j18e.jpg" target="_blank" rel="noopener">
+        <img src="journal/j18.jpg" data-ru="journal/j18.jpg" data-en="journal/j18e.jpg" alt="" width="1200" height="630" loading="lazy" decoding="async">
+      </a>
+      <div class="jbody">
+        <div class="jmeta">
+          <span class="jrub"><span class="ru">// инструмент</span><span class="en">// tool</span></span>
+          <span class="jdate"><span class="ru">14 сентября</span><span class="en">Sep 14</span></span>
+          
+          <a class="jperm" href="journal/post-18.html"><span class="ru">страница ↗</span><span class="en">page ↗</span></a>
+        </div>
+        <h2 class="jtitle"><a href="journal/post-18.html"><span class="ru">Redis в ИИ-сервисе нужен не для кеша</span><span class="en">Redis in an AI service isn&#x27;t there for caching</span></a></h2>
+        <div class="jtext" id="t18">
+          <div class="ru"><p>Redis обычно ставят как кеш и на этом останавливаются. В сервисе поверх LLM у него есть три работы поважнее.</p>
+<p><b>Дедупликация.</b> Внешние системы любят прислать одно и то же событие дважды. Заявка приходит по вебхуку, вебхук ретраится, и сервис честно обрабатывает её второй раз: второй вызов модели, второе назначение исполнителя, второе уведомление. Ключ с идентификатором события и коротким сроком жизни закрывает вопрос в три строки.</p>
+<p><b>Ограничение параллелизма.</b> У модели есть предел, за которым она начинает отвечать медленнее или отдавать ошибки. Счётчик активных запросов в Redis позволяет держать очередь на уровне сервиса, а не надеяться на провайдера. Лучше подождать в очереди двести миллисекунд, чем получить таймаут.</p>
+<p><b>Кеш ответов, но по смыслу, а не по строке.</b> Обычный кеш по точному тексту запроса в реальной жизни почти не срабатывает: люди формулируют по-разному. А вот кеш по нормализованному запросу или по хешу подобранного контекста попадает часто — особенно там, где сотрудники спрашивают об одном и том же в разных словах.</p>
+<p><b>Чего я в Redis не кладу.</b> Ничего, что нельзя потерять. Это память, и она может исчезнуть. Состояние диалога, историю обработки, всё, за что придётся отчитываться — в PostgreSQL. Redis для того, что можно пересчитать.</p>
+<p>Побочный эффект, которого я не ожидал: счётчики в Redis оказались лучшей телеметрией на старте. Сколько запросов пришло, сколько попало в кеш, сколько ушло в ретрай — видно до того, как настроен нормальный мониторинг.</p></div>
+          <div class="en"><p>Redis usually gets added as a cache and that&#x27;s where it stops. In a service built on an LLM it has three more important jobs.</p>
+<p><b>Deduplication.</b> External systems love sending the same event twice. A ticket arrives by webhook, the webhook retries, and your service dutifully processes it a second time: second model call, second assignment, second notification. A key holding the event id with a short TTL closes this in three lines.</p>
+<p><b>Concurrency limiting.</b> Every model has a ceiling past which it slows down or starts erroring. A counter of in-flight requests in Redis lets you queue at the service level instead of hoping the provider handles it. Better to wait two hundred milliseconds in a queue than to eat a timeout.</p>
+<p><b>A response cache, but keyed by meaning rather than by string.</b> A plain cache on exact request text almost never hits in real life: people phrase things differently. A cache keyed on a normalised query, or on a hash of the retrieved context, hits often — especially where staff ask the same thing in different words.</p>
+<p><b>What I don&#x27;t put in Redis.</b> Anything I can&#x27;t afford to lose. It&#x27;s memory, and memory can vanish. Conversation state, processing history, anything you&#x27;ll have to account for later goes in PostgreSQL. Redis is for what can be recomputed.</p>
+<p>An unexpected side effect: the Redis counters turned out to be the best telemetry early on. How many requests arrived, how many hit cache, how many went to retry — all visible before proper monitoring exists.</p></div>
+        </div>
+        <button class="jmore" data-t="t18">
+          <span class="ru">Читать целиком</span><span class="en">Read in full</span>
+          <span class="chev">▾</span>
+        </button>
+      </div>
+    </article>
+    <article class="jcard rv" data-rub="цифра" id="p19">
+      <a class="jcover" href="journal/j19.jpg" data-ru="journal/j19.jpg" data-en="journal/j19e.jpg" target="_blank" rel="noopener">
+        <img src="journal/j19.jpg" data-ru="journal/j19.jpg" data-en="journal/j19e.jpg" alt="" width="1200" height="630" loading="lazy" decoding="async">
+      </a>
+      <div class="jbody">
+        <div class="jmeta">
+          <span class="jrub"><span class="ru">// цифра</span><span class="en">// num</span></span>
+          <span class="jdate"><span class="ru">16 сентября</span><span class="en">Sep 16</span></span>
+          
+          <a class="jperm" href="journal/post-19.html"><span class="ru">страница ↗</span><span class="en">page ↗</span></a>
+        </div>
+        <h2 class="jtitle"><a href="journal/post-19.html"><span class="ru">85% — это не точность модели</span><span class="en">85% is not the model&#x27;s accuracy</span></a></h2>
+        <div class="jtext" id="t19">
+          <div class="ru"><p>Когда я говорю, что автодополнение заявок работает с точностью 85%, это цифра не про модель. Это цифра про систему на конкретной выборке конкретной компании.</p>
+<p>За ней стоит скучная работа. Двести реальных заявок, размеченных человеком: что именно в них не хватало и чем это следовало дополнить. Разметка заняла больше времени, чем разработка первой версии сервиса, и была самой полезной частью проекта.</p>
+<p>Дальше начинается то, о чём обычно не пишут. Нужен базовый уровень для сравнения. У нас он был такой: если дополнять поле самым частым значением, не глядя на текст, попадаешь примерно в четверти случаев. Вот от этой отметки и надо считать, а не от нуля. Разница между 25% и 85% — это ценность решения. Само по себе число 85 не значит ничего.</p>
+<p>Второе: у ошибок разная цена. Ошибиться в поле «приоритет» — неприятно. Ошибиться в поле «объект» — заявка уедет не в тот филиал, и её найдут через сутки. Поэтому общая точность врёт: считать надо по полям и решать отдельно, где сервис имеет право дополнять сам, а где обязан спросить.</p>
+<p><b>Что с этим делать.</b> Когда тебе называют точность внедрения, спрашивай три вещи: на какой выборке, с чем сравнивали и как распределены ошибки. Если на все три вопроса нет ответа, цифра нарисована.</p></div>
+          <div class="en"><p>When I say ticket auto-completion runs at 85% accuracy, that number isn&#x27;t about the model. It&#x27;s about the system, on one specific sample, at one specific company.</p>
+<p>Behind it sits unglamorous work. Two hundred real tickets labelled by a human: what exactly was missing from each, and what should have filled it. Labelling took longer than building the first version of the service, and was the most useful part of the project.</p>
+<p>Then comes the part nobody writes about. You need a baseline to compare against. Ours was this: filling a field with its most common value, without reading the text at all, is right roughly a quarter of the time. That&#x27;s the mark to measure from, not zero. The distance between 25% and 85% is the value of the solution. The number 85 on its own means nothing.</p>
+<p>Second: errors have different costs. Getting “priority” wrong is annoying. Getting “site” wrong sends the ticket to the wrong branch and it surfaces a day later. So overall accuracy lies: measure per field, and decide separately where the service may fill in on its own and where it must ask.</p>
+<p><b>What to do with this.</b> When someone quotes you an accuracy figure, ask three things: on what sample, compared against what, and how the errors are distributed. If there&#x27;s no answer to all three, the number is decorative.</p></div>
+        </div>
+        <button class="jmore" data-t="t19">
+          <span class="ru">Читать целиком</span><span class="en">Read in full</span>
+          <span class="chev">▾</span>
+        </button>
+      </div>
+    </article>
+    <article class="jcard rv" data-rub="разбор" id="p20">
+      <a class="jcover" href="journal/j20.jpg" data-ru="journal/j20.jpg" data-en="journal/j20e.jpg" target="_blank" rel="noopener">
+        <img src="journal/j20.jpg" data-ru="journal/j20.jpg" data-en="journal/j20e.jpg" alt="" width="1200" height="630" loading="lazy" decoding="async">
+      </a>
+      <div class="jbody">
+        <div class="jmeta">
+          <span class="jrub"><span class="ru">// разбор</span><span class="en">// case</span></span>
+          <span class="jdate"><span class="ru">18 сентября</span><span class="en">Sep 18</span></span>
+          
+          <a class="jperm" href="journal/post-20.html"><span class="ru">страница ↗</span><span class="en">page ↗</span></a>
+        </div>
+        <h2 class="jtitle"><a href="journal/post-20.html"><span class="ru">Почему я тяну на Docker Compose до последнего</span><span class="en">Why I stay on Docker Compose as long as I can</span></a></h2>
+        <div class="jtext" id="t20">
+          <div class="ru"><p>Меня регулярно спрашивают, почему внутренний сервис живёт на Docker Compose, а не в Kubernetes. Отвечаю развёрнуто, потому что вопрос не про технологию, а про то, кто это потом эксплуатирует.</p>
+<p><b>Что реально нужно внутреннему сервису.</b> Он обрабатывает поток, измеряемый сотнями запросов в час, а не десятками тысяч в секунду. Он не должен переживать отказ дата-центра, потому что вся компания в этот момент тоже не работает. Ему нужно подняться после перезагрузки сервера, писать логи и обновляться без часа простоя. Compose это умеет.</p>
+<p><b>Что даёт Kubernetes.</b> Автомасштабирование, самовосстановление, декларативные выкатки, изоляцию по неймспейсам. Всё это настоящие вещи, и в определённый момент они становятся необходимыми.</p>
+<p><b>Что Kubernetes стоит.</b> Кластер надо кому-то администрировать. Обновлять, чинить сеть, разбираться, почему под не поднимается. Если в компании нет платформенной команды, эта работа падает на того, кто внедрял, то есть на меня — и вместо новых внедрений я занимаюсь кластером. Для бизнеса это прямой убыток: он платил за автоматизацию процессов, а получил инженера на поддержке инфраструктуры.</p>
+<p><b>Мои признаки, что пора.</b> Сервисов стало больше трёх и они начали зависеть друг от друга. Нагрузка неровная настолько, что ручное масштабирование не успевает. Требуется выкатка без простоя, потому что сервисом пользуются круглосуточно. Появилась команда, для которой кластер — рабочий инструмент, а не личный проект.</p>
+<p>Пока ни один из признаков не сработал, каждый час, вложенный в Kubernetes, — это час, не вложенный в то, за что платят. Я сейчас изучаю его как раз потому, что вижу, как приближается первый признак. Но изучать заранее и внедрять заранее — разные вещи.</p></div>
+          <div class="en"><p>I get asked regularly why an internal service runs on Docker Compose rather than Kubernetes. I&#x27;ll answer at length, because the question isn&#x27;t about technology, it&#x27;s about who operates the thing afterwards.</p>
+<p><b>What an internal service actually needs.</b> It handles hundreds of requests an hour, not tens of thousands a second. It doesn&#x27;t need to survive a data-centre failure, because when that happens the whole company is down anyway. It needs to come back after a server reboot, write logs, and update without an hour of downtime. Compose does all of that.</p>
+<p><b>What Kubernetes gives you.</b> Autoscaling, self-healing, declarative rollouts, namespace isolation. These are real things, and at some point they become necessary.</p>
+<p><b>What Kubernetes costs.</b> Someone has to run the cluster. Upgrade it, fix networking, work out why a pod won&#x27;t start. If the company has no platform team, that work lands on whoever built the service — me — and instead of new rollouts I&#x27;m nursing a cluster. For the business that&#x27;s a straight loss: they paid for process automation and got an engineer doing infrastructure support.</p>
+<p><b>My signals that it&#x27;s time.</b> More than three services that have started depending on each other. Load uneven enough that manual scaling can&#x27;t keep up. A need for zero-downtime deploys because the service is used around the clock. A team for whom the cluster is a work tool rather than a personal project.</p>
+<p>Until one of those fires, every hour spent on Kubernetes is an hour not spent on what people are paying for. I&#x27;m learning it right now precisely because I can see the first signal approaching. But learning early and adopting early are different things.</p></div>
+        </div>
+        <button class="jmore" data-t="t20">
+          <span class="ru">Читать целиком</span><span class="en">Read in full</span>
+          <span class="chev">▾</span>
+        </button>
+      </div>
+    </article>
+    <article class="jcard rv" data-rub="мнение" id="p21">
+      <a class="jcover" href="journal/j21.jpg" data-ru="journal/j21.jpg" data-en="journal/j21e.jpg" target="_blank" rel="noopener">
+        <img src="journal/j21.jpg" data-ru="journal/j21.jpg" data-en="journal/j21e.jpg" alt="" width="1200" height="630" loading="lazy" decoding="async">
+      </a>
+      <div class="jbody">
+        <div class="jmeta">
+          <span class="jrub"><span class="ru">// мнение</span><span class="en">// take</span></span>
+          <span class="jdate"><span class="ru">21 сентября</span><span class="en">Sep 21</span></span>
+          
+          <a class="jperm" href="journal/post-21.html"><span class="ru">страница ↗</span><span class="en">page ↗</span></a>
+        </div>
+        <h2 class="jtitle"><a href="journal/post-21.html"><span class="ru">Промпт — не код, но версионировать его надо как код</span><span class="en">A prompt isn&#x27;t code, but it needs versioning like code</span></a></h2>
+        <div class="jtext" id="t21">
+          <div class="ru"><p>Промпты живут в самых неожиданных местах: в переписке, в заметках, в комментарии к тикету, в лучшем случае в константе посреди файла. Потом кто-то правит одну формулировку, качество падает, и никто не может сказать, что именно изменилось.</p>
+<p>Мой минимум, который окупается на первой же неделе.</p>
+<p>Промпт лежит в отдельном файле в репозитории и попадает в код через загрузку, а не через копипаст. Значит, у него есть история изменений, и на вопрос «когда это сломалось» отвечает <code>git log</code>.</p>
+<p>У промпта есть версия, и она пишется в лог вместе с ответом модели. Когда через месяц смотришь на странный ответ в логах, ты знаешь, каким промптом он был получен.</p>
+<p>Есть тестовая выборка: тридцать-пятьдесят реальных примеров с ожидаемым результатом. Правка промпта прогоняется по ней до того, как уедет в прод. Это не юнит-тесты, результат вероятностный, но падение с 85% до 60% видно сразу.</p>
+<p><b>Отдельно про смену модели.</b> Промпт, отлаженный под одну модель, на другой работает иначе — иногда лучше, иногда заметно хуже. Обновление модели это не обновление зависимости, а изменение поведения системы, и прогонять выборку нужно так же, как при правке промпта. Я на этом обжигался: обновил модель на более свежую, качество на части сценариев просело, и без выборки я бы это заметил по жалобам пользователей.</p>
+<p>И то, чего делать не надо: превращать промпт в километровый документ с двадцатью правилами. Каждое добавленное правило слегка размывает остальные. Если промпт разросся, обычно это значит, что задачу надо разбить на два вызова, а не дописать ещё абзац.</p></div>
+          <div class="en"><p>Prompts live in the strangest places: in chat threads, in notes, in a ticket comment, at best in a constant halfway down a file. Then someone edits one sentence, quality drops, and nobody can say what changed.</p>
+<p>My minimum, which pays for itself in the first week.</p>
+<p>The prompt sits in its own file in the repository and reaches the code by being loaded, not pasted. Which means it has a change history, and “when did this break” is answered by <code>git log</code>.</p>
+<p>The prompt has a version, and that version is logged next to the model&#x27;s response. When you look at a strange answer in the logs a month later, you know which prompt produced it.</p>
+<p>There&#x27;s a test set: thirty to fifty real examples with expected results. Any prompt edit runs against it before shipping. These aren&#x27;t unit tests, the output is probabilistic, but a drop from 85% to 60% is immediately visible.</p>
+<p><b>On changing models specifically.</b> A prompt tuned for one model behaves differently on another — sometimes better, sometimes markedly worse. A model upgrade is not a dependency bump, it is a change in system behaviour, and it needs the same test run as a prompt edit. I&#x27;ve been burned: I moved to a newer model, quality sagged on part of the scenarios, and without the test set I&#x27;d have found out through user complaints.</p>
+<p>And what not to do: turn the prompt into a kilometre-long document with twenty rules. Every rule you add slightly dilutes the others. If a prompt has sprawled, it usually means the task should be split into two calls rather than given another paragraph.</p></div>
+        </div>
+        <button class="jmore" data-t="t21">
+          <span class="ru">Читать целиком</span><span class="en">Read in full</span>
+          <span class="chev">▾</span>
+        </button>
+      </div>
+    </article>
+    <article class="jcard rv" data-rub="поле" id="p22">
+      <a class="jcover" href="journal/j22.jpg" data-ru="journal/j22.jpg" data-en="journal/j22e.jpg" target="_blank" rel="noopener">
+        <img src="journal/j22.jpg" data-ru="journal/j22.jpg" data-en="journal/j22e.jpg" alt="" width="1200" height="630" loading="lazy" decoding="async">
+      </a>
+      <div class="jbody">
+        <div class="jmeta">
+          <span class="jrub"><span class="ru">// поле</span><span class="en">// field</span></span>
+          <span class="jdate"><span class="ru">23 сентября</span><span class="en">Sep 23</span></span>
+          
+          <a class="jperm" href="journal/post-22.html"><span class="ru">страница ↗</span><span class="en">page ↗</span></a>
+        </div>
+        <h2 class="jtitle"><a href="journal/post-22.html"><span class="ru">Как я проверяю цифры, которые называет модель</span><span class="en">How I check the numbers a model gives me</span></a></h2>
+        <div class="jtext" id="t22">
+          <div class="ru"><p>Модель уверенно ошибается в мелочах, и именно мелочи ломают прод. Самая опасная категория — числа: они выглядят убедительно и не вызывают подозрений.</p>
+<p>Моё правило простое: <b>любое число, которое влияет на решение, должно быть вычислено, а не сгенерировано.</b></p>
+<p>На практике это значит, что модель не считает. Она достаёт исходные данные и говорит, что с ними сделать, а арифметику выполняет код. Если нужно сложить остатки по складам, модель определяет, какие склады имелись в виду, а сумму считает база. Разница принципиальная: база не ошибается в сложении никогда, модель — иногда.</p>
+<p>Второе место, где числа врут, — пересказ документа. Модель пересказывает таблицу и меняет местами колонки, особенно если в исходнике они шли не в том порядке, в котором о них спрашивают. Лечится требованием цитировать исходный фрагмент рядом с ответом: человек за секунду видит расхождение.</p>
+<p>Третье — единицы измерения. Часы и минуты, рубли и тысячи рублей, штуки и упаковки. Модель редко ошибается в самом числе и регулярно ошибается в том, чего оно. Если в предметной области есть единицы, они должны быть отдельным полем в схеме ответа, а не частью строки.</p>
+<p><b>Что я делаю, когда проверить нельзя.</b> Иногда данных для проверки просто нет. Тогда сервис обязан пометить ответ как непроверенный и показать это пользователю. Плохо не то, что система чего-то не знает. Плохо, когда она об этом молчит.</p></div>
+          <div class="en"><p>Models are confidently wrong about small things, and small things are what break production. The most dangerous category is numbers: they look convincing and raise no suspicion.</p>
+<p>My rule is simple: <b>any number that affects a decision must be computed, not generated.</b></p>
+<p>In practice that means the model doesn&#x27;t do arithmetic. It fetches the source data and says what to do with it; the code does the maths. If stock levels across warehouses need adding up, the model works out which warehouses were meant and the database does the sum. The difference is fundamental: a database never gets addition wrong, a model sometimes does.</p>
+<p>The second place numbers lie is document summarisation. A model restates a table and swaps the columns, especially when the source order differs from the order asked about. The cure is requiring the source fragment to be quoted next to the answer: a person spots the mismatch in a second.</p>
+<p>The third is units. Hours and minutes, roubles and thousands of roubles, items and packs. A model rarely gets the number itself wrong and regularly gets wrong what it is a number of. If your domain has units, they belong in their own field in the response schema, not inside a string.</p>
+<p><b>What I do when checking isn&#x27;t possible.</b> Sometimes there simply is no data to verify against. Then the service must mark the answer as unverified and show that to the user. A system not knowing something isn&#x27;t the problem. A system staying quiet about it is.</p></div>
+        </div>
+        <button class="jmore" data-t="t22">
+          <span class="ru">Читать целиком</span><span class="en">Read in full</span>
+          <span class="chev">▾</span>
+        </button>
+      </div>
+    </article>
+    <article class="jcard rv" data-rub="инструмент" id="p23">
+      <a class="jcover" href="journal/j23.jpg" data-ru="journal/j23.jpg" data-en="journal/j23e.jpg" target="_blank" rel="noopener">
+        <img src="journal/j23.jpg" data-ru="journal/j23.jpg" data-en="journal/j23e.jpg" alt="" width="1200" height="630" loading="lazy" decoding="async">
+      </a>
+      <div class="jbody">
+        <div class="jmeta">
+          <span class="jrub"><span class="ru">// инструмент</span><span class="en">// tool</span></span>
+          <span class="jdate"><span class="ru">25 сентября</span><span class="en">Sep 25</span></span>
+          
+          <a class="jperm" href="journal/post-23.html"><span class="ru">страница ↗</span><span class="en">page ↗</span></a>
+        </div>
+        <h2 class="jtitle"><a href="journal/post-23.html"><span class="ru">Локальная модель: сколько на самом деле нужно железа</span><span class="en">Local models: how much hardware you actually need</span></a></h2>
+        <div class="jtext" id="t23">
+          <div class="ru"><p>Вопрос «потянет ли моя видеокарта» звучит чаще любого другого, и ответ на него проще, чем кажется.</p>
+<p><b>Считается по памяти видеокарты.</b> Модель на 7 миллиардов параметров в квантизации 4 бита занимает примерно 4-5 гигабайт. На 14 миллиардах — около 9. Модели, где параметров десятки миллиардов, на одной потребительской карте не живут, им нужен сервер. Плюс запас на контекст: чем длиннее диалог и чем больше фрагментов ты подкладываешь в RAG, тем больше памяти уходит сверх самой модели, и на длинных контекстах это добавляет заметно.</p>
+<p><b>Что даёт квантизация.</b> Это сжатие весов ценой небольшой потери качества. Между 4 и 8 битами разница в качестве обычно небольшая, а в памяти — двукратная. Ниже 4 бит начинается заметная деградация. Начинать стоит с 4 бит и повышать, только если качество не устраивает и память позволяет.</p>
+<p><b>Что происходит без видеокарты.</b> Модель запустится на процессоре и будет отвечать в разы медленнее. Для фонового разбора очереди, где никто не ждёт ответа в реальном времени, это иногда приемлемо. Для чата с сотрудником — нет.</p>
+<p><b>Чего я не ожидал в первый раз.</b> Скорость упирается не только в вычисления, но и в пропускную способность памяти: модель на каждый токен читает все свои веса. Поэтому карта с меньшим числом ядер, но более быстрой памятью может оказаться быстрее на генерации, чем более «мощная» по бумажным характеристикам.</p>
+<p><b>Практический вывод.</b> Прежде чем закупать железо, прогоните реальную задачу на арендованной машине сутки. Требования к памяти считаются на бумаге, а вот приемлемая скорость ответа выясняется только на живом потоке.</p></div>
+          <div class="en"><p>“Will my graphics card handle it” gets asked more than anything else, and the answer is simpler than it looks.</p>
+<p><b>It comes down to video memory.</b> A 7-billion-parameter model at 4-bit quantisation takes roughly 4-5 GB. At 14 billion, about 9. Models with tens of billions of parameters don&#x27;t live on a single consumer card; they need a server. Then add headroom for context: the longer the conversation and the more chunks you feed a RAG system, the more memory goes on top of the model itself, and on long contexts that adds up noticeably.</p>
+<p><b>What quantisation buys you.</b> It compresses the weights at the cost of a small quality loss. Between 4 and 8 bits the quality difference is usually small while the memory difference is double. Below 4 bits degradation becomes obvious. Start at 4 bits and go up only if quality disappoints and memory allows.</p>
+<p><b>What happens without a GPU.</b> The model will run on the CPU and answer several times slower. For background processing of a queue, where nobody is waiting on a live answer, that&#x27;s sometimes acceptable. For a chat with an employee, it isn&#x27;t.</p>
+<p><b>What surprised me the first time.</b> Speed is bounded not only by compute but by memory bandwidth: the model reads all of its weights for every token. So a card with fewer cores but faster memory can generate faster than one that looks stronger on paper.</p>
+<p><b>The practical takeaway.</b> Before buying hardware, run the real workload on a rented machine for a day. Memory requirements can be worked out on paper; acceptable response speed only reveals itself on live traffic.</p></div>
+        </div>
+        <button class="jmore" data-t="t23">
+          <span class="ru">Читать целиком</span><span class="en">Read in full</span>
+          <span class="chev">▾</span>
+        </button>
+      </div>
+    </article>
+    <article class="jcard rv" data-rub="разбор" id="p24">
+      <a class="jcover" href="journal/j24.jpg" data-ru="journal/j24.jpg" data-en="journal/j24e.jpg" target="_blank" rel="noopener">
+        <img src="journal/j24.jpg" data-ru="journal/j24.jpg" data-en="journal/j24e.jpg" alt="" width="1200" height="630" loading="lazy" decoding="async">
+      </a>
+      <div class="jbody">
+        <div class="jmeta">
+          <span class="jrub"><span class="ru">// разбор</span><span class="en">// case</span></span>
+          <span class="jdate"><span class="ru">28 сентября</span><span class="en">Sep 28</span></span>
+          
+          <a class="jperm" href="journal/post-24.html"><span class="ru">страница ↗</span><span class="en">page ↗</span></a>
+        </div>
+        <h2 class="jtitle"><a href="journal/post-24.html"><span class="ru">CI/CD для сервиса с моделью внутри</span><span class="en">CI/CD for a service with a model inside it</span></a></h2>
+        <div class="jtext" id="t24">
+          <div class="ru"><p>Обычный пайплайн проверяет, что код собирается и тесты зелёные. Для сервиса, внутри которого языковая модель, этого мало: код может быть исправен, а сервис при этом отвечать хуже, чем вчера. Разбираю, что я добавляю к обычному конвейеру.</p>
+<p><b>Обычная часть, без неё нельзя.</b> Линтер, типы, юнит-тесты на всё, что не связано с моделью: парсинг, работа с базой, интеграция с внешним API. Эта часть большая — в реальном сервисе кода вокруг модели заметно больше, чем кода вызова модели.</p>
+<p><b>Первое, что добавляется: контрактные тесты на вызовы модели.</b> Ответ модели подменяется заглушкой, и проверяется, что сервис правильно обрабатывает валидный ответ, невалидный JSON, таймаут и отказ по лимиту. Эти тесты быстрые, не требуют модели и ловят большую часть аварий в проде. Их почти никто не пишет.</p>
+<p><b>Второе: регрессия на выборке.</b> Тридцать-пятьдесят реальных примеров с эталонными ответами прогоняются на настоящей модели. Считается доля попаданий и сравнивается с предыдущим значением, которое хранится в репозитории. Падение больше порога — пайплайн красный. Прогон стоит денег и времени, поэтому он запускается не на каждый коммит, а на ветке перед слиянием.</p>
+<p><b>Третье: закрепление версии модели.</b> Версия модели указана явно и меняется отдельным коммитом. Плавающий тег вроде <code>latest</code> означает, что однажды утром сервис начнёт вести себя иначе без единого изменения в коде — и ты будешь искать причину в своём коде.</p>
+<p><b>Четвёртое: деплой на staging и дым-тест на живой модели.</b> Один реальный запрос через весь путь: API, поиск, модель, запись в базу. Ловит всё, что связано с окружением, — от неверного ключа до недоступного хоста.</p>
+<p><b>Сколько это дало.</b> На проекте с системой учёта времени обычный конвейер — линтинг, автотесты, деплой на staging — сократил время интеграции изменений вдвое. Регрессионная часть до этого проекта не относится, но эффект от неё того же порядка: она убирает страх трогать промпт, а страх трогать код стоит дороже любого прогона.</p></div>
+          <div class="en"><p>A normal pipeline checks that the code builds and the tests are green. For a service with a language model inside, that isn&#x27;t enough: the code can be fine while the service answers worse than it did yesterday. Here&#x27;s what I add to the usual conveyor.</p>
+<p><b>The ordinary part, which you can&#x27;t skip.</b> Linting, types, unit tests on everything unrelated to the model: parsing, database work, external API integration. This part is large — in a real service there is considerably more code around the model than code that calls it.</p>
+<p><b>First addition: contract tests on model calls.</b> The model&#x27;s response is stubbed, and you check that the service handles a valid response, invalid JSON, a timeout and a rate-limit refusal. These tests are fast, need no model, and catch most production incidents. Almost nobody writes them.</p>
+<p><b>Second: regression on a test set.</b> Thirty to fifty real examples with reference answers run against the actual model. You compute the hit rate and compare it to the previous value stored in the repository. A drop beyond a threshold turns the pipeline red. The run costs money and time, so it doesn&#x27;t fire on every commit — it runs on the branch before merge.</p>
+<p><b>Third: pinning the model version.</b> The model version is explicit and changes in its own commit. A floating tag like <code>latest</code> means that one morning your service starts behaving differently with no change in the code — and you&#x27;ll go looking for the cause in your code.</p>
+<p><b>Fourth: deploy to staging plus a smoke test against the live model.</b> One real request through the whole path: API, retrieval, model, database write. It catches everything environmental, from a wrong key to an unreachable host.</p>
+<p><b>What it bought.</b> On the time-tracking project the ordinary pipeline — lint, tests, staging deploy — cut change integration time in half. The regression part didn&#x27;t apply to that project, but its effect is of the same order: it removes the fear of touching the prompt, and fear of touching code costs more than any test run.</p></div>
+        </div>
+        <button class="jmore" data-t="t24">
+          <span class="ru">Читать целиком</span><span class="en">Read in full</span>
+          <span class="chev">▾</span>
+        </button>
+      </div>
+    </article>
   </div>
   <p class="jempty" id="jempty" style="display:none">// <span class="ru">в этой рубрике пока пусто</span><span class="en">nothing here yet</span></p>
 
@@ -1187,5 +1521,7 @@ footer a:hover{color:var(--acc)}
   } else { glow.style.display='none'; }
 })();
 </script>
+<!-- Cloudflare Web Analytics: inert until a real site token is set -->
+<script>(function(){var T="__CF_ANALYTICS_TOKEN__";if(!/^[a-f0-9]{32}$/.test(T))return;var s=document.createElement("script");s.type="module";s.defer=true;s.src="https://static.cloudflareinsights.com/beacon.min.js";s.setAttribute("data-cf-beacon",JSON.stringify({token:T}));document.head.appendChild(s);})();</script>
 </body>
 </html>
