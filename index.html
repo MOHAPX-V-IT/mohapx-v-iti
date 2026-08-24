@@ -196,13 +196,6 @@ p{color:var(--dim);text-wrap:pretty}
 .muted{color:var(--dim);max-width:65ch}
 .muted + .muted{margin-top:16px}
 .accent{color:var(--acc)}
-.rdct{
-  font-family:var(--mono);font-size:.94em;letter-spacing:.02em;
-  color:transparent;background:var(--tx);border-radius:3px;padding:1px 4px;
-  user-select:none;cursor:help;position:relative;top:-1px;
-  transition:box-shadow .3s var(--ease), background .3s var(--ease)
-}
-.rdct:hover{box-shadow:0 0 0 2px color-mix(in srgb,var(--acc) 45%,transparent);background:var(--acc)}
 .cip{color:var(--acc);font-family:var(--mono);letter-spacing:.08em}
 
 /* ============ HERO ============ */
@@ -351,6 +344,10 @@ html[data-theme="light"] .pframe .lines{background:repeating-linear-gradient(to 
 .tli .yr2{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--acc);display:block;margin-bottom:6px}
 .tli h3{margin-bottom:7px}
 .tli p{font-size:15.5px;max-width:66ch}
+.tli .company{
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--acc);margin:-1px 0 8px
+}
 .tli.now::after{
   content:'';position:absolute;left:-31px;top:10px;width:6px;height:6px;border-radius:50%;
   background:var(--acc);animation:pulse 2s infinite
@@ -604,8 +601,8 @@ footer a:hover{color:var(--acc)}
   <h2><span class="ru">Инженер, который начинает<br>раньше, чем код</span><span class="en">An engineer who starts<br>before the code does</span></h2>
 
   <p class="lead">
-    <span class="ru">Алексей Марышев, 22 года, Москва. ИИ-инженер в <span class="rdct" title="скрыто по NDA" aria-label="скрыто по NDA">████████</span>: внедряю искусственный интеллект в бизнес-процессы компании. В IT с 18 лет. Окончил Калужский государственный университет им. К. Э. Циолковского по направлению «Информационные системы и технологии» в 2026 году.</span>
-    <span class="en">Aleksei Maryshev, 22, Moscow. AI Engineer at <span class="rdct" title="redacted under NDA" aria-label="redacted under NDA">████████</span>, where I embed AI into the company's business processes. In IT since 18. Graduated from Tsiolkovsky State University in Information Systems and Technologies in 2026.</span>
+    <span class="ru">Алексей Марышев, 22 года, Москва. ИИ-инженер в ООО «Сэлвим»: внедряю искусственный интеллект в бизнес-процессы компании. В IT с 18 лет. Окончил Калужский государственный университет им. К. Э. Циолковского по направлению «Информационные системы и технологии» в 2026 году.</span>
+    <span class="en">Aleksei Maryshev, 22, Moscow. AI Engineer at Salvim, where I embed AI into the company's business processes. In IT since 18. Graduated from Tsiolkovsky State University in Information Systems and Technologies in 2026.</span>
   </p>
 
   <p class="muted" style="margin-top:26px">
@@ -614,8 +611,8 @@ footer a:hover{color:var(--acc)}
   </p>
 
   <p class="muted">
-    <span class="ru">Она оказалась на стыке трёх: разработки, внедрения и анализа бизнес-процессов. До <span class="rdct" title="скрыто по NDA" aria-label="скрыто по NDA">████████</span> два с половиной года работал как фулстек на себя — вёл проекты полного цикла от сбора требований до production-деплоя, говорил с заказчиками напрямую, сам защищал ТЗ и сам сдавал приёмку. Оттуда привычка отвечать за результат целиком, а не за свой участок.</span>
-    <span class="en">It turned out to sit at the intersection of three: engineering, implementation and business process analysis. Before <span class="rdct" title="redacted under NDA" aria-label="redacted under NDA">████████</span> I spent two and a half years as an independent full-stack developer — running end-to-end projects from requirements to production deployment, negotiating directly with clients, defending my own specs and handling my own acceptance. That's where the habit of owning the whole result, not just my slice of it, comes from.</span>
+    <span class="ru">Она оказалась на стыке трёх: разработки, внедрения и анализа бизнес-процессов. До «Сэлвима» два с половиной года работал как фулстек на себя — вёл проекты полного цикла от сбора требований до production-деплоя, говорил с заказчиками напрямую, сам защищал ТЗ и сам сдавал приёмку. Оттуда привычка отвечать за результат целиком, а не за свой участок.</span>
+    <span class="en">It turned out to sit at the intersection of three: engineering, implementation and business process analysis. Before Salvim I spent two and a half years as an independent full-stack developer — running end-to-end projects from requirements to production deployment, negotiating directly with clients, defending my own specs and handling my own acceptance. That's where the habit of owning the whole result, not just my slice of it, comes from.</span>
   </p>
 
   <p class="muted">
@@ -654,21 +651,25 @@ footer a:hover{color:var(--acc)}
     <div class="tli rv">
       <span class="yr2"><span class="ru">2024</span><span class="en">2024</span></span>
       <h3><span class="ru">IT-специалист в клинике</span><span class="en">IT specialist at a clinic</span></h3>
+      <p class="company"><span class="ru">S Class Clinic · Калуга</span><span class="en">S Class Clinic · Kaluga</span></p>
       <p><span class="ru">Поддержка внутренней рабочей системы и помощь сотрудникам, обязанности системного администратора.</span><span class="en">Supporting the internal working system and its users, covering the sysadmin role.</span></p>
     </div>
     <div class="tli rv">
       <span class="yr2"><span class="ru">2025</span><span class="en">2025</span></span>
       <h3><span class="ru">Проект «Внутренний табель»</span><span class="en">Project “Internal Timesheet”</span></h3>
+      <p class="company"><span class="ru">АО «Алгонт»</span><span class="en">JSC Algont</span></p>
       <p><span class="ru">Корпоративная система учёта времени с нуля. Первая команда из пяти человек, CI/CD — время интеграции изменений сократилось вдвое.</span><span class="en">A corporate time-tracking system from scratch. My first team of five, plus CI/CD — change integration time cut in half.</span></p>
     </div>
     <div class="tli rv">
       <span class="yr2"><span class="ru">2025</span><span class="en">2025</span></span>
       <h3><span class="ru">Проект «Ночной диспетчер»</span><span class="en">Project “Night Dispatcher”</span></h3>
+      <p class="company"><span class="ru">ГК «Самолет»</span><span class="en">Samolet Group</span></p>
       <p><span class="ru">Связка таск-трекера с локальной LLM: 200+ заявок в час, +35% к точности маршрутизации, ночные простои поддержки исчезли.</span><span class="en">A task tracker wired to a local LLM: 200+ tickets an hour, +35% routing accuracy, night-time support backlogs gone.</span></p>
     </div>
     <div class="tli rv">
       <span class="yr2"><span class="ru">2025—2026</span><span class="en">2025—2026</span></span>
       <h3><span class="ru">Проект «Аренда и брони»</span><span class="en">Project “Rent & Bookings”</span></h3>
+      <p class="company"><span class="ru">ООО «Складофф24» · CRM Rentura</span><span class="en">Skladoff24 · Rentura CRM</span></p>
       <p><span class="ru">CRM с ИИ-ассистентом в одиночку: архитектура БД, бэкенд, фронтенд, админ-панель и RAG поверх всего этого.</span><span class="en">A CRM with an AI assistant, solo: database architecture, backend, frontend, admin panel and RAG on top.</span></p>
     </div>
     <div class="tli rv">
@@ -679,7 +680,8 @@ footer a:hover{color:var(--acc)}
     <div class="tli rv now">
       <span class="yr2"><span class="ru">сейчас</span><span class="en">now</span></span>
       <h3><span class="ru">ИИ-инженер</span><span class="en">AI Engineer</span></h3>
-      <p><span class="ru">Работаю в <span class="rdct" title="скрыто по NDA" aria-label="скрыто по NDA">████████</span>. Принимаю гипотезы напрямую от заказчиков и довожу отобранные до прода за неделю.</span><span class="en">At <span class="rdct" title="redacted under NDA" aria-label="redacted under NDA">████████</span>. I take hypotheses straight from clients and ship the surviving ones to production in a week.</span></p>
+      <p class="company"><span class="ru">ООО «Сэлвим»</span><span class="en">Salvim</span></p>
+      <p><span class="ru">Принимаю гипотезы напрямую от внутренних заказчиков и довожу отобранные до прода за неделю.</span><span class="en">I take hypotheses straight from internal clients and ship the surviving ones to production in a week.</span></p>
     </div>
   </div>
 </section>
@@ -749,21 +751,21 @@ footer a:hover{color:var(--acc)}
       <div class="v" data-count="200" data-suffix="+">0</div>
       <div class="l"><span class="ru">заявок подрядчиков в час обрабатывал микросервис, связавший Jira API с локально развёрнутой LLM. Работал круглосуточно и полностью снял ночные простои поддержки.</span>
         <span class="en">contractor tickets per hour processed by a microservice bridging the Jira API with a locally hosted LLM. It ran around the clock and removed night-time support downtime entirely.</span></div>
-      <div class="src"><b><span class="ru">«Ночной диспетчер»</span><span class="en">“Night Dispatcher”</span></b> · <span class="ru">внедрено в 2025</span><span class="en">shipped in 2025</span></div>
+      <div class="src"><b><span class="ru">ГК «Самолет»</span><span class="en">Samolet Group</span></b> · <span class="ru">«Ночной диспетчер», 2025</span><span class="en">“Night Dispatcher”, 2025</span></div>
     </div>
 
     <div class="card rv stat">
       <div class="v" data-count="35" data-prefix="+" data-suffix="%">0</div>
       <div class="l"><span class="ru">к точности автоматической маршрутизации: тот же сервис сам определял исполнителя по содержанию заявки вместо ручного разбора диспетчером.</span>
         <span class="en">to automatic routing accuracy: the same service picked the right owner from the ticket's content instead of a dispatcher sorting it by hand.</span></div>
-      <div class="src"><b><span class="ru">«Ночной диспетчер»</span><span class="en">“Night Dispatcher”</span></b> · <span class="ru">та же связка Jira ↔ LLM</span><span class="en">same Jira ↔ LLM service</span></div>
+      <div class="src"><b><span class="ru">ГК «Самолет»</span><span class="en">Samolet Group</span></b> · <span class="ru">та же связка Jira ↔ LLM</span><span class="en">same Jira ↔ LLM service</span></div>
     </div>
 
     <div class="card rv stat">
       <div class="v" data-count="85" data-suffix="%">0</div>
       <div class="l"><span class="ru">точность автодополнения: сервис находил, каких данных в заявке не хватает, и дописывал их до того, как заявка уходила в работу.</span>
         <span class="en">auto-completion accuracy: the service detected which data a ticket was missing and filled it in before the ticket entered the queue.</span></div>
-      <div class="src"><b><span class="ru">«Ночной диспетчер»</span><span class="en">“Night Dispatcher”</span></b> · <span class="ru">та же связка Jira ↔ LLM</span><span class="en">same Jira ↔ LLM service</span></div>
+      <div class="src"><b><span class="ru">ГК «Самолет»</span><span class="en">Samolet Group</span></b> · <span class="ru">та же связка Jira ↔ LLM</span><span class="en">same Jira ↔ LLM service</span></div>
     </div>
 
     <div class="card rv stat">
@@ -777,14 +779,14 @@ footer a:hover{color:var(--acc)}
       <div class="v">×2</div>
       <div class="l"><span class="ru">скорость интеграции изменений в корпоративной Time Management System после того, как поднял CI/CD: линтинг → автотесты → деплой на staging.</span>
         <span class="en">faster change integration in a corporate Time Management System after I set up CI/CD: lint → automated tests → staging deploy.</span></div>
-      <div class="src"><b><span class="ru">«Внутренний табель»</span><span class="en">“Internal Timesheet”</span></b> · <span class="ru">внедрено в 2025</span><span class="en">shipped in 2025</span></div>
+      <div class="src"><b><span class="ru">АО «Алгонт»</span><span class="en">JSC Algont</span></b> · <span class="ru">«Внутренний табель», 2025</span><span class="en">“Internal Timesheet”, 2025</span></div>
     </div>
 
     <div class="card rv stat">
       <div class="v" data-count="7">0</div>
       <div class="l"><span class="ru">дней занимает полный цикл: от гипотезы заказчика через анализ и MVP до решения в проде, которым пользуются каждый день.</span>
         <span class="en">days for the full cycle: from a client's hypothesis through analysis and MVP to a production system people use daily.</span></div>
-      <div class="src"><b><span class="ru">Текущая практика</span><span class="en">Current practice</span></b> · <span class="ru">2026</span><span class="en">2026</span></div>
+      <div class="src"><b><span class="ru">ООО «Сэлвим»</span><span class="en">Salvim</span></b> · <span class="ru">текущая практика, 2026</span><span class="en">current practice, 2026</span></div>
     </div>
 
   </div>
@@ -798,8 +800,8 @@ footer a:hover{color:var(--acc)}
   <div class="grid gp" style="margin-top:38px">
 
     <div class="card proj rv">
-      <div class="top"><span class="org"><span class="ru">Проект «Ночной диспетчер»</span><span class="en">Project “Night Dispatcher”</span></span><span class="yr">2025</span></div>
-      <h3><span class="ru">Jira ↔ LLM: автообработка заявок подрядчиков</span><span class="en">Jira ↔ LLM: automated contractor ticket handling</span></h3>
+      <div class="top"><span class="org"><span class="ru">ГК «Самолет»</span><span class="en">Samolet Group</span></span><span class="yr">2025</span></div>
+      <h3><span class="ru">«Ночной диспетчер» — Jira ↔ LLM</span><span class="en">“Night Dispatcher” — Jira ↔ LLM</span></h3>
       <p><span class="ru">Микросервис-связка Jira API и локально развёрнутой Qwen3-235b. Спроектировал prompt-engineering pipeline: классификация заявки → проверка полноты данных → автодополнение → назначение исполнителя. Сервис работал 24/7 и полностью снял ночные простои поддержки.</span>
          <span class="en">A microservice bridging the Jira API with a locally deployed Qwen3-235b. I designed the prompt-engineering pipeline: classify the ticket → check data completeness → auto-complete → assign an owner. The service ran 24/7 and eliminated night-time support downtime entirely.</span></p>
       <div class="res"><span class="ru">Маршрутизация точнее на <b>35%</b>, автодополнение — <b>85%</b> точности, <b>200+</b> заявок в час. Бизнес отказался от найма дополнительных стажёров: MVP заместил эту функцию.</span>
@@ -808,8 +810,8 @@ footer a:hover{color:var(--acc)}
     </div>
 
     <div class="card proj rv">
-      <div class="top"><span class="org"><span class="ru">Проект «Внутренний табель»</span><span class="en">Project “Internal Timesheet”</span></span><span class="yr">2025</span></div>
-      <h3><span class="ru">Корпоративная Time Management System</span><span class="en">Corporate Time Management System</span></h3>
+      <div class="top"><span class="org"><span class="ru">АО «Алгонт»</span><span class="en">JSC Algont</span></span><span class="yr">2025</span></div>
+      <h3><span class="ru">«Внутренний табель» — Time Management System</span><span class="en">“Internal Timesheet” — Time Management System</span></h3>
       <p><span class="ru">С нуля спроектировал и реализовал систему учёта рабочего времени, отпусков и загрузки сотрудников. Координировал кросс-функциональную команду из пяти человек — фронтенд, бэкенд, QA — и замещал их на написании кода в критических ситуациях, чтобы команда не просела в производительности. Написал техническое задание в Confluence и Swagger.</span>
          <span class="en">Designed and built a system for tracking working hours, leave and team workload from scratch. Coordinated a cross-functional team of five — frontend, backend, QA — and covered their code personally in critical moments so the team never lost throughput. Wrote the full spec in Confluence and Swagger.</span></p>
       <div class="res"><span class="ru">CI/CD на GitLab CI: линтинг → автотесты → деплой на staging. Время интеграции изменений сократилось <b>вдвое</b>. Система внедрена и используется до сих пор.</span>
@@ -818,8 +820,8 @@ footer a:hover{color:var(--acc)}
     </div>
 
     <div class="card proj rv">
-      <div class="top"><span class="org"><span class="ru">Проект «Аренда и брони»</span><span class="en">Project “Rent &amp; Bookings”</span></span><span class="yr">2025—2026</span></div>
-      <h3><span class="ru">CRM для аренды недвижимости с ИИ-ассистентом</span><span class="en">Rental CRM with an AI assistant</span></h3>
+      <div class="top"><span class="org"><span class="ru">ООО «Складофф24» · CRM Rentura</span><span class="en">Skladoff24 · Rentura CRM</span></span><span class="yr">2025—2026</span></div>
+      <h3><span class="ru">CRM для аренды с ИИ-ассистентом</span><span class="en">Rental CRM with an AI assistant</span></h3>
       <p><span class="ru">В одиночку закрыл полный цикл: архитектура БД, бэкенд, фронтенд, админ-панель. Ассистент на RAG + LLM по текстовой команде сам выполняет операции в CRM — создаёт бронь, меняет даты, ищет объекты по критериям, собирает отчёты, взаимодействуя с системой через API. Плюс календарь доступности с блокировкой конфликтующих броней на уровне БД, личные кабинеты обеих сторон и генерация документов по шаблонам.</span>
          <span class="en">Owned the entire cycle solo: database architecture, backend, frontend, admin panel. A RAG + LLM assistant executes CRM operations from plain text — creating bookings, changing dates, searching properties by criteria, generating reports — by calling the system's own API. Plus an availability calendar with database-level conflict locking, tenant and landlord portals, and templated document generation.</span></p>
       <div class="res"><span class="ru">Система передана заказчику для вывода на рынок. Из проекта вышел, когда развитие сменилось поддержкой.</span>
@@ -981,32 +983,18 @@ footer a:hover{color:var(--acc)}
   });
 
   /* ---- terminal typing ---- */
-  var termEl=document.getElementById('term'), typeTimer=null, cipherTimer=null;
-  var PRE='> initializing profile ... ai_engineer @ ', POST=' ... [classified] ok';
-  var GLYPHS='ABCDEFGHKLMNPRSTUVXZ0123456789#%&$@?!/\\|<>[]{}=+*^~';
-  var CIPH_LEN=9;
-  function scramble(){
-    var s='';
-    for(var i=0;i<CIPH_LEN;i++) s+=GLYPHS.charAt(Math.floor(Math.random()*GLYPHS.length));
-    return s;
-  }
-  function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+  var termEl=document.getElementById('term'), typeTimer=null;
   function typeTerm(){
-    clearTimeout(typeTimer); clearInterval(cipherTimer);
-    var full = PRE + '\u2588'.repeat(CIPH_LEN) + POST;
+    var txt='> initializing profile ... ai_engineer @ salvim ... ok';
+    clearTimeout(typeTimer);
     termEl.innerHTML='';
     var i=0;
     (function step(){
-      if(i<=full.length){
-        termEl.innerHTML = esc(full.slice(0,i)) + '<span class="caret"></span>';
+      if(i<=txt.length){
+        termEl.innerHTML = txt.slice(0,i).replace(/</g,'&lt;') + '<span class="caret"></span>';
         i++;
         typeTimer=setTimeout(step, i<3?60:22);
-        return;
       }
-      cipherTimer=setInterval(function(){
-        termEl.innerHTML = esc(PRE) + '<span class="cip">' + esc(scramble()) + '</span>'
-                         + esc(POST) + '<span class="caret"></span>';
-      }, 110);
     })();
   }
   typeTerm();
