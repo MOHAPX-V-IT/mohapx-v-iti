@@ -197,13 +197,6 @@ p{color:var(--dim);text-wrap:pretty}
 .muted{color:var(--dim);max-width:65ch}
 .muted + .muted{margin-top:16px}
 .accent{color:var(--acc)}
-.rdct{
-  font-family:var(--mono);font-size:.94em;letter-spacing:.02em;
-  color:transparent;background:var(--tx);border-radius:3px;padding:1px 4px;
-  user-select:none;cursor:help;position:relative;top:-1px;
-  transition:box-shadow .3s var(--ease), background .3s var(--ease)
-}
-.rdct:hover{box-shadow:0 0 0 2px color-mix(in srgb,var(--acc) 45%,transparent);background:var(--acc)}
 .cip{color:var(--acc);font-family:var(--mono);letter-spacing:.08em}
 
 /* ============ HERO ============ */
@@ -352,6 +345,10 @@ html[data-theme="light"] .pframe .lines{background:repeating-linear-gradient(to 
 .tli .yr2{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--acc);display:block;margin-bottom:6px}
 .tli h3{margin-bottom:7px}
 .tli p{font-size:15.5px;max-width:66ch}
+.tli .company{
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--acc);margin:-1px 0 8px
+}
 .tli.now::after{
   content:'';position:absolute;left:-31px;top:10px;width:6px;height:6px;border-radius:50%;
   background:var(--acc);animation:pulse 2s infinite
