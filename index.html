@@ -429,6 +429,8 @@ html[data-theme="light"] .bg-fx .shader.on{opacity:.28}
 
 /* PROJECTS */
 .proj{padding:30px}
+.proj.featured{grid-column:1/-1}
+.proj.featured p{max-width:72ch}
 .proj .top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:6px}
 .proj .org{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--dimmer)}
 .proj .yr{font-family:var(--mono);font-size:11.5px;color:var(--dimmer);white-space:nowrap}
@@ -798,6 +800,16 @@ footer a:hover{color:var(--acc)}
   <h2><span class="ru">Что уже работает</span><span class="en">What's already running</span></h2>
 
   <div class="grid gp" style="margin-top:38px">
+
+    <div class="card proj featured rv">
+      <div class="top"><span class="org"><span class="ru">ООО «Сэлвим»</span><span class="en">Salvim</span></span><span class="yr">2026</span></div>
+      <h3><span class="ru">Salvim RAG Chat — медицинская RAG-платформа</span><span class="en">Salvim RAG Chat — medical RAG platform</span></h3>
+      <p><span class="ru">С нуля спроектировал и запустил full-stack веб-сервис для подготовки медицинских ответов по внутренней базе знаний, доверенным источникам и DeepSeek. Разделил систему на React-клиент, Node.js API, Python/FastAPI RAG-ядро и PostgreSQL. Реализовал ролевой доступ, очередь согласования с эксклюзивным назначением, обязательную проверку медицинским экспертом, полный аудит действий и автоматическое пополнение базы знаний экспертными правками.</span>
+         <span class="en">Designed and shipped a full-stack service from scratch for drafting medical responses from an internal knowledge base, approved sources and DeepSeek. Split the system into a React client, Node.js API, Python/FastAPI RAG core and PostgreSQL. Built role-based access, an exclusive-review queue, mandatory medical expert approval, a full audit trail and automatic knowledge-base updates from expert corrections.</span></p>
+      <div class="res"><span class="ru">Production-цикл: вопрос → черновик ИИ → проверка экспертом → официальный ответ. PWA, HTTPS, Docker Compose, внутренние и почтовые уведомления, ежедневные резервные копии и сохранение истории после удаления аккаунта.</span>
+        <span class="en">Production workflow: question → AI draft → expert review → official response. PWA, HTTPS, Docker Compose, in-app and email reminders, daily backups, and history preservation after account deletion.</span></div>
+      <div class="tags"><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Node.js / Express</span><span class="tag">Python / FastAPI</span><span class="tag">PostgreSQL</span><span class="tag">RAG</span><span class="tag">DeepSeek API</span><span class="tag">Docker Compose</span><span class="tag">Nginx / Caddy</span><span class="tag">JWT / PWA</span></div>
+    </div>
 
     <div class="card proj rv">
       <div class="top"><span class="org"><span class="ru">ГК «Самолет»</span><span class="en">Samolet Group</span></span><span class="yr">2025</span></div>
