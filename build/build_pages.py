@@ -302,26 +302,36 @@ CALC_CSS = """
 """
 
 FAQ = [
- ("Как рассчитать окупаемость автоматизации процесса?",
-  "Возьми число сотрудников, занятых задачей, умножь на часы в неделю и на 52 — получишь годовой объём ручной работы в часах. Умножь на стоимость часа сотрудника: это прямые потери за год. Затем оцени, какую долю этого времени снимет автоматизация, вычти стоимость поддержки решения и раздели стоимость разработки на полученную месячную экономию. Результат — срок окупаемости в месяцах. Ровно так считает калькулятор на этой странице.",
-  "How do you calculate the payback of automating a process?",
-  "Take the number of people doing the task, multiply by hours per week and by 52 — that's the yearly volume of manual work in hours. Multiply by the hourly cost of an employee: those are your direct annual losses. Then estimate what share of that time automation removes, subtract the cost of maintaining the solution, and divide the build cost by the resulting monthly saving. That's the payback period in months — exactly what this calculator does."),
- ("Какой срок окупаемости внедрения ИИ считается нормальным?",
-  "Для внутренней автоматизации бизнес-процессов ориентир — до 12 месяцев. От 12 до 24 месяцев решение обычно ещё имеет смысл, но требует, чтобы процесс был устойчивым и не переписывался каждый квартал. Дольше двух лет — почти всегда сигнал, что задача выбрана неверно: за это время изменится и процесс, и инструменты.",
-  "What payback period counts as normal for an AI rollout?",
-  "For internal business-process automation, aim for under 12 months. Between 12 and 24 months a project usually still makes sense, but only if the process is stable and isn't rewritten every quarter. Beyond two years is almost always a sign the wrong task was chosen: in that time both the process and the tooling will change."),
- ("Что калькулятор не учитывает?",
-  "Три вещи. Первое — скрытые эффекты: снижение числа ошибок, скорость реакции на клиента, освобождённое внимание сотрудников. Обычно они работают в плюс, но их сложно оцифровать до внедрения. Второе — риск того, что процесс изменится раньше, чем автоматизация окупится. Третье — стоимость внедрения почти всегда занижают на входе: закладывай запас в 20–30%.",
-  "What does the calculator leave out?",
-  "Three things. First, the hidden effects: fewer errors, faster response to clients, freed-up attention. They usually work in your favour, but they're hard to quantify before the rollout. Second, the risk that the process changes before the automation pays for itself. Third, build cost is almost always underestimated up front — add a 20–30% buffer."),
- ("Когда автоматизацию делать не стоит?",
-  "Если никто не может назвать конкретную роль, которой станет легче. Если процесс переписывают чаще, чем его успеют автоматизировать. Если ручная работа занимает меньше часа в неделю — тогда разработка, отладка и поддержка не окупятся никогда. Автоматизация ради автоматизации — это трата денег, а не инновация.",
-  "When should you not automate?",
-  "When nobody can name a specific role that gets relief. When the process is rewritten faster than it can be automated. When the manual work takes less than an hour a week — then building, debugging and maintaining it will never pay off. Automation for its own sake is spending, not innovation."),
- ("Как оценить стоимость часа сотрудника?",
-  "Полная стоимость часа выше оклада: возьми месячные затраты компании на сотрудника вместе с налогами и взносами и раздели на 160 рабочих часов. Для ориентира: специалист с окладом 100 000 ₽ обходится компании примерно в 800–900 ₽ в час.",
-  "How do you estimate an employee's hourly cost?",
-  "The full hourly cost is higher than the salary: take the company's total monthly spend on the person, including taxes and contributions, and divide by 160 working hours. As a benchmark, a specialist on a 100,000 ₽ salary costs the company roughly 800–900 ₽ an hour."),
+    (
+        'Как рассчитать окупаемость AI-решения?',
+        'Оцените текущий объём работы в часах и стоимость часа. Укажите ожидаемое сокращение времени с учётом проверки результата, стоимость разработки и ежемесячной поддержки. Калькулятор сравнит стоимость высвобожденного времени с расходами и покажет срок окупаемости.',
+        'How do you estimate an AI solution’s payback?',
+        'Estimate current work hours and hourly cost. Enter the expected time reduction including output review, development cost and monthly maintenance. The calculator compares freed capacity with expenses and estimates payback.',
+    ),
+    (
+        'Для каких проектов подходит калькулятор?',
+        'Для AI-ассистентов, RAG-поиска и работы с документами, если можно оценить сокращение времени на конкретную задачу. Для проектов, где основной эффект — качество, доступность знаний или снижение риска, одного этого расчёта недостаточно.',
+        'Which projects does the calculator suit?',
+        'AI assistants, RAG search and document workflows where time reduction can be estimated for a specific task. When the main benefit is quality, knowledge access or reduced risk, this calculation alone is insufficient.',
+    ),
+    (
+        'Что калькулятор не учитывает?',
+        'Качество результата, ошибки модели, требования к данным и доступам, изменение процесса и время освоения системы. Высвобожденное время также не означает автоматического сокращения расходов компании.',
+        'What does the calculator leave out?',
+        'Output quality, model errors, data and access requirements, process changes and adoption time. Freed capacity does not automatically mean lower company spending.',
+    ),
+    (
+        'Как оценить сокращение времени?',
+        'Измерьте выполнение одной и той же задачи до и после пилота. Включите время поиска, ожидания ответа, экспертной проверки и исправлений. Используйте наблюдаемое сокращение времени, а не скорость генерации модели.',
+        'How do you estimate time reduction?',
+        'Measure the same task before and after a pilot. Include search, response time, expert review and corrections. Use observed task time reduction, rather than model generation speed.',
+    ),
+    (
+        'Как оценить стоимость часа сотрудника?',
+        'Разделите полные месячные затраты компании на сотрудника на рабочие часы за месяц. Учитывайте оклад, налоги и взносы. Вводные калькулятора — пример расчёта; подставьте фактические значения своей компании.',
+        'How do you estimate an employee’s hourly cost?',
+        'Divide total monthly company spending on the employee by monthly working hours, including salary, taxes and contributions. Calculator defaults are illustrative; use your company’s actual figures.',
+    ),
 ]
 
 faq_html = "\n".join(f'''    <details{" open" if i==0 else ""}>
@@ -336,12 +346,12 @@ faq_ld = json.dumps({
 
 app_ld = json.dumps({
   "@context":"https://schema.org","@type":"WebApplication",
-  "name":"Калькулятор окупаемости автоматизации и внедрения ИИ",
+  "name":"Калькулятор окупаемости AI-решения",
   "url":f"{SITE}/calculator.html",
   "applicationCategory":"BusinessApplication",
   "operatingSystem":"Any",
   "offers":{"@type":"Offer","price":"0","priceCurrency":"RUB"},
-  "description":"Бесплатный онлайн-калькулятор: расчёт срока окупаемости автоматизации бизнес-процессов и внедрения ИИ, экономии человеко-часов и ROI за первый год.",
+  "description":"Оценка экономического эффекта AI-решения: экономия времени, расходы на поддержку, срок окупаемости и ROI за первый год.",
   "inLanguage":"ru",
   "author":{"@type":"Person","name":"Алексей Марышев","url":SITE}
 }, ensure_ascii=False)
@@ -359,12 +369,12 @@ calc_body = f'''<a id="top"></a>
 <section style="padding-top:150px;padding-bottom:20px">
   <div class="eyebrow">$ roi --calc</div>
   <h1 style="font-family:var(--disp);font-weight:800;font-size:clamp(30px,5.2vw,58px);line-height:1.06;letter-spacing:-.03em;margin-bottom:20px">
-    <span class="ru">Калькулятор окупаемости автоматизации</span>
-    <span class="en">Automation payback calculator</span>
+    <span class="ru">Калькулятор окупаемости AI-решения</span>
+    <span class="en">AI solution payback calculator</span>
   </h1>
   <p class="lead">
-    <span class="ru">Бесплатный расчёт окупаемости автоматизации бизнес-процессов и внедрения ИИ: сколько денег и человеко-часов съедает ручная работа сейчас, сколько сэкономит автоматизация, за сколько месяцев вернутся вложения и какой будет ROI за первый год. Считает прямо в браузере, ничего никуда не отправляет.</span>
-    <span class="en">A free payback calculator for business process automation and AI rollouts: how much money and how many person-hours manual work eats today, what automation saves, how many months until the investment returns, and the first-year ROI. It runs entirely in your browser and sends nothing anywhere.</span>
+    <span class="ru">Инструмент предварительной оценки AI-проекта: сколько времени он может освободить, сколько стоит разработка и поддержка, когда вернутся вложения. Подходит для ассистентов, RAG и работы с документами, если эффект можно выразить в сэкономленных часах. Расчёт выполняется в браузере, данные никуда не отправляются.</span>
+    <span class="en">A tool for an initial AI project estimate: time it may free up, development and maintenance cost, and payback. It works for assistants, RAG and document workflows when the impact can be expressed as hours saved. Calculations run in your browser and send no data anywhere.</span>
   </p>
 
   <div class="calc">
@@ -372,7 +382,7 @@ calc_body = f'''<a id="top"></a>
 {fld("n","Сколько человек занято задачей","People doing the task","3","человек, которые делают эту работу руками","people doing this work by hand")}
 {fld("h","Часов в неделю на одного человека","Hours per week, per person","6","сколько времени уходит на задачу еженедельно","time the task takes each week","0.5")}
 {fld("r","Стоимость часа сотрудника, ₽","Hourly cost of an employee, ₽","850","полная стоимость для компании: оклад + налоги ÷ 160 часов","full cost to the company: salary + taxes ÷ 160 hours","10")}
-{fld("s","Какую долю времени снимет автоматизация, %","Share of time automation removes, %","70","реалистично — 60–85%, полностью процесс не исчезает","realistically 60–85%; the process never disappears entirely","5")}
+{fld("s","Ожидаемое сокращение времени на задачу, %","Expected reduction in task time, %","70","оценка по пилоту; учитывайте проверку и исправление результата","estimate from a pilot; include review and correction time","5")}
 {fld("c","Стоимость разработки и внедрения, ₽","Build and rollout cost, ₽","350000","с запасом 20–30% — на входе её почти всегда занижают","add a 20–30% buffer; it's almost always underestimated","1000")}
 {fld("m","Поддержка решения, ₽ в месяц","Maintenance, ₽ per month","8000","хостинг, модели, доработки, дежурство","hosting, models, tweaks, on-call","500")}
     </form>
@@ -384,7 +394,7 @@ calc_body = f'''<a id="top"></a>
       </div>
 
       <div class="rgrid">
-        <div class="rbox"><div class="rv2" id="o1">—</div><div class="rl"><span class="ru">потери на ручной работе за год</span><span class="en">annual cost of the manual work</span></div></div>
+        <div class="rbox"><div class="rv2" id="o1">—</div><div class="rl"><span class="ru">стоимость текущей работы за год</span><span class="en">annual cost of the current work</span></div></div>
         <div class="rbox"><div class="rv2" id="o2">—</div><div class="rl"><span class="ru">чистая экономия за год</span><span class="en">net saving per year</span></div></div>
         <div class="rbox"><div class="rv2" id="o3">—</div><div class="rl"><span class="ru">окупаемость</span><span class="en">payback period</span></div></div>
         <div class="rbox"><div class="rv2" id="o4">—</div><div class="rl"><span class="ru">ROI за первый год</span><span class="en">first-year ROI</span></div></div>
@@ -393,21 +403,21 @@ calc_body = f'''<a id="top"></a>
 
       <div class="bars">
         <div class="bar now"><div class="bt"><span><span class="ru">сейчас</span><span class="en">today</span></span><span id="b1">—</span></div><div class="btr"><div class="bf" id="bf1" style="width:100%"></div></div></div>
-        <div class="bar after"><div class="bt"><span><span class="ru">после автоматизации</span><span class="en">after automation</span></span><span id="b2">—</span></div><div class="btr"><div class="bf" id="bf2" style="width:30%"></div></div></div>
+        <div class="bar after"><div class="bt"><span><span class="ru">после внедрения</span><span class="en">after implementation</span></span><span id="b2">—</span></div><div class="btr"><div class="bf" id="bf2" style="width:30%"></div></div></div>
       </div>
     </div>
   </div>
 </section>
 
 <section style="padding-top:20px">
-  <h2><span class="ru">Как считать окупаемость автоматизации</span><span class="en">How to calculate automation payback</span></h2>
+  <h2><span class="ru">Как считать эффект AI-решения</span><span class="en">How to estimate an AI solution’s impact</span></h2>
   <p class="muted">
-    <span class="ru">Расчёт ROI автоматизации строится на одном простом сравнении: сколько компания платит за ручную работу сейчас и сколько будет платить после внедрения. Годовые потери — это число сотрудников, умноженное на часы в неделю, на 52 недели и на полную стоимость часа. Экономия — та доля этих потерь, которую снимает автоматизация, за вычетом стоимости поддержки. Срок окупаемости внедрения — стоимость разработки, делённая на месячную экономию.</span>
-    <span class="en">Automation ROI comes down to one comparison: what the company pays for the manual work today versus what it will pay after the rollout. Annual losses are the number of people times hours per week times 52 weeks times the full hourly cost. The saving is the share of those losses automation removes, minus maintenance. Payback is the build cost divided by the monthly saving.</span>
+    <span class="ru">Годовая стоимость текущей работы — число сотрудников × часы в неделю × 52 × стоимость часа. Сокращение времени даёт оценку высвобожденного ресурса; из неё вычитаются расходы на поддержку. Срок окупаемости — стоимость разработки, делённая на месячный эффект. ROI первого года учитывает разработку и поддержку.</span>
+    <span class="en">Annual cost of the current work is people × hours per week × 52 × hourly cost. Time reduction estimates the value of freed capacity, minus maintenance expenses. Payback is development cost divided by the monthly impact. First-year ROI accounts for development and maintenance.</span>
   </p>
   <p class="muted">
-    <span class="ru">Эта арифметика не заменяет анализ процесса, но отсекает большую часть плохих идей за пять минут. Если расчёт экономии человеко-часов не сходится на бумаге, он не сойдётся и в проде — и тогда автоматизация превращается в трату, а не во вложение.</span>
-    <span class="en">This arithmetic doesn't replace process analysis, but it kills most bad ideas in five minutes. If the person-hour maths doesn't work on paper, it won't work in production either — and then automation becomes spending rather than investment.</span>
+    <span class="ru">Высвобожденные часы не всегда превращаются в сокращение расходов: сотрудники могут использовать их для других задач. Калькулятор оценивает только этот эффект. Качество ответов, экспертную проверку, доступность данных и требования к системе нужно оценивать отдельно.</span>
+    <span class="en">Freed hours do not always translate into lower spending: employees may use them for other tasks. The calculator estimates only this effect. Output quality, expert review, data availability and system requirements need a separate assessment.</span>
   </p>
 
   <h2 style="margin-top:44px"><span class="ru">Частые вопросы</span><span class="en">Frequently asked</span></h2>
@@ -417,10 +427,10 @@ calc_body = f'''<a id="top"></a>
 
   <div class="jsub rv" style="margin-top:50px">
     <div class="eyebrow" style="justify-content:center">$ next</div>
-    <h2 style="margin-bottom:14px"><span class="ru">Цифры сошлись?</span><span class="en">Do the numbers work?</span></h2>
+    <h2 style="margin-bottom:14px"><span class="ru">Обсудим задачу и оценку?</span><span class="en">Discuss the problem and the estimate?</span></h2>
     <p class="muted" style="margin:0 auto 28px">
-      <span class="ru">Напиши в Telegram одной строкой, что считал. Скажу, реализуемо ли это технически и где расчёт обычно врёт. Если идея не окупается — скажу прямо.</span>
-      <span class="en">Send me a line on Telegram about what you calculated. I'll tell you whether it's technically feasible and where this kind of estimate usually lies. If it doesn't pay off, I'll say so.</span>
+      <span class="ru">Напишите, какой процесс вы оценивали и какие данные доступны. Обсудим, нужен ли здесь AI, как устроить решение и что проверить в пилоте.</span>
+      <span class="en">Tell me which process you estimated and what data is available. We can discuss whether AI fits, how to build the solution and what to validate in a pilot.</span>
     </p>
     <div class="cta" style="justify-content:center">
       <a class="btn primary" href="https://t.me/ELITeeiiNHEIT" target="_blank" rel="noopener"><span class="ru">Обсудить расчёт</span><span class="en">Discuss the numbers</span><span class="arw">→</span></a>
@@ -471,22 +481,22 @@ CALC_JS = """
     if(net<=0){
       v.classList.add('bad');
       vh.textContent=t('Не окупится','It will not pay off');
-      vp.textContent=t('Поддержка съедает всю экономию. Автоматизация ради автоматизации неприемлема — эту задачу лучше оставить как есть.',
-                       'Maintenance eats the entire saving. Automation for its own sake is unacceptable — leave this one alone.');
+      vp.textContent=t('По этим вводным поддержка превышает эффект от высвобожденного времени. Пересмотрите расчёт или оцените другие цели проекта.',
+                       'With these inputs, maintenance exceeds the value of freed time. Revisit the estimate or assess the project’s other objectives.');
     } else if(payback<=12){
-      vh.textContent=t('Стоит делать','Worth building');
-      vp.textContent=t('Вложения возвращаются меньше чем за год. Это тот случай, когда считать дальше нечего — надо запускать.',
-                       'The investment returns in under a year. Nothing left to calculate — go build it.');
+      vh.textContent=t('Оценка: до года','Estimate: under a year');
+      vp.textContent=t('Расчётный срок окупаемости — до года. Следующий шаг: проверить сокращение времени и качество результата на пилоте.',
+                       'Estimated payback is within a year. Next, validate time reduction and output quality in a pilot.');
     } else if(payback<=24){
       v.classList.add('warn');
-      vh.textContent=t('На грани','Borderline');
-      vp.textContent=t('Окупится, но небыстро. Делать имеет смысл, только если процесс устойчивый и не переписывается каждый квартал.',
-                       'It pays off, but slowly. Only worth it if the process is stable and not rewritten every quarter.');
+      vh.textContent=t('Оценка: 1–2 года','Estimate: 1–2 years');
+      vp.textContent=t('Расчётный срок — от года до двух. Проверьте устойчивость процесса и обоснованность всех вводных.',
+                       'Estimated payback is one to two years. Check process stability and the assumptions behind each input.');
     } else {
       v.classList.add('bad');
-      vh.textContent=t('Слишком долго','Too slow');
-      vp.textContent=t('Больше двух лет. За это время изменится и процесс, и инструменты — скорее всего, выбрана не та задача.',
-                       'More than two years. Both the process and the tooling will change by then — most likely the wrong task was picked.');
+      vh.textContent=t('Оценка: больше 2 лет','Estimate: over 2 years');
+      vp.textContent=t('Окупаемость по экономии времени превышает два года. Сопоставьте этот срок с горизонтом проекта и другими ожидаемыми результатами.',
+                       'Payback from time savings exceeds two years. Compare it with the project horizon and other expected outcomes.');
     }
   }
   ids.forEach(function(i){el[i].addEventListener('input',calc);});
@@ -496,10 +506,10 @@ CALC_JS = """
 """
 
 calc_page = page(
-  "Калькулятор окупаемости автоматизации и внедрения ИИ — MOHAPX-V-IT",
-  "Automation and AI payback calculator — MOHAPX-V-IT",
-  "Бесплатный калькулятор окупаемости автоматизации бизнес-процессов и внедрения ИИ: расчёт ROI, срока окупаемости в месяцах, экономии человеко-часов и годовых потерь на ручной работе. Считает онлайн, без регистрации.",
-  "A free calculator for the payback of business process automation and AI rollouts: ROI, payback period in months, person-hours saved and the annual cost of manual work. Runs online, no sign-up.",
+  "Калькулятор окупаемости AI-решения — MOHAPX-V-IT",
+  "AI solution payback calculator — MOHAPX-V-IT",
+  "Калькулятор экономического эффекта AI-решения: экономия времени, расходы на поддержку, срок окупаемости и ROI. Расчёт в браузере, без регистрации.",
+  "An AI solution impact calculator: time saved, maintenance cost, payback period and ROI. Runs in your browser, no sign-up.",
   f"{SITE}/calculator.html", f"{SITE}/journal/j10.jpg",
   calc_body, CALC_CSS, prefix="", extra_js=CALC_JS)
 calc_page = calc_page.replace('<meta property="og:type" content="article">', '<meta property="og:type" content="website">')
