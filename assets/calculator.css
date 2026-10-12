@@ -1,0 +1,41 @@
+/* A working tool inside the same typographic world as the home page. */
+body[data-page=calculator] main>section:first-child{padding-top:76px!important;padding-bottom:40px!important}
+body[data-page=calculator] main>section{max-width:none;width:100%;margin:0;padding-left:0;padding-right:0}
+body[data-page=calculator] h1{font-family:var(--display)!important;font-size:clamp(38px,5.2vw,76px)!important;line-height:1.1!important;font-weight:550!important;max-width:1000px;letter-spacing:-.035em!important}
+body[data-page=calculator] h2{font-family:var(--display);font-weight:550}
+body[data-page=calculator] .eyebrow,body[data-page=calculator] .bg-fx,body[data-page=calculator] .progress,body[data-page=calculator] #cursorGlow{display:none}
+body[data-page=calculator] .rv{opacity:1;transform:none;transition:none}
+body[data-page=calculator] #nav{width:100%;max-width:none;margin:0;padding:0;background:transparent;border:0;border-radius:0;box-shadow:none;backdrop-filter:none;position:static}
+body[data-page=calculator] .brand,body[data-page=calculator] .nav-controls{background:var(--surface)}
+body[data-page=calculator] .brand-type{font-family:Unbounded,var(--body)}
+body[data-page=calculator] .brand-mark{filter:none}
+body[data-page=calculator] .calc{grid-template-columns:minmax(0,420px) minmax(0,1fr);gap:7%;margin-top:52px}
+body[data-page=calculator] .cform{border-radius:0;border:0;background:var(--surface);padding:32px;box-shadow:none}
+body[data-page=calculator] .cform label{font-family:var(--body);font-size:15px;font-weight:500;letter-spacing:0}
+body[data-page=calculator] .cform input{border-radius:0;background:var(--bg);border:1px solid var(--line);font-family:var(--body);color:var(--tx);min-height:50px;box-shadow:none}
+body[data-page=calculator] .fld .hint{font-family:var(--body);font-size:12px;color:var(--dim);letter-spacing:0}
+body[data-page=calculator] .cres{background:none;border:0;border-radius:0;box-shadow:none;padding:0;top:120px}
+body[data-page=calculator] .rgrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 32px}
+body[data-page=calculator] .rbox{border:0;border-radius:0;background:none;box-shadow:none;padding:26px 0;border-top:1px solid var(--line)}
+body[data-page=calculator] .rbox .rv2{font-family:var(--body);font-weight:550;letter-spacing:-.025em;font-size:30px}
+body[data-page=calculator] .rbox .rl{font-family:var(--body);font-size:13px;letter-spacing:0;color:var(--dim)}
+body[data-page=calculator] .verdict{background:var(--surface);border:0;border-radius:0;box-shadow:none;padding:28px}
+body[data-page=calculator] .verdict .vh{font-family:var(--body);font-size:25px;font-weight:600;letter-spacing:-.02em}
+body[data-page=calculator] .verdict p{font-size:15px;color:var(--dim)}
+body[data-page=calculator] .bar .bt{font-family:var(--body);letter-spacing:0;text-transform:none}
+body[data-page=calculator] .bar .btr{border:0;border-radius:0;height:5px;background:var(--line)}
+body[data-page=calculator] .bar .bf{border-radius:0;transition:none}
+body[data-page=calculator] .bar.now .bf{background:var(--dim)}
+body[data-page=calculator] .bar.after .bf{background:var(--acc)}
+body[data-page=calculator] .card{background:none;border:0;border-radius:0;box-shadow:none;padding:26px 0;border-top:1px solid var(--line)}
+body[data-page=calculator] .card::after,body[data-page=calculator] .card::before{display:none}
+body[data-page=calculator] .card h3{font-family:var(--body);font-size:22px}
+body[data-page=calculator] .card p{font-size:15px}
+body[data-page=calculator] .btn{border-radius:0;box-shadow:none;font-family:var(--body);font-size:14px;padding:15px 22px;min-height:54px;letter-spacing:0}
+body[data-page=calculator] .btn.primary{background:var(--acc);color:var(--button-tx);border:0}
+body[data-page=calculator] .btn.ghost{border:1px solid var(--line);background:none;color:var(--tx)}
+body[data-page=calculator] .cta{justify-content:start}
+body[data-page=calculator] .faq details[data-expanded=false] summary::before{content:'+'}
+body[data-page=calculator] .site-footer{max-width:var(--max);width:100%;font-family:var(--body);letter-spacing:0}
+@media(max-width:900px){body[data-page=calculator] .calc{grid-template-columns:1fr;gap:36px}}
+@media(max-width:760px){body[data-page=calculator] main>section:first-child{padding-top:42px!important}body[data-page=calculator] h1{font-size:36px!important}body[data-page=calculator] .calc{margin-top:32px}body[data-page=calculator] .cform{padding:24px}body[data-page=calculator] .rbox .rv2{font-size:25px}body[data-page=calculator] .verdict{padding:24px}body[data-page=calculator] .rbox{padding:22px 0}body[data-page=calculator] .cta .btn{width:100%;justify-content:space-between}}

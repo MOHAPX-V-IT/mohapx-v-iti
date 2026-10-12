@@ -1,10 +1,11 @@
 import json, re, html, os
+from theme_calculator import restyle_calculator
 from email.utils import format_datetime
 from datetime import datetime, timezone
 
 SITE = "https://mohapx-v-it.github.io/mohapx-v-iti"
 data = json.load(open('posts.json', encoding='utf-8'))
-style = open('site/index.html', encoding='utf-8').read().split('<style>')[1].split('</style>')[0]
+style = open('build/legacy-theme.css', encoding='utf-8').read()
 STRIP_SHADER = True
 import re as _re
 style = _re.sub(r'/\* -+ animated shader field.*?@media \(prefers-reduced-motion:reduce\)\{\.bg-fx \.shader\{display:none\}\}\n', '', style, flags=_re.S)
@@ -513,5 +514,6 @@ calc_page = page(
   f"{SITE}/calculator.html", f"{SITE}/journal/j10.jpg",
   calc_body, CALC_CSS, prefix="", extra_js=CALC_JS)
 calc_page = calc_page.replace('<meta property="og:type" content="article">', '<meta property="og:type" content="website">')
+calc_page = restyle_calculator(calc_page)
 open('site/calculator.html','w',encoding='utf-8').write(calc_page)
 print('calculator.html', round(len(calc_page.encode())/1024,1), 'KB')

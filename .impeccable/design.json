@@ -1,0 +1,477 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-12T15:25:42.4863224Z",
+  "title": "Design System: MOHAPX-V-IT",
+  "extensions": {
+    "colorMeta": {
+      "dark-accent": {
+        "role": "primary",
+        "tonalRamp": [
+          "oklch(15% 0.1552 65.5)",
+          "oklch(26,4% 0.1552 65.5)",
+          "oklch(37,9% 0.1552 65.5)",
+          "oklch(49,3% 0.1552 65.5)",
+          "oklch(60,7% 0.1552 65.5)",
+          "oklch(72,1% 0.1552 65.5)",
+          "oklch(83,6% 0.1552 65.5)",
+          "oklch(95% 0.1552 65.5)"
+        ],
+        "displayName": "dark accent"
+      },
+      "dark-accent-hover": {
+        "role": "primary",
+        "tonalRamp": [
+          "oklch(15% 0.0905 71.7)",
+          "oklch(26,4% 0.0905 71.7)",
+          "oklch(37,9% 0.0905 71.7)",
+          "oklch(49,3% 0.0905 71.7)",
+          "oklch(60,7% 0.0905 71.7)",
+          "oklch(72,1% 0.0905 71.7)",
+          "oklch(83,6% 0.0905 71.7)",
+          "oklch(95% 0.0905 71.7)"
+        ],
+        "displayName": "dark accent hover"
+      },
+      "dark-accent-active": {
+        "role": "primary",
+        "tonalRamp": [
+          "oklch(15% 0.1802 46.0)",
+          "oklch(26,4% 0.1802 46.0)",
+          "oklch(37,9% 0.1802 46.0)",
+          "oklch(49,3% 0.1802 46.0)",
+          "oklch(60,7% 0.1802 46.0)",
+          "oklch(72,1% 0.1802 46.0)",
+          "oklch(83,6% 0.1802 46.0)",
+          "oklch(95% 0.1802 46.0)"
+        ],
+        "displayName": "dark accent active"
+      },
+      "dark-bg": {
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0066 285.5)",
+          "oklch(26,4% 0.0066 285.5)",
+          "oklch(37,9% 0.0066 285.5)",
+          "oklch(49,3% 0.0066 285.5)",
+          "oklch(60,7% 0.0066 285.5)",
+          "oklch(72,1% 0.0066 285.5)",
+          "oklch(83,6% 0.0066 285.5)",
+          "oklch(95% 0.0066 285.5)"
+        ],
+        "displayName": "dark bg"
+      },
+      "dark-bg-secondary": {
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0105 285.2)",
+          "oklch(26,4% 0.0105 285.2)",
+          "oklch(37,9% 0.0105 285.2)",
+          "oklch(49,3% 0.0105 285.2)",
+          "oklch(60,7% 0.0105 285.2)",
+          "oklch(72,1% 0.0105 285.2)",
+          "oklch(83,6% 0.0105 285.2)",
+          "oklch(95% 0.0105 285.2)"
+        ],
+        "displayName": "dark bg secondary"
+      },
+      "dark-surface": {
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0097 285.6)",
+          "oklch(26,4% 0.0097 285.6)",
+          "oklch(37,9% 0.0097 285.6)",
+          "oklch(49,3% 0.0097 285.6)",
+          "oklch(60,7% 0.0097 285.6)",
+          "oklch(72,1% 0.0097 285.6)",
+          "oklch(83,6% 0.0097 285.6)",
+          "oklch(95% 0.0097 285.6)"
+        ],
+        "displayName": "dark surface"
+      },
+      "dark-text": {
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0067 286.3)",
+          "oklch(26,4% 0.0067 286.3)",
+          "oklch(37,9% 0.0067 286.3)",
+          "oklch(49,3% 0.0067 286.3)",
+          "oklch(60,7% 0.0067 286.3)",
+          "oklch(72,1% 0.0067 286.3)",
+          "oklch(83,6% 0.0067 286.3)",
+          "oklch(95% 0.0067 286.3)"
+        ],
+        "displayName": "dark text"
+      },
+      "dark-muted": {
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0157 290.2)",
+          "oklch(26,4% 0.0157 290.2)",
+          "oklch(37,9% 0.0157 290.2)",
+          "oklch(49,3% 0.0157 290.2)",
+          "oklch(60,7% 0.0157 290.2)",
+          "oklch(72,1% 0.0157 290.2)",
+          "oklch(83,6% 0.0157 290.2)",
+          "oklch(95% 0.0157 290.2)"
+        ],
+        "displayName": "dark muted"
+      },
+      "dark-line": {
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0067 286.3)",
+          "oklch(26,4% 0.0067 286.3)",
+          "oklch(37,9% 0.0067 286.3)",
+          "oklch(49,3% 0.0067 286.3)",
+          "oklch(60,7% 0.0067 286.3)",
+          "oklch(72,1% 0.0067 286.3)",
+          "oklch(83,6% 0.0067 286.3)",
+          "oklch(95% 0.0067 286.3)"
+        ],
+        "displayName": "dark line"
+      },
+      "dark-button-text": {
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0128 307.7)",
+          "oklch(26,4% 0.0128 307.7)",
+          "oklch(37,9% 0.0128 307.7)",
+          "oklch(49,3% 0.0128 307.7)",
+          "oklch(60,7% 0.0128 307.7)",
+          "oklch(72,1% 0.0128 307.7)",
+          "oklch(83,6% 0.0128 307.7)",
+          "oklch(95% 0.0128 307.7)"
+        ],
+        "displayName": "dark button text"
+      },
+      "light-accent": {
+        "role": "primary",
+        "tonalRamp": [
+          "oklch(15% 0.1352 51.7)",
+          "oklch(26,4% 0.1352 51.7)",
+          "oklch(37,9% 0.1352 51.7)",
+          "oklch(49,3% 0.1352 51.7)",
+          "oklch(60,7% 0.1352 51.7)",
+          "oklch(72,1% 0.1352 51.7)",
+          "oklch(83,6% 0.1352 51.7)",
+          "oklch(95% 0.1352 51.7)"
+        ],
+        "displayName": "light accent"
+      },
+      "light-accent-hover": {
+        "role": "primary",
+        "tonalRamp": [
+          "oklch(15% 0.1061 48.9)",
+          "oklch(26,4% 0.1061 48.9)",
+          "oklch(37,9% 0.1061 48.9)",
+          "oklch(49,3% 0.1061 48.9)",
+          "oklch(60,7% 0.1061 48.9)",
+          "oklch(72,1% 0.1061 48.9)",
+          "oklch(83,6% 0.1061 48.9)",
+          "oklch(95% 0.1061 48.9)"
+        ],
+        "displayName": "light accent hover"
+      },
+      "light-accent-active": {
+        "role": "primary",
+        "tonalRamp": [
+          "oklch(15% 0.1371 42.2)",
+          "oklch(26,4% 0.1371 42.2)",
+          "oklch(37,9% 0.1371 42.2)",
+          "oklch(49,3% 0.1371 42.2)",
+          "oklch(60,7% 0.1371 42.2)",
+          "oklch(72,1% 0.1371 42.2)",
+          "oklch(83,6% 0.1371 42.2)",
+          "oklch(95% 0.1371 42.2)"
+        ],
+        "displayName": "light accent active"
+      },
+      "light-bg": {
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0057 84.6)",
+          "oklch(26,4% 0.0057 84.6)",
+          "oklch(37,9% 0.0057 84.6)",
+          "oklch(49,3% 0.0057 84.6)",
+          "oklch(60,7% 0.0057 84.6)",
+          "oklch(72,1% 0.0057 84.6)",
+          "oklch(83,6% 0.0057 84.6)",
+          "oklch(95% 0.0057 84.6)"
+        ],
+        "displayName": "light bg"
+      },
+      "light-bg-secondary": {
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0029 84.6)",
+          "oklch(26,4% 0.0029 84.6)",
+          "oklch(37,9% 0.0029 84.6)",
+          "oklch(49,3% 0.0029 84.6)",
+          "oklch(60,7% 0.0029 84.6)",
+          "oklch(72,1% 0.0029 84.6)",
+          "oklch(83,6% 0.0029 84.6)",
+          "oklch(95% 0.0029 84.6)"
+        ],
+        "displayName": "light bg secondary"
+      },
+      "light-surface": {
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0075 80.7)",
+          "oklch(26,4% 0.0075 80.7)",
+          "oklch(37,9% 0.0075 80.7)",
+          "oklch(49,3% 0.0075 80.7)",
+          "oklch(60,7% 0.0075 80.7)",
+          "oklch(72,1% 0.0075 80.7)",
+          "oklch(83,6% 0.0075 80.7)",
+          "oklch(95% 0.0075 80.7)"
+        ],
+        "displayName": "light surface"
+      },
+      "light-text": {
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0119 293.0)",
+          "oklch(26,4% 0.0119 293.0)",
+          "oklch(37,9% 0.0119 293.0)",
+          "oklch(49,3% 0.0119 293.0)",
+          "oklch(60,7% 0.0119 293.0)",
+          "oklch(72,1% 0.0119 293.0)",
+          "oklch(83,6% 0.0119 293.0)",
+          "oklch(95% 0.0119 293.0)"
+        ],
+        "displayName": "light text"
+      },
+      "light-muted": {
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0163 294.9)",
+          "oklch(26,4% 0.0163 294.9)",
+          "oklch(37,9% 0.0163 294.9)",
+          "oklch(49,3% 0.0163 294.9)",
+          "oklch(60,7% 0.0163 294.9)",
+          "oklch(72,1% 0.0163 294.9)",
+          "oklch(83,6% 0.0163 294.9)",
+          "oklch(95% 0.0163 294.9)"
+        ],
+        "displayName": "light muted"
+      },
+      "light-line": {
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0086 84.6)",
+          "oklch(26,4% 0.0086 84.6)",
+          "oklch(37,9% 0.0086 84.6)",
+          "oklch(49,3% 0.0086 84.6)",
+          "oklch(60,7% 0.0086 84.6)",
+          "oklch(72,1% 0.0086 84.6)",
+          "oklch(83,6% 0.0086 84.6)",
+          "oklch(95% 0.0086 84.6)"
+        ],
+        "displayName": "light line"
+      }
+    },
+    "tonalRampPurpose": "Synthesized OKLCH swatch previews only; they do not introduce implementation tokens. Translucent divider ramps use the underlying color without alpha.",
+    "typographyMeta": {
+      "display": {
+        "displayName": "Opening statement",
+        "purpose": "Three-line home opening with contextual responsive sizes."
+      },
+      "headline": {
+        "displayName": "Section heading",
+        "purpose": "Main reading hierarchy across the home page and calculator."
+      },
+      "wordmark": {
+        "displayName": "Identity lockup",
+        "purpose": "Unbounded remains local to the brand."
+      }
+    },
+    "shadows": [
+      {
+        "name": "menu-overlay",
+        "value": "0 24px 48px -20px rgba(0,0,0,.38)",
+        "purpose": "Dropdown menu only; content surfaces remain flat."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(.16,1,.3,1)",
+        "purpose": "Arrow, menu and disclosure geometry transitions."
+      },
+      {
+        "name": "color-state",
+        "value": "200ms",
+        "purpose": "Primary action color changes."
+      },
+      {
+        "name": "arrow-shift",
+        "value": "350ms; translateX(4px)",
+        "purpose": "SVG arrows on primary actions and text links."
+      },
+      {
+        "name": "control-geometry",
+        "value": "300ms",
+        "purpose": "Menu bars and project plus/minus."
+      },
+      {
+        "name": "crown-turn",
+        "value": "28s per rotation; rendered at approximately 30fps",
+        "purpose": "Original extruded crown; user pause, reduced-motion start pause, offscreen and hidden-document suspension."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "0.01ms CSS transitions; one animation iteration; no arrow transform; auto scroll",
+        "purpose": "Matches the shipped media query; crown preference is handled separately in JS."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "wide",
+        "value": "min-width: 1600px"
+      },
+      {
+        "name": "compact-desktop",
+        "value": "max-width: 1100px"
+      },
+      {
+        "name": "calculator-stack",
+        "value": "max-width: 900px"
+      },
+      {
+        "name": "mobile",
+        "value": "max-width: 760px"
+      },
+      {
+        "name": "small-mobile",
+        "value": "max-width: 360px"
+      },
+      {
+        "name": "short-desktop",
+        "value": "min-width: 761px and max-height: 800px"
+      }
+    ],
+    "focus": {
+      "controls": "2px solid var(--ring), offset 5px",
+      "calculator-input": "Accent border; current calculator cascade suppresses outline and box shadow."
+    },
+    "scope": "Current home page and calculator shell. Journal and articles intentionally remain in the frozen legacy design. PRODUCT.md owns product truth; assets/README.md owns public technical sources.",
+    "notCanonized": "Inherited calculator glyph arrows and FAQ plus/minus text, and hidden terminal-style eyebrows. These are legacy exceptions rather than future icon or label rules."
+  },
+  "components": [
+    {
+      "name": "Primary Action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Square orange action with the source SVG arrow and theme-bound colors.",
+      "html": "<a class=\"ds-button\" href=\"#work\">Смотреть проекты<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" aria-hidden=\"true\"><path d=\"M5 12h14M12 5l7 7-7 7\"/></svg></a>",
+      "css": ".ds-button{display:inline-flex;align-items:center;justify-content:space-between;gap:32px;padding:15px 23px;min-height:54px;background:var(--acc,hsl(33 88% 56%));color:var(--button-tx,#151218);font:750 14px/1.7 var(--body,Manrope,system-ui,sans-serif);text-decoration:none;white-space:nowrap;transition:background .2s,color .2s}.ds-button svg{width:24px;height:24px;flex:none;transition:transform .35s var(--ease,cubic-bezier(.16,1,.3,1))}.ds-button:hover{background:var(--acc-2,hsl(33 78% 74%))}.ds-button:hover svg{transform:translateX(4px)}.ds-button:active{background:var(--acc-deep,hsl(24 88% 48%))}.ds-button:focus-visible{outline:2px solid var(--ring,hsl(33 88% 56%));outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-button,.ds-button svg{transition:none}.ds-button:hover svg{transform:none}}"
+    },
+    {
+      "name": "Text Link",
+      "kind": "button",
+      "refersTo": "text-link",
+      "description": "Open text action with an SVG arrow and a generous target height.",
+      "html": "<a class=\"ds-link\" href=\"#work\">Смотреть проекты<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" aria-hidden=\"true\"><path d=\"M5 12h14M12 5l7 7-7 7\"/></svg></a>",
+      "css": ".ds-link{display:inline-flex;align-items:center;gap:24px;min-height:44px;color:var(--tx,#ECECF1);font:650 15px/1.7 var(--body,Manrope,system-ui,sans-serif);text-decoration:none}.ds-link svg{width:24px;height:24px;transition:transform .35s var(--ease,cubic-bezier(.16,1,.3,1))}.ds-link:hover{color:var(--acc,hsl(33 88% 56%))}.ds-link:hover svg{transform:translateX(4px)}.ds-link:focus-visible{outline:2px solid var(--ring,hsl(33 88% 56%));outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-link svg{transition:none}.ds-link:hover svg{transform:none}}"
+    },
+    {
+      "name": "Calculator Ghost Action",
+      "kind": "button",
+      "description": "Square bordered secondary calculator action; inherited glyph decoration is deliberately omitted.",
+      "html": "<a class=\"ds-ghost\" href=\"journal.html\">Читать журнал</a>",
+      "css": ".ds-ghost{display:inline-flex;align-items:center;gap:12px;min-height:54px;padding:15px 22px;border:1px solid var(--line,rgba(236,236,241,.17));border-radius:0;background:none;color:var(--tx,#ECECF1);font:600 14px/1.7 var(--body,Manrope,system-ui,sans-serif);text-decoration:none;transition:border-color .3s}.ds-ghost:hover{border-color:var(--acc,hsl(33 88% 56%))}.ds-ghost:focus-visible{outline:2px solid var(--ring,hsl(33 88% 56%));outline-offset:5px}"
+    },
+    {
+      "name": "Calculator Number Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Number field with label and hint inside the square calculator form.",
+      "html": "<div class=\"ds-field\"><label for=\"ds-hours\">Часов работы в неделю</label><input id=\"ds-hours\" type=\"number\" value=\"6\" min=\"0\" step=\"0.5\" inputmode=\"decimal\"/><small>На одного сотрудника</small></div>",
+      "css": ".ds-field{padding:24px;background:var(--surface,#19191E);color:var(--tx,#ECECF1);font-family:var(--body,Manrope,system-ui,sans-serif)}.ds-field label{display:block;font-size:15px;font-weight:500;margin-bottom:7px}.ds-field input{width:100%;min-height:50px;padding:12px 14px;border:1px solid var(--line,rgba(236,236,241,.17));border-radius:0;background:var(--bg,#09090C);color:var(--tx,#ECECF1);font:400 16px/1.7 var(--body,Manrope,system-ui,sans-serif);outline:none;box-shadow:none;transition:border-color .25s var(--ease,cubic-bezier(.16,1,.3,1));appearance:textfield}.ds-field input:focus,.ds-field input:focus-visible{border-color:var(--acc,hsl(33 88% 56%));outline:none;box-shadow:none}.ds-field small{display:block;font-size:12px;color:var(--dim,#A9A8B3);margin-top:6px}"
+    },
+    {
+      "name": "Clipped Brand and Grouped Controls",
+      "kind": "nav",
+      "description": "Compact preview of the source brand block, language control and menu geometry; behavioral JS is outside this preview.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Основная навигация\"><a class=\"ds-brand\" href=\"#top\"><svg viewBox=\"0 0 64 52\" aria-hidden=\"true\"><path d=\"M6 40V14l13 10L32 4l13 20 13-10v26z\" fill=\"currentColor\"/><rect x=\"6\" y=\"45\" width=\"52\" height=\"5\" rx=\"2.5\" fill=\"currentColor\"/></svg><span>MOHAPX-V-IT<small>AI FDE / Full-stack</small></span></a><div class=\"ds-controls\"><button class=\"ds-utility\" aria-label=\"Switch to English\">RU</button><button class=\"ds-menu\" aria-expanded=\"false\" aria-label=\"Открыть меню\"><span class=\"ds-bars\"><i></i><i></i></span>Меню</button></div></nav>",
+      "css": ".ds-nav{display:flex;align-items:center;gap:22px;color:var(--tx,#ECECF1);font-family:var(--body,Manrope,system-ui,sans-serif)}.ds-brand{display:flex;align-items:center;gap:18px;min-height:76px;background:var(--surface,#19191E);padding:14px 23px;clip-path:polygon(18px 0,100% 0,100% 100%,18px 100%,0 calc(100% - 18px),0 18px);color:inherit;text-decoration:none;font:650 13px/1.4 Unbounded,Manrope,system-ui,sans-serif;letter-spacing:-.025em}.ds-brand svg{width:44px;flex:none;color:var(--acc,hsl(33 88% 56%))}.ds-brand small{display:block;font:500 11px/1.4 var(--body,Manrope,system-ui,sans-serif);margin-top:4px;color:var(--dim,#A9A8B3);letter-spacing:0}.ds-controls{display:flex;background:var(--surface,#19191E);min-height:76px}.ds-utility,.ds-menu{height:76px;background:transparent;color:inherit;border:0;cursor:pointer;font-family:inherit}.ds-utility{min-width:50px;font-size:12px;font-weight:750}.ds-menu{display:flex;align-items:center;gap:22px;padding:0 25px 0 18px;border-left:1px solid var(--line,rgba(236,236,241,.17));font-size:13px;font-weight:650}.ds-bars{position:relative;width:27px;height:17px}.ds-bars i{position:absolute;left:0;top:2px;width:27px;height:2px;background:currentColor;transition:transform .3s var(--ease,cubic-bezier(.16,1,.3,1))}.ds-bars i+i{top:12px;width:18px}.ds-menu[aria-expanded=true] .ds-bars i{transform:translateY(5px) rotate(45deg)}.ds-menu[aria-expanded=true] .ds-bars i+i{width:27px;transform:translateY(-5px) rotate(-45deg)}.ds-brand:hover,.ds-utility:hover,.ds-menu:hover{color:var(--acc,hsl(33 88% 56%))}.ds-brand:focus-visible,.ds-utility:focus-visible,.ds-menu:focus-visible{outline:2px solid var(--ring,hsl(33 88% 56%));outline-offset:5px}"
+    },
+    {
+      "name": "Text Tags",
+      "kind": "chip",
+      "description": "Non-interactive project metadata, rendered as plain wrapping text.",
+      "html": "<div class=\"ds-tags\"><span>RAG</span><span>LLM</span><span>Python</span></div>",
+      "css": ".ds-tags{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:24px;color:var(--dim,#A9A8B3);font:400 12px/1.7 var(--body,Manrope,system-ui,sans-serif)}"
+    },
+    {
+      "name": "Workflow Surface",
+      "kind": "card",
+      "refersTo": "workflow-container",
+      "description": "Flat surface grouping a reading sequence, with expert emphasis.",
+      "html": "<div class=\"ds-flow\"><p class=\"ds-flow-title\">Как проходит медицинский ответ</p><div class=\"ds-flow-step\"><span>Вопрос сотрудника</span><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" aria-hidden=\"true\"><path d=\"M5 12h14M12 5l7 7-7 7\"/></svg></div><div class=\"ds-flow-step ds-expert\">Проверка эксперта</div></div>",
+      "css": ".ds-flow{background:var(--surface,#19191E);color:var(--tx,#ECECF1);padding:34px 32px 32px;font-family:var(--body,Manrope,system-ui,sans-serif)}.ds-flow-title{font-size:13px;color:var(--dim,#A9A8B3);margin:0 0 26px}.ds-flow-step{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:19px;line-height:1.4;padding:20px 0;border-bottom:1px solid var(--line,rgba(236,236,241,.17))}.ds-flow-step svg{transform:rotate(90deg);width:22px;height:22px;color:var(--dim,#A9A8B3)}.ds-flow-step:last-child{border:0}.ds-expert{color:var(--acc,hsl(33 88% 56%))}"
+    },
+    {
+      "name": "Editorial Disclosure",
+      "kind": "custom",
+      "description": "Native details disclosure with drawn plus/minus and a ruled title row; preview copy is illustrative.",
+      "html": "<details class=\"ds-project\"><summary><div class=\"ds-meta\"><span>AI / Full-stack</span><span>2025</span></div><div class=\"ds-summary\"><h3>Корпоративная AI-система</h3><span class=\"ds-toggle\">Подробнее<i class=\"ds-plus\"></i></span></div></summary><div class=\"ds-body\"><p>Описание задачи, архитектуры и результата проекта.</p></div></details>",
+      "css": ".ds-project{border-top:1px solid var(--line,rgba(236,236,241,.17));color:var(--tx,#ECECF1);font-family:var(--body,Manrope,system-ui,sans-serif)}.ds-project summary{padding:26px 0 28px;cursor:pointer;list-style:none}.ds-project summary::-webkit-details-marker{display:none}.ds-project summary::marker{content:''}.ds-meta{display:flex;justify-content:space-between;gap:14px;font-size:12px;color:var(--dim,#A9A8B3);line-height:1.5}.ds-summary{display:flex;align-items:start;justify-content:space-between;gap:35px;margin-top:12px}.ds-summary h3{margin:0;font-size:25px;font-weight:650;line-height:1.3;letter-spacing:-.02em}.ds-toggle{display:flex;align-items:center;gap:26px;min-width:124px;font-size:12px;font-weight:500;padding-top:8px}.ds-plus{display:block;position:relative;width:22px;height:22px;flex:none}.ds-plus::before,.ds-plus::after{content:'';position:absolute;left:1px;top:10px;width:20px;height:1px;background:currentColor}.ds-plus::after{transform:rotate(90deg);transition:transform .3s var(--ease,cubic-bezier(.16,1,.3,1))}.ds-project[open] .ds-plus::after{transform:rotate(0)}.ds-project summary:hover h3,.ds-project[open] h3{color:var(--acc,hsl(33 88% 56%))}.ds-project summary:focus-visible{outline:2px solid var(--ring,hsl(33 88% 56%));outline-offset:5px}.ds-body{padding:0 0 38px 33%;font-size:17px;line-height:1.65}.ds-body p{margin:0;max-width:75ch}@media(max-width:760px){.ds-body{padding:0 0 28px}.ds-summary h3{font-size:21px}.ds-toggle{font-size:0;min-width:22px;gap:0}}@media(prefers-reduced-motion:reduce){.ds-plus::after{transition:none}}"
+    },
+    {
+      "name": "Original Crown Fallback",
+      "kind": "custom",
+      "description": "Static SVG identity preview; production upgrades this exact geometry to one extruded spinning Three.js group.",
+      "html": "<div class=\"ds-crown\"><svg viewBox=\"0 0 64 52\" role=\"img\" aria-label=\"Корона MOHAPX-V-IT\"><path d=\"M6 40V14l13 10L32 4l13 20 13-10v26z\" fill=\"currentColor\"/><rect x=\"6\" y=\"45\" width=\"52\" height=\"5\" rx=\"2.5\" fill=\"currentColor\"/></svg></div>",
+      "css": ".ds-crown{display:grid;place-items:center;padding:24px}.ds-crown svg{width:min(100%,320px);color:var(--acc,hsl(33 88% 56%));transform:rotate(-8deg)}"
+    }
+  ],
+  "narrative": {
+    "donts": [
+      "**Don't** turn plain text tags or stack items into a new pill system.",
+      "**Don't** extend the clipped brand silhouette into every content container.",
+      "**Don't** infer current design tokens from the frozen journal or legacy stylesheet embedded in the calculator; the current cascade is authoritative.",
+      "**Don't** inherit legacy calculator glyph icons or hidden terminal-style eyebrows as a house style. They remain non-canonical legacy details.",
+      "**Don't** substitute a different crown, copied reference identity or additional interface accent family."
+    ],
+    "dos": [
+      "**Do** retain the original orange theme roles and crown geometry.",
+      "**Do** use the shared self-hosted fonts, theme variables and persisted language/theme controls.",
+      "**Do** keep repeated portfolio records as readable ruled rows with native disclosures.",
+      "**Do** carry the mobile reading order and preference-aware crown motion onto related surfaces.",
+      "**Do** use SVG or drawn geometry for interface icons, following the redesigned header and project controls."
+    ],
+    "rules": [
+      {
+        "section": "colors",
+        "name": "The Paired Theme Rule",
+        "body": "Switch the entire accent, ground, surface, text and divider family together. New surfaces inherit the existing CSS variables and persisted theme state."
+      },
+      {
+        "section": "typography",
+        "name": "The Brand Voice Rule",
+        "body": "Use Manrope for large statements and reading; reserve Unbounded for the identity lockup."
+      },
+      {
+        "section": "layout",
+        "name": "The Editorial Row Rule",
+        "body": "Use horizontal separators and aligned information for repeated projects, experience and tools. Preserve native disclosures and the established mobile reading order."
+      },
+      {
+        "section": "elevation",
+        "name": "The Object Depth Rule",
+        "body": "Keep recurring content flat; concentrate physical depth in the original crown and functional menu overlay."
+      }
+    ],
+    "northStar": "The Engineer's Agency",
+    "overview": "The shipped home page and calculator combine the spacious agency composition of the user-pinned Comblock reference with MOHAPX-V-IT's existing orange palette and crown. Large Manrope headings, asymmetric columns, restrained surfaces and ruled editorial rows give the work room to speak. The crown provides the main expressive object; the content below uses clear reading order and native controls.\n\nThe identity retains its own geometry and wordmark. Manrope carries the interface and narrative; Unbounded remains in the brand lockup. Both font families are self-hosted. Dark and light are complete theme pairs, and Russian and English share the same structure. This record covers the redesigned home page and calculator shell. The journal and its article pages intentionally retain the frozen legacy design; they are not examples of this system.",
+    "keyCharacteristics": [
+      "Large, tightly spaced Manrope headlines with generous section intervals.",
+      "Orange emphasis against near-black or warm paper neutrals.",
+      "Clipped brand geometry, square surfaces and fine horizontal rules.",
+      "Editorial project disclosures rather than a repeated card grid.",
+      "One metallic crown object, with user-controlled and preference-aware motion."
+    ]
+  }
+}

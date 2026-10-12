@@ -596,31 +596,36 @@ footer a:hover{color:var(--acc)}
 .faq p{margin-top:12px;font-size:16px}
 </style>
 <script>try{var _t=localStorage.getItem('mvi-theme');if(_t)document.documentElement.setAttribute('data-theme',_t);var _l=localStorage.getItem('mvi-lang');if(_l)document.documentElement.setAttribute('lang',_l);}catch(e){}</script>
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/calculator.css">
+<script src="assets/site.js" defer></script>
 </head>
-<body data-title-ru="Калькулятор окупаемости AI-решения — MOHAPX-V-IT" data-title-en="AI solution payback calculator — MOHAPX-V-IT">
-<div class="bg-fx"><div class="vign"></div><div class="floor"></div><div class="scan"></div><div class="noise"></div></div>
-<div id="cursorGlow"></div>
-<div class="progress" id="prog"></div>
-<a id="top"></a>
-<nav id="nav">
-  <a class="brand" href="index.html" aria-label="MOHAPX-V-IT">
-    <svg class="crown" viewBox="0 0 64 52" aria-hidden="true"><path d="M6 40V14l13 10L32 4l13 20 13-10v26z" fill="currentColor"/><rect x="6" y="45" width="52" height="5" rx="2.5" fill="currentColor"/></svg>
-    <span class="wm">MOHAPX<i>-</i>V<i>-</i>IT</span></a>
-  <div class="navlinks">
-    <a href="index.html#whoami"><span class="ru">кто я</span><span class="en">whoami</span></a>
-    <a href="index.html#process"><span class="ru">процесс</span><span class="en">process</span></a>
-    <a href="index.html#work"><span class="ru">проекты</span><span class="en">work</span></a>
-    <a href="index.html#path"><span class="ru">путь</span><span class="en">path</span></a>
-    <a href="journal.html"><span class="ru">журнал</span><span class="en">journal</span></a>
-    <a href="calculator.html" aria-current="true"><span class="ru">калькулятор</span><span class="en">calculator</span></a>
-    <a href="index.html#contact"><span class="ru">контакт</span><span class="en">contact</span></a>
+<body data-page="calculator">
+<a class="skip" href="#main"><span class="ru">К содержанию</span><span class="en">Skip to content</span></a>
+<header class="site-header">
+  <nav id="nav" aria-label="Основная навигация">
+    <a class="brand" href="index.html#top" aria-label="MOHAPX-V-IT — Алексей Марышев"><span class="brand-mark"><svg viewBox="0 0 64 52" aria-hidden="true"><path d="M6 40V14l13 10L32 4l13 20 13-10v26z" fill="currentColor"/><rect x="6" y="45" width="52" height="5" rx="2.5" fill="currentColor"/></svg></span><span class="brand-type">MOHAPX-V-IT<small>AI FDE / Full-stack</small></span></a>
+    <div class="nav-controls">
+      <button class="utility" id="langBtn" aria-label="Switch language"><span id="langA">RU</span></button>
+      <button class="utility theme-control" id="themeBtn" aria-label="Переключить цветовую тему"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9c0-.5-.04-1-.12-1.48A7 7 0 0 1 13.48 3.12 9.4 9.4 0 0 0 12 3Z"/></svg></button>
+      <button class="menu-button" id="menuBtn" aria-expanded="false" aria-controls="siteMenu"><span class="menu-label"><span class="ru">Меню</span><span class="en">Menu</span></span><span class="menu-glyph" aria-hidden="true"><i></i><i></i></span></button>
+    </div>
+    <a class="button header-contact" href="https://t.me/ELITeeiiNHEIT" target="_blank" rel="noopener"><span class="ru">Обсудить проект</span><span class="en">Discuss a project</span><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+  </nav>
+  <div class="site-menu" id="siteMenu" hidden>
+    <div class="menu-links"><a href="index.html#whoami"><span class="ru">кто я</span><span class="en">whoami</span><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+<a href="index.html#work"><span class="ru">проекты</span><span class="en">work</span><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+<a href="index.html#path"><span class="ru">путь</span><span class="en">path</span><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+<a href="index.html#process"><span class="ru">процесс</span><span class="en">process</span><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+<a href="index.html#stack"><span class="ru">стек</span><span class="en">stack</span><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+<a href="index.html#manifest"><span class="ru">взгляды</span><span class="en">manifesto</span><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+<a href="index.html#contact"><span class="ru">контакт</span><span class="en">contact</span><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+<a href="journal.html"><span class="ru">журнал</span><span class="en">journal</span><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a><a href="calculator.html"><span class="ru">калькулятор</span><span class="en">calculator</span><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+    <div class="menu-footer"><span><span class="ru">Алексей Марышев · Москва</span><span class="en">Aleksei Maryshev · Moscow</span></span><a href="https://t.me/ELITeeiiNHEIT" target="_blank" rel="noopener">Telegram <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a></div>
   </div>
-  <div class="hud">
-    <button class="chip" id="langBtn" aria-label="Switch language"><b id="langA">RU</b><span style="opacity:.4">/</span><span id="langB">EN</span></button>
-    <button class="chip" id="themeBtn" aria-label="Switch theme"><span id="themeIco">◐</span><span id="themeTx">DARK</span></button>
-  </div>
-</nav>
-<main>
+</header>
+<main id="main">
 <section style="padding-top:150px;padding-bottom:20px">
   <div class="eyebrow">$ roi --calc</div>
   <h1 style="font-family:var(--disp);font-weight:800;font-size:clamp(30px,5.2vw,58px);line-height:1.06;letter-spacing:-.03em;margin-bottom:20px">
@@ -739,52 +744,8 @@ footer a:hover{color:var(--acc)}
 </main>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Как рассчитать окупаемость AI-решения?", "acceptedAnswer": {"@type": "Answer", "text": "Оцените текущий объём работы в часах и стоимость часа. Укажите ожидаемое сокращение времени с учётом проверки результата, стоимость разработки и ежемесячной поддержки. Калькулятор сравнит стоимость высвобожденного времени с расходами и покажет срок окупаемости."}}, {"@type": "Question", "name": "Для каких проектов подходит калькулятор?", "acceptedAnswer": {"@type": "Answer", "text": "Для AI-ассистентов, RAG-поиска и работы с документами, если можно оценить сокращение времени на конкретную задачу. Для проектов, где основной эффект — качество, доступность знаний или снижение риска, одного этого расчёта недостаточно."}}, {"@type": "Question", "name": "Что калькулятор не учитывает?", "acceptedAnswer": {"@type": "Answer", "text": "Качество результата, ошибки модели, требования к данным и доступам, изменение процесса и время освоения системы. Высвобожденное время также не означает автоматического сокращения расходов компании."}}, {"@type": "Question", "name": "Как оценить сокращение времени?", "acceptedAnswer": {"@type": "Answer", "text": "Измерьте выполнение одной и той же задачи до и после пилота. Включите время поиска, ожидания ответа, экспертной проверки и исправлений. Используйте наблюдаемое сокращение времени, а не скорость генерации модели."}}, {"@type": "Question", "name": "Как оценить стоимость часа сотрудника?", "acceptedAnswer": {"@type": "Answer", "text": "Разделите полные месячные затраты компании на сотрудника на рабочие часы за месяц. Учитывайте оклад, налоги и взносы. Вводные калькулятора — пример расчёта; подставьте фактические значения своей компании."}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Калькулятор окупаемости AI-решения", "url": "https://mohapx-v-it.github.io/mohapx-v-iti/calculator.html", "applicationCategory": "BusinessApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "RUB"}, "description": "Оценка экономического эффекта AI-решения: экономия времени, расходы на поддержку, срок окупаемости и ROI за первый год.", "inLanguage": "ru", "author": {"@type": "Person", "name": "Алексей Марышев", "url": "https://mohapx-v-it.github.io/mohapx-v-iti"}}</script>
-<footer>
-  <span>MOHAPX-V-IT © 2026 <span class="ru">Алексей Марышев</span><span class="en">Aleksei Maryshev</span></span>
-  <a href="journal.html"><span class="ru">← в журнал</span><span class="en">← to the journal</span></a>
-  <a href="#top">↑ <span class="ru">наверх</span><span class="en">back to top</span></a>
-</footer>
+<footer class="site-footer"><a class="footer-brand" href="index.html#top"><span class="brand-mark"><svg viewBox="0 0 64 52" aria-hidden="true"><path d="M6 40V14l13 10L32 4l13 20 13-10v26z" fill="currentColor"/><rect x="6" y="45" width="52" height="5" rx="2.5" fill="currentColor"/></svg></span> MOHAPX-V-IT</a><span><span class="ru">Алексей Марышев · Москва</span><span class="en">Aleksei Maryshev · Moscow</span><br>© 2026</span><div><a href="journal.html"><span class="ru">Журнал</span><span class="en">Journal</span></a><a href="calculator.html"><span class="ru">Калькулятор</span><span class="en">Calculator</span></a><a href="index.html#top"><span class="ru">Наверх</span><span class="en">Back to top</span><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div></footer>
 <script>
-(function(){
-  var root=document.documentElement;
-  var themeBtn=document.getElementById('themeBtn'),themeTx=document.getElementById('themeTx'),themeIco=document.getElementById('themeIco');
-  function setTheme(t){root.setAttribute('data-theme',t);themeTx.textContent=t==='dark'?'DARK':'LIGHT';
-    themeIco.textContent=t==='dark'?'◐':'◑';try{localStorage.setItem('mvi-theme',t);}catch(e){}}
-  themeBtn.addEventListener('click',function(){setTheme(root.getAttribute('data-theme')==='dark'?'light':'dark');});
-
-  var langBtn=document.getElementById('langBtn'),langA=document.getElementById('langA'),langB=document.getElementById('langB');
-  window.__onLang=null;
-  function setLang(l){root.setAttribute('lang',l);langA.textContent=l.toUpperCase();langB.textContent=l==='ru'?'EN':'RU';
-    try{localStorage.setItem('mvi-lang',l);}catch(e){}
-    var ttl=document.querySelector('[data-title-'+l+']');
-    if(ttl) document.title=ttl.getAttribute('data-title-'+l);
-    if(window.__onLang) window.__onLang(l);}
-  langBtn.addEventListener('click',function(){setLang(root.getAttribute('lang')==='ru'?'en':'ru');});
-  try{var sT=localStorage.getItem('mvi-theme');if(sT)setTheme(sT);
-      var sL=localStorage.getItem('mvi-lang');if(sL)setLang(sL);}catch(e){}
-
-  var prog=document.getElementById('prog'),nv=document.getElementById('nav');
-  function onScroll(){var h=document.documentElement.scrollHeight-window.innerHeight;
-    if(prog) prog.style.width=(h>0?(window.scrollY/h)*100:0)+'%';
-    if(nv) nv.classList.toggle('stuck',window.scrollY>24);}
-  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
-
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){
-    if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},
-    {threshold:.06,rootMargin:'0px 0px -30px 0px'});
-  document.querySelectorAll('.rv, section > *').forEach(function(el){el.classList.add('rv');io.observe(el);});
-
-  var glow=document.getElementById('cursorGlow'),gx=0,gy=0,cx=0,cy=0;
-  if(glow && window.matchMedia('(pointer:fine)').matches){
-    window.addEventListener('mousemove',function(e){gx=e.clientX;gy=e.clientY;});
-    (function loop(){cx+=(gx-cx)*.09;cy+=(gy-cy)*.09;glow.style.left=cx+'px';glow.style.top=cy+'px';requestAnimationFrame(loop);})();
-  } else if(glow){ glow.style.display='none'; }
-  document.querySelectorAll('.card').forEach(function(c){
-    c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect();
-      c.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%');
-      c.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%');});});
-})();
-
 (function(){
   var ids=['n','h','r','s','c','m'], el={};
   ids.forEach(function(i){el[i]=document.getElementById(i);});

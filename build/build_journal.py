@@ -2,7 +2,8 @@ import json, re, html
 
 data = json.load(open('posts.json', encoding='utf-8'))
 src = open('site/index.html', encoding='utf-8').read()
-style = src.split('<style>')[1].split('</style>')[0]
+# The journal keeps its existing visual identity independently of the home page.
+style = open('build/legacy-theme.css', encoding='utf-8').read()
 STRIP_SHADER = True
 import re as _re
 style = _re.sub(r'/\* -+ animated shader field.*?@media \(prefers-reduced-motion:reduce\)\{\.bg-fx \.shader\{display:none\}\}\n', '', style, flags=_re.S)
