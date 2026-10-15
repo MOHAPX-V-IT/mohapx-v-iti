@@ -118,7 +118,7 @@ async function mountCrown() {
   };
   const tick = time => {
     frame = 0;
-    if (paused || !visible || document.hidden || contextLost) { lastTime = 0; return; }
+    if (paused || document.documentElement.dataset.effectsPaused === 'true' || !visible || document.hidden || contextLost) { lastTime = 0; return; }
     if (!lastTime) lastTime = time;
     const dt = Math.min((time-lastTime)/1000,.06);
     if (time-lastTime >= 1000/30) {
@@ -131,7 +131,7 @@ async function mountCrown() {
     frame = requestAnimationFrame(tick);
   };
   const resume = () => {
-    if (!frame && !paused && visible && !document.hidden && !contextLost) {
+    if (!frame && !paused && document.documentElement.dataset.effectsPaused !== 'true' && visible && !document.hidden && !contextLost) {
       lastTime = 0;
       frame = requestAnimationFrame(tick);
     }
@@ -160,6 +160,10 @@ async function mountCrown() {
   resizeObserver.observe(stage);
   const themeObserver = new MutationObserver(setEnvironment);
   themeObserver.observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+  const effectsObserver = new MutationObserver(() => {
+    document.documentElement.dataset.effectsPaused === 'true' ? stop() : resume();
+  });
+  effectsObserver.observe(document.documentElement,{attributes:true,attributeFilter:['data-effects-paused']});
   renderer.domElement.addEventListener('webglcontextlost',event => {
     event.preventDefault();contextLost=true;stop();stage.classList.remove('is-ready');control.hidden=true;
   });
@@ -175,7 +179,7 @@ async function mountCrown() {
   window.addEventListener('pagehide',event => {
     stop();
     if (event.persisted) return;
-    observer.disconnect();resizeObserver.disconnect();themeObserver.disconnect();
+    observer.disconnect();resizeObserver.disconnect();themeObserver.disconnect();effectsObserver.disconnect();
     bodyGeometry.dispose();baseGeometry.dispose();faceMaterial.dispose();edgeMaterial.dispose();
     environmentTarget?.dispose();environmentTexture.dispose();pmrem.dispose();renderer.dispose();
   });

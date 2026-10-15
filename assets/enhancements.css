@@ -1,0 +1,80 @@
+/* Vanilla adaptations of the supplied 21st.dev component references. */
+@property --gleam-angle{syntax:'<angle>';initial-value:0deg;inherits:false}
+.button.shiny{isolation:isolate;position:relative;overflow:hidden;border:1px solid transparent;border-radius:32px;background:linear-gradient(var(--bg),var(--bg)) padding-box,conic-gradient(from var(--gleam-angle),var(--line) 65%,var(--acc) 80%,var(--acc-2) 86%,var(--line) 94%) border-box;color:var(--tx);animation:gleam-turn 5s linear infinite;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--tx) 5%,transparent)}
+.button.shiny::before{content:'';position:absolute;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(ellipse at 50% 120%,color-mix(in srgb,var(--acc) 24%,transparent),transparent 70%);opacity:.45;transition:opacity .3s}
+.button.shiny:hover::before,.button.shiny:focus-visible::before{opacity:1}
+@keyframes gleam-turn{to{--gleam-angle:360deg}}
+.hero-paths{position:absolute;inset:-40px calc(-1 * var(--gutter)) 0;overflow:hidden;z-index:-1;pointer-events:none;mask-image:linear-gradient(180deg,#000,transparent 90%);opacity:.35}
+.hero-paths svg{width:100%;height:100%;min-width:900px;color:var(--acc)}
+.hero-paths path{stroke-dasharray:360 1000;animation:path-travel 32s linear infinite;animation-delay:calc(var(--i) * -.8s)}
+@keyframes path-travel{to{stroke-dashoffset:-1360}}
+.hero-kicker{display:flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--dim);margin-bottom:22px}
+.hero-kicker::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--acc)}
+.showcase{padding:28px 0 64px;border-top:1px solid var(--line)}
+.showcase-heading{display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:12px;color:var(--dim)}
+.showcase-heading p{letter-spacing:.12em;text-transform:uppercase}
+.showcase-heading a{display:inline-flex;align-items:center;min-height:44px;color:var(--tx)}
+#effectsToggle{background:transparent;color:var(--dim);font-size:11px;min-height:44px;white-space:nowrap}
+.tilted-grid{height:360px;position:relative;overflow:hidden;container-type:size;mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.tilted-scene{position:absolute;inset:0;transform-style:preserve-3d;perspective:var(--camera);perspective-origin:50% 50%}
+.tilted-tile{position:absolute;top:calc(50% - var(--tile-h) / 2);left:calc(50% - var(--tile-w) / 2);width:var(--tile-w);height:var(--tile-h);transform-style:preserve-3d;animation:tile-orbit var(--duration) linear infinite;animation-delay:var(--delay)}
+.tilted-slice{position:absolute;top:0;height:100%;overflow:hidden;backface-visibility:hidden}
+.tilted-slice img{position:absolute;top:0;height:100%;max-width:none;width:var(--tile-w);object-fit:cover}
+.tilted-still{display:flex;gap:18px;overflow:auto;padding:35px 0;scroll-snap-type:x mandatory}
+.tilted-still img{width:min(72vw,360px);flex-shrink:0;scroll-snap-align:center;border:1px solid var(--line)}
+.github-section{position:relative}
+.github-top{display:flex;justify-content:space-between;gap:32px;align-items:end;margin-bottom:38px}
+.github-top h2{margin-top:12px}
+.eyebrow{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--acc)}
+.github-profile{display:inline-flex;gap:10px;align-items:center;min-height:44px;white-space:nowrap;font-size:14px}
+.github-profile svg{width:22px;height:22px}
+.github-stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:34px}
+.github-stat{padding:26px 24px;border-right:1px solid var(--line)}
+.github-stat:first-child{padding-left:0}.github-stat:last-child{border:0}
+.github-stat strong{display:block;font-size:clamp(32px,4vw,54px);line-height:1.2;font-weight:550;letter-spacing:-.04em}
+.github-stat span{font-size:12px;color:var(--dim)}
+.github-calendar{position:relative;padding:26px;background:var(--bg2);border:1px solid var(--line)}
+.calendar-tooltip{position:absolute;z-index:5;max-width:calc(100% - 24px);padding:7px 10px;pointer-events:none;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--tx);font-size:11px;box-shadow:0 8px 24px #0003;transform:translate(-50%,-100%);opacity:0;transition:left .18s cubic-bezier(.2,.8,.2,1),top .18s cubic-bezier(.2,.8,.2,1),opacity .12s}
+.calendar-tooltip.is-visible{opacity:1}
+.github-calendar.is-revealed .calendar-grid .calendar-day{animation:activity-reveal .45s var(--ease) both;animation-delay:var(--reveal-delay)}
+@keyframes activity-reveal{from{transform:scale(.25);opacity:0}to{transform:scale(1);opacity:1}}
+.calendar-heading{display:flex;justify-content:space-between;gap:16px;font-size:12px;margin-bottom:24px}
+.calendar-heading span:last-child{color:var(--dim)}
+.calendar-scroll{overflow-x:auto;padding-bottom:10px}
+.calendar-months{position:relative;height:24px;margin-left:26px;min-width:640px;font-size:10px;color:var(--dim)}
+.calendar-months span{position:absolute}
+.calendar-body{display:flex;gap:10px;min-width:666px}
+.calendar-labels{width:16px;flex-shrink:0;display:grid;grid-template-rows:repeat(7,1fr);font-size:9px;color:var(--dim);line-height:1}
+.calendar-labels span:nth-child(1){grid-row:2}.calendar-labels span:nth-child(2){grid-row:4}.calendar-labels span:nth-child(3){grid-row:6}
+.calendar-grid{display:grid;grid-auto-flow:column;grid-template-rows:repeat(7,1fr);grid-auto-columns:1fr;gap:4px;flex:1}
+.calendar-day{display:block;aspect-ratio:1;min-width:8px;background:var(--soft);border-radius:2px;outline-offset:2px;font-size:0}
+.calendar-day[data-level='1']{background:color-mix(in srgb,var(--acc) 28%,var(--soft))}
+.calendar-day[data-level='2']{background:color-mix(in srgb,var(--acc) 52%,var(--soft))}
+.calendar-day[data-level='3']{background:color-mix(in srgb,var(--acc) 76%,var(--soft))}
+.calendar-day[data-level='4']{background:var(--acc)}
+.calendar-day:focus-visible,.calendar-day:hover{outline:1px solid var(--tx);outline-offset:2px}
+.calendar-legend{display:flex;gap:5px;align-items:center;justify-content:end;font-size:10px;color:var(--dim);margin-top:12px}
+.calendar-legend i{width:11px;height:11px;flex:none}
+.calendar-caption{font-size:12px;color:var(--dim);min-height:24px;margin-top:12px}
+.github-footnote{font-size:12px;color:var(--dim);margin-top:18px;max-width:76ch}
+.repo-list{display:grid;grid-template-columns:repeat(3,1fr);gap:0 30px;margin-top:32px}
+.repo-link{display:flex;justify-content:space-between;gap:14px;padding:18px 0;border-top:1px solid var(--line);font-size:14px}
+.repo-link span{font-size:11px;color:var(--dim)}
+.repo-link:hover{color:var(--acc)}
+.halftone-footer{height:clamp(390px,40vw,570px);position:relative;overflow:hidden;isolation:isolate;background:var(--bg2);border-top:1px solid var(--line)}
+.halftone-footer canvas{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+.halftone-top{max-width:var(--max);margin:auto;padding:36px var(--gutter) 0;display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:28px;font-size:12px}
+.halftone-top strong{display:block;font-weight:600;letter-spacing:.05em}
+.halftone-top p{color:var(--dim);margin-top:8px;max-width:30ch}
+.halftone-col{display:flex;align-items:start;flex-direction:column;gap:4px}
+.halftone-col h3{font-size:10px;font-weight:400;text-transform:uppercase;letter-spacing:.15em;color:var(--dim);margin-bottom:10px}
+.halftone-col a{min-height:28px}.halftone-col a:hover{color:var(--acc)}
+.halftone-rule{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:28px var(--gutter) 0;padding-top:12px;border-top:1px solid var(--line);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+.halftone-rule a{display:flex;align-items:center;gap:10px;min-height:36px;color:var(--tx)}
+.halftone-fallback{position:absolute;bottom:-.22em;left:50%;transform:translateX(-50%);font-size:17vw;line-height:1;font-weight:800;letter-spacing:-.08em;white-space:nowrap;color:var(--tx);opacity:.18;z-index:-1}
+.halftone-footer.is-ready .halftone-fallback{visibility:hidden}
+html[data-effects-paused=true] :is(.tilted-tile,.hero-paths path,.button.shiny){animation-play-state:paused}
+html[data-effects-paused=true] .github-calendar .calendar-day{animation:none}
+@media(max-width:900px){.github-top{display:block}.github-profile{margin-top:20px}.halftone-top{grid-template-columns:1.4fr 1fr 1fr}.halftone-brand{grid-column:1/-1}.halftone-footer{height:480px}}
+@media(max-width:600px){.hero-kicker{font-size:9px;letter-spacing:.07em}.tilted-grid{height:260px}.showcase{padding-bottom:35px}.showcase-heading{font-size:10px}.github-stats{grid-template-columns:1fr 1fr}.github-stat{padding:20px 14px}.github-stat:nth-child(2){border-right:0}.github-stat:nth-child(-n+2){border-bottom:1px solid var(--line)}.github-stat:nth-child(3){padding-left:0}.github-stat span{font-size:10px}.github-calendar{padding:18px 14px}.calendar-heading{flex-direction:column;gap:4px}.repo-list{grid-template-columns:1fr}.halftone-top{gap:20px;padding-top:28px}.halftone-top strong{font-size:13px}.halftone-col{font-size:11px}.halftone-col a{min-height:36px}.halftone-rule{font-size:9px;align-items:start}.halftone-footer{height:470px}}
+@media(prefers-reduced-motion:reduce){.tilted-tile,.hero-paths path,.button.shiny{animation-play-state:paused!important}.github-calendar .calendar-day{animation:none!important}.calendar-tooltip{transition:none}}

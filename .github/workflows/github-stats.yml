@@ -1,0 +1,39 @@
+name: Refresh public GitHub statistics
+on:
+  schedule:
+    - cron: '23 5 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+  pages: write
+concurrency:
+  group: site-build
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python build/update_github.py
+      - name: Save refreshed public data
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/github-stats.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'site: refresh public GitHub statistics'
+            git push
+          fi
+      - name: Refresh existing branch-based GitHub Pages deployment
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          build_type=$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq '.build_type')
+          if [ "$build_type" = 'legacy' ]; then
+            gh api --method POST "repos/$GITHUB_REPOSITORY/pages/builds"
+          else
+            echo 'Custom Pages workflow: configure that workflow to consume the refreshed snapshot.'
+          fi

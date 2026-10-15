@@ -120,6 +120,20 @@ components:
 
 # Design System: MOHAPX-V-IT
 
+## 21st.dev effects, October 2026
+
+The home page adds four effects adapted to the existing buildless architecture:
+curved, sliced open-source project covers; animated paths behind the hero;
+orange conic-gradient button edges; and a large, cropped halftone footer
+wordmark with pointer springs and a click wave. Buttons use 32px corners as
+an intentional exception to the original square primary button token.
+Existing copy, crown geometry, project disclosure and local fonts remain.
+The GitHub section follows the existing ruled layout and uses real dated data,
+orange activity levels and keyboard-accessible day exploration. The month grid
+scrolls inside its own container on small screens. Motion respects the system
+preference and a dedicated effects pause button; canvas rendering sleeps offscreen
+and after the springs settle. Journal and calculator do not load the effects.
+
 ## Overview
 
 **Creative North Star: "The Engineer's Agency"**
@@ -250,3 +264,25 @@ One Three.js group assembles extruded versions of the existing crown body and ba
 ## Interactive motion
 
 The original rotating crown remains the focal motion. The navigation uses interruptible opacity and translate animations (300 ms entrance, 180 ms exit). Project rows and calculator FAQs retain native details as a no-script fallback; progressively enhanced grid disclosures follow natural content height (360 ms opening, 240 ms closing), including language and viewport changes. Closing content becomes inert immediately. Buttons have a small press response and directional arrows; theme colours transition for 280 ms. Reduced-motion preferences disable these transitions and settle any animation already in progress. Reading sections stay visible and still.
+
+## Current home page: MOHAPX / Fieldwork
+
+The current home page supersedes the original agency composition while retaining
+the MOHAPX crown, Manrope, warm accent and two themes. Dark: charcoal-green
+#111210 with warm white #f1f0e9 and apricot #ff9459. Light: paper #f4f2eb with
+ink #20221b and burnt orange #b74b17. JetBrains Mono is reserved for small
+engineering annotations; Manrope carries readable content. The orange contact
+panel closes the narrative. No scroll hijacking, autoplay video or cursor replacement.
+
+The portrait is an editorial print with an annotation and small crown seal.
+The three selected cases pair a short business explanation with authored process
+diagrams, not fake screenshots. Project filters preserve native detail disclosure.
+A restrained spotlight, a four-stage scroll rail, tiny magnetic CTA movement and
+brief heading reveals are adapted from the selected 21st.dev sources.
+The motion toggle covers the crown, card band, calendar reveal and heading motion.
+
+Default spacing is 100px per major section, 64px on mobile. Main content is
+limited to 1400px including gutters. Header exposes primary destinations on
+desktop; the full menu remains keyboard accessible. Deep history is disclosed
+on request so the main journey is substantially shorter. The previous token
+block documents the shared calculator shell, not the current portfolio overrides.
