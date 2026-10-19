@@ -27,7 +27,9 @@
     if (portrait) portrait.alt = en ? 'Aleksei Maryshev' : 'Алексей Марышев';
     document.title = root.querySelector('body').dataset.page === 'calculator'
       ? (en ? 'AI solution payback calculator — MOHAPX-V-IT' : 'Калькулятор окупаемости AI-решения — MOHAPX-V-IT')
-      : (en ? 'MOHAPX-V-IT — Aleksei Maryshev, AI Forward Deployed Engineer' : 'MOHAPX-V-IT — Алексей Марышев, AI Forward Deployed Engineer');
+      : (en ? 'MOHAPX-V-IT — Aleksei Maryshev, FDE / Business analysis' : 'MOHAPX-V-IT — Алексей Марышев, FDE / бизнес-анализ');
+    const analysisList = document.querySelector('.analysis-artifacts');
+    if (analysisList) analysisList.setAttribute('aria-label',en ? 'Analysis outcomes' : 'Результаты разбора задачи');
     if (typeof window.__onLang === 'function') window.__onLang();
   };
   themeButton.addEventListener('click',() => {
