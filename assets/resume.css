@@ -1,0 +1,129 @@
+.resume-content {
+  padding-bottom: clamp(32px, 7vw, 95px);
+}
+
+.resume-section {
+  padding-block: clamp(30px, 5vw, 74px);
+  border-top: 1px solid var(--line);
+}
+
+.resume-section > h2 {
+  margin: 0 0 clamp(20px, 4vw, 48px);
+  font-size: clamp(30px, 4.5vw, 62px);
+  line-height: 1.05;
+  letter-spacing: -.055em;
+}
+
+.resume-role {
+  display: grid;
+  grid-template-columns: minmax(13rem, .72fr) minmax(0, 1.28fr);
+  gap: clamp(20px, 5vw, 64px);
+  padding: 23px 0;
+  border-top: 1px solid var(--line);
+}
+
+.resume-role:last-child {
+  padding-bottom: 0;
+}
+
+.resume-role-meta h3,
+.resume-project h3 {
+  margin: 0;
+  font-size: clamp(19px, 2.15vw, 29px);
+  letter-spacing: -.04em;
+  line-height: 1.2;
+}
+
+.resume-role-meta p {
+  margin: 6px 0 0;
+  color: var(--dim);
+}
+
+.resume-role-meta .resume-date {
+  margin: 0 0 8px;
+  color: var(--acc);
+  font: 500 11px/1.5 var(--mono);
+}
+
+.resume-points {
+  margin: 0;
+  padding-inline-start: 1.2em;
+}
+
+.resume-points > li + li {
+  margin-top: 9px;
+}
+
+.resume-points > li::marker {
+  color: var(--acc);
+}
+
+.resume-projects,
+.resume-skills {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.resume-project,
+.resume-skills > div {
+  padding: clamp(14px, 2.6vw, 30px);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.resume-project p,
+.resume-skills dd,
+.resume-education p {
+  margin: 8px 0 0;
+  color: var(--dim);
+}
+
+.resume-project > a {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.resume-project .resume-links {
+  margin-top: 10px;
+}
+
+.resume-skills {
+  margin: 0;
+}
+
+.resume-skills dt {
+  font-weight: 720;
+}
+
+.resume-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+}
+
+.resume-project a,
+.resume-contact a {
+  color: var(--acc);
+  text-decoration: underline;
+  text-underline-offset: .25em;
+}
+
+.resume-content a:hover {
+  color: var(--acc-2);
+}
+
+@media (max-width: 720px) {
+  .resume-role {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+}
+
+@media (max-width: 540px) {
+  .resume-projects,
+  .resume-skills {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

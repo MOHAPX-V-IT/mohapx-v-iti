@@ -14,6 +14,7 @@
   const grid = document.getElementById('selectedCases');
   const filterStatus = document.getElementById('filterStatus');
   const announceFilter = () => {
+    if (!filterStatus || !filterBar) return;
     const count = cards.filter(card => !card.hidden).length;
     filterStatus.textContent = language() ? `${count} selected projects shown` : `Показано избранных проектов: ${count}`;
     filterBar.setAttribute('aria-label',language() ? 'Filter selected projects' : 'Фильтр избранных проектов');

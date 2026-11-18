@@ -6,6 +6,7 @@
   const langButton = document.getElementById('langBtn');
   const themeButton = document.getElementById('themeBtn');
   const themeMeta = document.querySelector('meta[name="theme-color"]');
+  const page = document.body.dataset.page;
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   let menuOpen = !menu.hidden;
   let menuAnimation;
@@ -20,14 +21,20 @@
     const light = root.dataset.theme === 'light';
     themeButton.setAttribute('aria-label',en ? `Switch to ${light ? 'dark' : 'light'} theme` : `Включить ${light ? 'тёмную' : 'светлую'} тему`);
     themeButton.setAttribute('aria-pressed',String(light));
-    themeMeta.content = light ? '#F4F2EE' : '#09090C';
+    themeMeta.content = page === 'resume'
+      ? (light ? '#f4f2eb' : '#111210')
+      : (light ? '#F4F2EE' : '#09090C');
     document.getElementById('nav').setAttribute('aria-label',en ? 'Main navigation' : 'Основная навигация');
     menuButton.setAttribute('aria-label',menuOpen ? (en ? 'Close menu' : 'Закрыть меню') : (en ? 'Open menu' : 'Открыть меню'));
     const portrait = document.querySelector('.portrait img');
     if (portrait) portrait.alt = en ? 'Aleksei Maryshev' : 'Алексей Марышев';
-    document.title = root.querySelector('body').dataset.page === 'calculator'
-      ? (en ? 'AI solution payback calculator — MOHAPX-V-IT' : 'Калькулятор окупаемости AI-решения — MOHAPX-V-IT')
-      : (en ? 'MOHAPX-V-IT — Aleksei Maryshev, FDE / Business analysis' : 'MOHAPX-V-IT — Алексей Марышев, FDE / бизнес-анализ');
+    if (page === 'resume') {
+      document.title = en ? 'Aleksei Maryshev — Fullstack Developer · Résumé' : 'Алексей Марышев — Fullstack Developer · Резюме';
+    } else {
+      document.title = page === 'calculator'
+        ? (en ? 'AI solution payback calculator — MOHAPX-V-IT' : 'Калькулятор окупаемости AI-решения — MOHAPX-V-IT')
+        : (en ? 'MOHAPX-V-IT — Aleksei Maryshev, FDE / Business analysis' : 'MOHAPX-V-IT — Алексей Марышев, FDE / бизнес-анализ');
+    }
     const analysisList = document.querySelector('.analysis-artifacts');
     if (analysisList) analysisList.setAttribute('aria-label',en ? 'Analysis outcomes' : 'Результаты разбора задачи');
     if (typeof window.__onLang === 'function') window.__onLang();
