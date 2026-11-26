@@ -80,6 +80,21 @@
   color: var(--dim);
 }
 
+.resume-project-details {
+  margin-top: 12px;
+  font-size: 0.875rem;
+}
+
+.resume-project-details summary {
+  width: fit-content;
+  color: var(--acc);
+  cursor: pointer;
+}
+
+.resume-project-details p {
+  line-height: 1.5;
+}
+
 .resume-project > a {
   display: inline-block;
   margin-top: 10px;

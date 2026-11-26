@@ -1,0 +1,252 @@
+/* Native disclosure tree, adapted from the supplied 21st.dev TreeView reference. */
+.skills-explorer {
+  --branch: color-mix(in srgb, var(--dim) 32%, transparent);
+  margin-top: 30px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--surface) 48%, var(--bg));
+}
+
+.skills-section-intro {
+  max-width: 660px;
+  margin-top: -20px;
+  color: var(--dim);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.skills-explorer-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  padding: 13px clamp(18px, 3vw, 34px);
+  border-bottom: 1px solid var(--line);
+}
+
+.skills-explorer-root {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--tx);
+  font: 500 14px/1.5 var(--mono);
+}
+
+.skills-explorer-root > svg {
+  width: 18px;
+  height: 18px;
+  color: var(--acc);
+}
+
+.skills-explorer-toggle {
+  min-height: 44px;
+  padding: 8px 0 8px 14px;
+  color: var(--dim);
+  background: transparent;
+  font-size: 14px;
+  transition: color .18s ease;
+}
+
+.skills-explorer-toggle:hover,
+.skills-explorer-toggle:focus-visible {
+  color: var(--acc);
+}
+
+.skills-explorer-branches {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: 28px 36px;
+  padding: clamp(20px, 3vw, 34px);
+}
+
+.skill-branch {
+  min-width: 0;
+}
+
+.skill-branch > summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 5px 4px;
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+.skill-branch > summary::-webkit-details-marker {
+  display: none;
+}
+
+.skill-branch > summary::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  flex: 0 0 7px;
+  margin-right: 2px;
+  border-top: 1.5px solid var(--dim);
+  border-right: 1.5px solid var(--dim);
+  transform: rotate(45deg);
+  transition: transform .18s ease, border-color .18s ease;
+}
+
+.skill-branch[open] > summary::before {
+  transform: rotate(135deg) translate(-2px, 1px);
+}
+
+.skill-folder-icon {
+  width: 19px;
+  height: 19px;
+  flex: 0 0 19px;
+  color: var(--acc);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.skill-folder-label {
+  color: var(--tx);
+  font: 500 15px/1.5 var(--mono);
+  transition: color .18s ease;
+}
+
+.skill-branch > summary:hover .skill-folder-label,
+.skill-branch > summary:focus-visible .skill-folder-label {
+  color: var(--acc);
+}
+
+.skill-branch > summary:hover::before {
+  border-color: var(--acc);
+}
+
+.skill-branch-list {
+  margin: 0 0 0 22px;
+  padding: 5px 0 0;
+  list-style: none;
+}
+
+.skill-branch-list > li {
+  position: relative;
+  padding-left: 23px;
+  border-left: 1px solid var(--branch);
+}
+
+.skill-branch-list > li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 18px;
+  width: 15px;
+  height: 1px;
+  background: var(--branch);
+}
+
+.skill-branch-list > li:last-child {
+  border-left-color: transparent;
+}
+
+.skill-branch-list > li:last-child::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -1px;
+  height: 18px;
+  width: 1px;
+  background: var(--branch);
+}
+
+.skill-leaf {
+  --skill-accent: var(--acc);
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  max-width: 100%;
+  min-height: 36px;
+  padding: 5px 2px;
+  color: var(--dim);
+  font-size: 15px;
+  line-height: 1.65;
+  outline-offset: 3px;
+  transition: color .18s ease;
+}
+
+.skill-leaf::before {
+  content: '';
+  position: relative;
+  top: 1px;
+  width: 10px;
+  height: 12px;
+  flex: 0 0 10px;
+  border: 1px solid currentColor;
+  border-radius: 1px;
+  opacity: .55;
+  clip-path: polygon(0 0, 65% 0, 100% 30%, 100% 100%, 0 100%);
+}
+
+.skill-leaf:hover,
+.skill-leaf:focus-visible {
+  color: var(--skill-accent);
+}
+
+.skill-leaf:focus-visible {
+  outline: 2px solid var(--skill-accent);
+  border-radius: 2px;
+}
+
+.skill-leaf[data-skill='typescript'] { --skill-accent: #68b5ff; }
+.skill-leaf[data-skill='javascript'] { --skill-accent: #f7df1e; }
+.skill-leaf[data-skill='react'] { --skill-accent: #61dafb; }
+.skill-leaf[data-skill='python'] { --skill-accent: #ffd343; }
+.skill-leaf[data-skill='node'] { --skill-accent: #83cd29; }
+.skill-leaf[data-skill='express'] { --skill-accent: #f0db4f; }
+.skill-leaf[data-skill='fastapi'] { --skill-accent: #42cbb4; }
+.skill-leaf[data-skill='django'] { --skill-accent: #54c99c; }
+.skill-leaf[data-skill='rust'] { --skill-accent: #dea584; }
+.skill-leaf[data-skill='java'] { --skill-accent: #ff9b55; }
+.skill-leaf[data-skill='postgresql'] { --skill-accent: #80b7e3; }
+.skill-leaf[data-skill='sqlite'] { --skill-accent: #69bcdf; }
+.skill-leaf[data-skill='redis'] { --skill-accent: #ff786e; }
+.skill-leaf[data-skill='docker'] { --skill-accent: #54b9fa; }
+.skill-leaf[data-skill='linux'] { --skill-accent: #f5d45d; }
+.skill-leaf[data-skill='celery'] { --skill-accent: #a9cc54; }
+
+html[data-theme='light'] .skill-leaf[data-skill='typescript'] { --skill-accent: #235ea8; }
+html[data-theme='light'] .skill-leaf[data-skill='javascript'] { --skill-accent: #806500; }
+html[data-theme='light'] .skill-leaf[data-skill='react'] { --skill-accent: #087891; }
+html[data-theme='light'] .skill-leaf[data-skill='python'] { --skill-accent: #846300; }
+html[data-theme='light'] .skill-leaf[data-skill='node'] { --skill-accent: #39720c; }
+html[data-theme='light'] .skill-leaf[data-skill='express'] { --skill-accent: #806500; }
+html[data-theme='light'] .skill-leaf[data-skill='fastapi'] { --skill-accent: #007d6e; }
+html[data-theme='light'] .skill-leaf[data-skill='django'] { --skill-accent: #08754a; }
+html[data-theme='light'] .skill-leaf[data-skill='rust'] { --skill-accent: #995127; }
+html[data-theme='light'] .skill-leaf[data-skill='java'] { --skill-accent: #ad4c0d; }
+html[data-theme='light'] .skill-leaf[data-skill='postgresql'] { --skill-accent: #2b6290; }
+html[data-theme='light'] .skill-leaf[data-skill='sqlite'] { --skill-accent: #086b91; }
+html[data-theme='light'] .skill-leaf[data-skill='redis'] { --skill-accent: #b6372f; }
+html[data-theme='light'] .skill-leaf[data-skill='docker'] { --skill-accent: #086ba8; }
+html[data-theme='light'] .skill-leaf[data-skill='linux'] { --skill-accent: #846300; }
+html[data-theme='light'] .skill-leaf[data-skill='celery'] { --skill-accent: #577315; }
+
+@media (max-width: 1100px) {
+  .skills-explorer-branches { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 600px) {
+  .skills-section-intro { margin-top: 0; }
+  .skills-explorer { margin-top: 24px; }
+  .skills-explorer-branches { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .skills-explorer-toolbar { padding-inline: 18px; }
+  .skills-explorer-toggle { font-size: 13px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skill-branch > summary::before,
+  .skill-folder-label,
+  .skills-explorer-toggle,
+  .skill-leaf { transition: none; }
+}

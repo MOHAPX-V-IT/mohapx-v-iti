@@ -1,5 +1,24 @@
 # Assets
 
+## Resume refresh · November 2026
+
+- `editorial-hero.css`, `editorial-hero.js` adapt the user-supplied Elias / Portfolio
+  Hero by clevision: https://21st.dev/@clevision/components/elias-author-hero.
+  Source availability was verified through the connected 21st.dev catalog.
+- `experience-carousel.css` and the built `experience-carousel.js` support the
+  user-supplied Warp Carousel by Louis Studios. Editable React source is in
+  `components/ui/warp-carousel.tsx` and `components/experience-carousel.tsx`.
+  React's bundled license notices are in `experience-carousel.js.LEGAL.txt`.
+- `skills-tree.css`, `skills-tree.js` adapt the supplied TreeView interaction to
+  native disclosures, with no React or motion dependency for this section.
+- `aleksei-cutout.webp` is a transparent derivative of the existing portrait,
+  prepared with the built-in image-generation editing tool. The original
+  `aleksei-1.jpg` is retained. WebP encoding preserves the generated alpha.
+
+Portrait editing prompt:
+
+> Edit type: background-extraction. Remove ONLY the complete background of this provided photograph and return a clean photorealistic cutout of the SAME person with genuine alpha transparency. Preserve the identity, face, glasses, hairstyle, facial expression, pose, body proportions, clothing, colors and photographic detail exactly as in the reference. Do not beautify, retouch, redraw, stylize, relight, add outlines, text or shadows. Keep the head, both arms, all clothing, legs and shoes within the image frame, same full-body framing. Clean natural edges around hair, glasses, arms, dark shirt and shoes. The output is a transparent PNG asset for layering this real portrait over large typography on a personal portfolio website.
+
 - `aleksei-1.jpg` — original portrait extracted losslessly from the previous home page.
 - `site.css`, `site.js`, `crown.js` — the home page layout, controls and rotating version of the original crown.
 - `enhancements.css`, `enhancements.js` — buildless adaptations of the user-supplied 21st.dev Halftone Wordmark Footer, Tilted Grid Hero, Shiny Button and Background Paths references.

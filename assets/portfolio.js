@@ -88,7 +88,7 @@
 
   const timeline = document.querySelector('.process-timeline');
   const milestones = [...document.querySelectorAll('.timeline-step')];
-  const navLinks = [...document.querySelectorAll('.desktop-links a')];
+  const navLinks = [...document.querySelectorAll('.desktop-links a[href^="#"]')];
   let scrollFrame = 0;
   const updateScroll = () => {
     scrollFrame = 0;
