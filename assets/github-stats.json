@@ -1,11 +1,11 @@
 {
   "username": "MOHAPX-V-IT",
   "profileUrl": "https://github.com/MOHAPX-V-IT",
-  "updatedAt": "2026-11-25T15:47:40.500653+00:00",
-  "publicRepos": 47,
+  "updatedAt": "2026-11-26T15:28:10.628940+00:00",
+  "publicRepos": 51,
   "followers": 0,
   "stars": 0,
-  "contributions": 131,
+  "contributions": 144,
   "days": [
     {
       "date": "2025-11-23",
@@ -1844,8 +1844,13 @@
     },
     {
       "date": "2026-11-25",
+      "level": 3,
+      "count": 16
+    },
+    {
+      "date": "2026-11-26",
       "level": 1,
-      "count": 4
+      "count": 1
     }
   ],
   "repositories": [
@@ -2088,6 +2093,13 @@
       "stars": 0
     },
     {
+      "name": "Profile-cutting-optimizer",
+      "url": "https://github.com/MOHAPX-V-IT/Profile-cutting-optimizer",
+      "description": null,
+      "language": "Java",
+      "stars": 0
+    },
+    {
       "name": "RAG-Change-Inspector",
       "url": "https://github.com/MOHAPX-V-IT/RAG-Change-Inspector",
       "description": null,
@@ -2099,6 +2111,13 @@
       "url": "https://github.com/MOHAPX-V-IT/RagChat",
       "description": null,
       "language": "JavaScript",
+      "stars": 0
+    },
+    {
+      "name": "Regulations",
+      "url": "https://github.com/MOHAPX-V-IT/Regulations",
+      "description": null,
+      "language": "Java",
       "stars": 0
     },
     {
@@ -2151,6 +2170,13 @@
       "stars": 0
     },
     {
+      "name": "Unloading-reconciler",
+      "url": "https://github.com/MOHAPX-V-IT/Unloading-reconciler",
+      "description": null,
+      "language": "Java",
+      "stars": 0
+    },
+    {
       "name": "VibeCalculator",
       "url": "https://github.com/MOHAPX-V-IT/VibeCalculator",
       "description": null,
@@ -2169,6 +2195,13 @@
       "url": "https://github.com/MOHAPX-V-IT/VKR_BlenderAgent",
       "description": null,
       "language": "Python",
+      "stars": 0
+    },
+    {
+      "name": "Workflow-Designer",
+      "url": "https://github.com/MOHAPX-V-IT/Workflow-Designer",
+      "description": null,
+      "language": "Java",
       "stars": 0
     }
   ]
